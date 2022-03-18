@@ -1,0 +1,27 @@
+var searchData=
+[
+  ['m_0',['m',['../structutils_1_1hhmmss__t.html#ad8a112b54ec4bcb2b411bb57862ab2e2',1,'utils::hhmmss_t']]],
+  ['main_1',['main',['../main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97',1,'main.cpp']]],
+  ['main_2ecpp_2',['main.cpp',['../main_8cpp.html',1,'']]],
+  ['mainwin_3',['mainWin',['../classSBBHostApp.html#a4f1643f2fc42beb1fa3a7a7a00e1afb4',1,'SBBHostApp']]],
+  ['mainwin_5fheight_4',['mainWin_height',['../classParams.html#aeaf22b5f712a0f841b5725a4608d9ecf',1,'Params']]],
+  ['mainwin_5fheight_5',['MAINWIN_HEIGHT',['../config_8h.html#a646d34544adae55716b8138eeef75d42',1,'config.h']]],
+  ['mainwin_5fwidth_6',['mainWin_width',['../classParams.html#a94caac2fce050f4833d16174f765b1b3',1,'Params']]],
+  ['mainwin_5fwidth_7',['MAINWIN_WIDTH',['../config_8h.html#a2caf52fceb53cf020e4e8fe3ecdf7510',1,'config.h']]],
+  ['margin_8',['MARGIN',['../config_8h.html#ab05a798afd72aac947f417e1dab73c87',1,'config.h']]],
+  ['mask_9',['MASK',['../HostPort_8h.html#ae7520c5477c11965aabeedc033c9862b',1,'HostPort.h']]],
+  ['max_5flogged_5fsamples_10',['MAX_LOGGED_SAMPLES',['../config_8h.html#a926ad1ced106070e1e79a4cb414344bf',1,'config.h']]],
+  ['max_5fmissing_5fpackets_11',['max_missing_packets',['../classParams.html#a147d623f178d729a0de8179a40eec636',1,'Params']]],
+  ['max_5fmissing_5fpackets_12',['MAX_MISSING_PACKETS',['../config_8h.html#abbaad26ad7b4a876914cb4b6551b2f48',1,'config.h']]],
+  ['max_5fnum_5fsamples_13',['max_num_samples',['../classLogData.html#ac6bbf3544354d578e71bb13ced071eb2',1,'LogData']]],
+  ['max_5fport_14',['MAX_PORT',['../config_8h.html#a401e1a60d6381236216b6a130a6685bd',1,'config.h']]],
+  ['maxentry_15',['maxEntry',['../classSlider.html#a3d0dd0fbed9eab3b2578d8b9cacb4f72',1,'Slider']]],
+  ['maxlabel_16',['maxLabel',['../classSlider.html#af0bc9cf34f506cf70835179253ee78c2',1,'Slider']]],
+  ['maxmissings_17',['maxmissings',['../classSettingsDialog.html#a3647273739bfb09a4df3533c40c786b0',1,'SettingsDialog']]],
+  ['messagedialog_5fheight_18',['messageDialog_height',['../classParams.html#a7bbecdb302988a6d00c4e3b08ce86aea',1,'Params']]],
+  ['messagedialog_5fwidth_19',['messageDialog_width',['../classParams.html#acfbdd2db6bfa92f59b8711b5a6503190',1,'Params']]],
+  ['messdialog_5fheight_20',['MESSDIALOG_HEIGHT',['../config_8h.html#aac2bbf750b897b580f7bcd65523268e2',1,'config.h']]],
+  ['messdialog_5fwidth_21',['MESSDIALOG_WIDTH',['../config_8h.html#aad6ad47c76f8c25a206b97b9c154891a',1,'config.h']]],
+  ['minentry_22',['minEntry',['../classSlider.html#a4f15cc4b007b77336a3653f14d1da14f',1,'Slider']]],
+  ['minlabel_23',['minLabel',['../classSlider.html#a91894dc784ceb5307122050cdc6a61b6',1,'Slider']]]
+];
