@@ -29,16 +29,16 @@ var NAVTREE =
       [ "About", "index.html#autotoc_md1", null ],
       [ "Files", "index.html#autotoc_md2", null ],
       [ "Prerequisites", "index.html#autotoc_md3", null ],
-      [ "Building", "index.html#autotoc_md4", null ],
-      [ "Installation", "index.html#autotoc_md5", null ],
-      [ "Documentation", "index.html#autotoc_md6", null ],
+      [ "Documentation", "index.html#autotoc_md4", null ],
+      [ "Building", "index.html#autotoc_md5", null ],
+      [ "Installation", "index.html#autotoc_md6", null ],
       [ "Workaround with gtkmm in Windows x64", "index.html#autotoc_md7", [
         [ "Tips", "index.html#autotoc_md8", null ]
       ] ],
       [ "Configuration file", "index.html#autotoc_md9", null ],
-      [ "Known issues", "index.html#autotoc_md10", null ],
-      [ "TODO list", "index.html#autotoc_md11", null ]
+      [ "Known issues", "index.html#autotoc_md10", null ]
     ] ],
+    [ "Todo List", "todo.html", null ],
     [ "Namespaces", "namespaces.html", [
       [ "Namespace List", "namespaces.html", "namespaces_dup" ],
       [ "Namespace Members", "namespacemembers.html", [

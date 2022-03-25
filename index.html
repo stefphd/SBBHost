@@ -112,7 +112,7 @@ Files</h1>
 <p >Files:</p>
 <ul>
 <li><code>SBBHost.sln</code>, <code>SBBHost.vcxproj</code>, <code>SBBHost.vcxproj.filters</code>,<code>SBBHost.vcxproj.user</code> ,<code>SBBHost.rc</code> ,<code>resource.h</code>: project files necessary for <em>Visual Studio</em> (in Windows only)</li>
-<li><code>Makefile</code>: makefile necessary for compilation in Linux</li>
+<li><code>Makefile</code>: makefile necessary for compilation and installation in Linux</li>
 <li><code>Doxyfile</code>: configuration file for documentation generation from source code using <em>doxygen</em></li>
 </ul>
 <p >Code folders:</p>
@@ -127,12 +127,14 @@ Files</h1>
 <li><code>./docs/html</code>: contains the documentation in html (generated automatically from source code using <em>doxygen</em>)</li>
 <li><code>./bin</code>: contains binary files (Win x64 binaries are in <code>./bin/win64</code>)</li>
 <li><code>./.build</code>: contains temporary files created during compilation</li>
+<li><code>./.vscode</code>: contains VS code property file(s)</li>
 </ul>
 <p >Installer files and folders:</p>
 <ul>
 <li><code>./installer</code>: folder containing the installer files</li>
 <li><code>./installer/installer.vdproj</code>: installer project necessary for <em>Visual Studio</em> (in Windows only)</li>
 <li><code>./installer/win64</code>: contains the Windows x64 installer</li>
+<li><code>./installer/linux</code>: contains the Linux installation files</li>
 </ul>
 <h1><a class="anchor" id="autotoc_md3"></a>
 Prerequisites</h1>
@@ -141,6 +143,7 @@ Prerequisites</h1>
 <li><em>gtkmm4</em> libraries, including all its dependencies (for building only in Windows, not for installation)</li>
 <li><em>Visual Studio</em> (&gt;=2017) for Windows (for building only)</li>
 <li><em>g++</em> with <em>make</em> for Linux only</li>
+<li><em>doxygen</em> for documentation generation</li>
 </ul>
 <p ><em>gtkmm4</em> libraries can be installed with:</p>
 <ul>
@@ -151,23 +154,6 @@ Prerequisites</h1>
 </ul>
 <p >For building in Linux it is racommended to have also <em>Visual Studio Code</em> with <em>C/C+ (ms-vscode)</em> installed. This is not mandatory for compilation but it helps for code completation and make the compilation simpler.</p>
 <h1><a class="anchor" id="autotoc_md4"></a>
-Building</h1>
-<ul>
-<li><p class="startli">Linux: building makes use of a makefile. Depending on what you would like to do, there are different options</p>
-<p class="startli">1) Build all: just use <code>make</code> or <code>make all</code> in the terminal (does not rebuild if files do not change) 2) Clean all object files: <code>make clean</code> 3) Clean all files (including binaries): <code>make cleaner</code> 4) Rebuild: <code>make remake</code> (regardless if files have changed or not)</p>
-<p class="startli">If installed, you may also use <em>Visual Studio Code</em> using <code>ctrl+shift+B</code> to build (this corresponds to <code>make all</code>). Note that building is mandatory for installation in Linux.</p>
-</li>
-<li>Windows: just use <em>Visual Studio</em> in x64-Realase mode. Make sure to use the <em>C++17 (ISO/IEC 14882)</em> compiler. Note that building is not necessary for installation in Windows.</li>
-</ul>
-<h1><a class="anchor" id="autotoc_md5"></a>
-Installation</h1>
-<ul>
-<li>Linux: TODO</li>
-<li><p class="startli">Windows x64: just use <code>./installer/win64/SBBHost Installer.msi</code> to install the application in Windows using a setup wizard. Note that building is not necessary in Windows for installation, since pre-compiled binaries are provided. It is highly racommended to not change the installation directory. However, if you want to change the installation directory during the setup wizard, you must change the variable <code>gsettings_dir</code> in the file <code>path_to_installation/sbbhost-config.ini</code> with</p>
-<div class="fragment"><div class="line">gsettings_dir = &#39;path_to_installation\share&#39;;</div>
-</div><!-- fragment --></li>
-</ul>
-<h1><a class="anchor" id="autotoc_md6"></a>
 Documentation</h1>
 <p >Documentation for the source code (but not for the used libraries in <code>./lib</code>) can be generated from the source using <em>doxygen</em> (see <a href="https://www.doxygen.nl/download.html">https://www.doxygen.nl/download.html</a> for download) with</p>
 <div class="fragment"><div class="line">doxygen</div>
@@ -178,8 +164,30 @@ Documentation</h1>
 </div><!-- fragment --><p >in <code>Doxyfile</code>. The latex version will be in <code>./docs/latex</code> and can be compiled using latex with</p>
 <div class="fragment"><div class="line">cd ./docs/latex</div>
 <div class="line">make</div>
-</div><!-- fragment --><p >which generates the pdf file <code>./doc/latex/refman.pdf</code>.</p>
+</div><!-- fragment --><p >which generates the pdf file <code>./doc/latex/refman.pdf</code>. Note that this requires having latex installed.</p>
 <p >Documentation generation has been tested on Linux only, but it should work also in Windows.</p>
+<h1><a class="anchor" id="autotoc_md5"></a>
+Building</h1>
+<ul>
+<li><p class="startli">Linux: building makes use of a makefile. Depending on what you would like to do, there are different options</p><ul>
+<li>Build all: just use <code>make</code> or <code>make all</code> in the terminal (does not rebuild if files do not change)</li>
+<li>Clean all object files: <code>make clean</code></li>
+<li>Clean all files (including binaries): <code>make cleaner</code></li>
+<li>Rebuild: <code>make remake</code> (regardless if files have changed or not)</li>
+</ul>
+<p class="startli">If installed, you may also use <em>Visual Studio Code</em> using <code>ctrl+shift+B</code> to build (this corresponds to <code>make all</code>). Note that building is mandatory for installation in Linux. The installation files are built with <em>make</em> too using <code>make installer</code>. Note that the previous commands can be also used at the same time, e.g. <code>make all installer doc</code> to build code and installer and to generate the documentation.</p>
+</li>
+<li>Windows: just use <em>Visual Studio</em> in x64-Realase mode. Make sure to use the <em>C++17 (ISO/IEC 14882)</em> compiler. The installer is built using <em>Visual Studio</em> too.</li>
+</ul>
+<h1><a class="anchor" id="autotoc_md6"></a>
+Installation</h1>
+<ul>
+<li>Linux: installation is performed using <em>make</em>, in particular with <code>make install</code> and <code>make unistall</code>. Please note that sudo/root permission may be necessary: in such case use <code>sudo make install</code> and <code>sudo make unistall</code>.</li>
+<li>Windows x64: just use <code>./installer/win64/SBBHost Installer.msi</code> to install the application in Windows using a setup wizard. <dl class="section attention"><dt>Attention</dt><dd>It is highly racommended to not change the installation directory. However, if you want to change the installation directory during the setup wizard, you must change the variable <code>gsettings_dir</code> in the file <code>path_to_installation/sbbhost-config.ini</code> with</dd></dl>
+<div class="fragment"><div class="line">gsettings_dir = &#39;path_to_installation\share&#39;;</div>
+</div><!-- fragment --></li>
+</ul>
+<dl class="section note"><dt>Note</dt><dd>Both in Linux and Windows, building is not mandatory for installation, since pre-compiled binaries are provided inside the installer folder.</dd></dl>
 <h1><a class="anchor" id="autotoc_md7"></a>
 Workaround with gtkmm in Windows x64</h1>
 <p >The <em>gtkmm-4.0</em> libraries have been initially meant to be used in Linux systems, therefore it is not trivial to use them in Windows, especially with <em>Visual Studio</em>. The workaround is to use <em>vcpkg</em>, which is a tool for installing packages in Windows.</p>
@@ -250,22 +258,22 @@ Configuration file</h1>
 <li>Modify the control list and their upper, lower limits and default values</li>
 <li>Modify the default size of windows and dialogs, as well as the appearance of the graph</li>
 </ul>
-<p >However, modifications should be done carefully by expert users.</p>
+<p >However, modifications should be done carefully by expert users. In Linux, the configuration file is by defualt in <code>/usr/bin</code>.</p>
 <h1><a class="anchor" id="autotoc_md10"></a>
 Known issues</h1>
 <ul>
 <li>Help me to find issues</li>
-<li>2+2=5</li>
-</ul>
-<h1><a class="anchor" id="autotoc_md11"></a>
-TODO list</h1>
-<ul>
-<li>CHECK IF WINDOWS WORKING: to check file save, saveAs, open and drag and drop (both stream and plot mode)</li>
-<li>Implement direct open of a *.sbb file (argv and argc)????</li>
-<li>Add plot settings (plot_graph_decim, etc)</li>
-<li>Low-pass filt-filt in plot???</li>
-<li>Implement PSD in plot mode</li>
-<li>Create Linux installer (e.g. with make, just add install to Makefile: stuff to do????) </li>
+<li><p class="startli">2+2=5</p>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000001">Todo:</a></b></dt><dd><p class="startdd">MAKE WINDOWS WORKING: to check file save, saveAs, open and drag and drop (both stream and plot mode), to add fftw lib </p>
+<p class="interdd">Add docs to win installer (to be installed in /docs dir)? </p>
+<p class="interdd">Add help button in toolbar with opening of documentation (main is index.html) </p>
+<p class="interdd">Implement direct open of a *.sbb file (argv and argc)???? </p>
+<p class="interdd">Add plot settings (plot_graph_decim, etc) </p>
+<p class="interdd">Low-pass filt-filt in plot??? </p>
+<p class="interdd">Implement PSD in plot mode </p>
+<p class="enddd">Create Linux installer (e.g. with make, just add install to Makefile: stuff to do????) </p>
+</dd></dl>
+</li>
 </ul>
 </div></div><!-- PageDoc -->
 </div><!-- contents -->
