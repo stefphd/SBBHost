@@ -40,7 +40,7 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr id="projectrow">
-  <td id="projectlogo"><img alt="Logo" src="sbbhost-icon.png"/></td>
+  <td id="projectlogo"><img alt="Logo" src="sbbhost-icon.svg"/></td>
   <td id="projectalign">
    <div id="projectname">SBB Host
    </div>
@@ -185,7 +185,10 @@ Documentation</h1>
 <h1><a class="anchor" id="autotoc_md6"></a>
 Installation</h1>
 <ul>
-<li>Linux: installation is performed using <em>make</em>, in particular with <code>make install</code> and <code>make unistall</code>. Please note that sudo/root permission may be necessary: in such case use <code>sudo make install</code> and <code>sudo make unistall</code>.</li>
+<li><p class="startli">Linux: installation is performed using <em>make</em>, in particular with <code>make install</code> and <code>make uninstall</code>. Please note that sudo/root permission may be necessary: in such case use <code>sudo make install</code> and <code>sudo make uninstall</code>. One may also install the application locally using <code>make install LOCAL=yes</code> and <code>make uninstall LOCAL=yes</code>. In such case no sudo/root permission are necessary, but the user must modify the file <code>./installer/linux/</code>. You can either use the <code>Makefile</code> in <code>./</code>, or that in <code>./installer/linux</code> using</p>
+<div class="fragment"><div class="line">cd ./installer/linux</div>
+<div class="line">sudo make install</div>
+</div><!-- fragment --></li>
 <li>Windows x64: just use <code>./installer/win64/SBBHost Installer.msi</code> to install the application in Windows using a setup wizard. <dl class="section attention"><dt>Attention</dt><dd>It is highly racommended to not change the installation directory. However, if you want to change the installation directory during the setup wizard, you must change the variable <code>gsettings_dir</code> in the file <code>path_to_installation/sbbhost-config.ini</code> with</dd></dl>
 <div class="fragment"><div class="line">gsettings_dir = &#39;path_to_installation\share&#39;;</div>
 </div><!-- fragment --></li>
@@ -249,9 +252,10 @@ Workaround with &lt;em&gt;gtkmm&lt;/em&gt; in Windows x64</h1>
 <div class="fragment"><div class="line">pkgconf --cflags-only-I gtkmm-4.0 --with-path=C:\src\vcpkg\installed\x64-windows\lib\pkgconfig</div>
 </div><!-- fragment --><p class="startli">This prints a list of include diretories (e.g. <code>-IC:/src/vcpkg/installed/**</code>), which is the flag to pass to the C/C++ compiler for including the necessary directories.</p>
 </li>
-<li><p class="startli">You may also print a nicer list of include directories using in the <em><b>Windows PowerShell</b></em> (not in the <em>Command Prompt</em>!)</p>
+<li><p class="startli">You may also print a nicer list of include directories using in the <em><b>Windows PowerShell</b></em></p>
 <div class="fragment"><div class="line">$(./pkgconf --cflags-only-I gtkmm-4.0 --with-path=C:\src\vcpkg\installed\x64-windows\lib\pkgconfig) -replace &quot;-I&quot;, &quot;`n&quot;</div>
-</div><!-- fragment --></li>
+</div><!-- fragment --><dl class="section attention"><dt>Attention</dt><dd>Make sure to use the <em><b>Windows PowerShell</b></em>, not the <em>Command Prompt</em>.</dd></dl>
+</li>
 <li><p class="startli">In <em>Visual Studio</em> put these directories in <em>Additional Include Directory</em> for the C/C++ compiler. You may also add the following additional compiler flag</p>
 <div class="fragment"><div class="line">`C:\src\vcpkg\installed\x64-windows\tools\pkgconf\pkgconf --cflags-only-I gtkmm-4.0 --with-path=C:\src\vcpkg\installed\x64-windows\lib\pkgconfig`</div>
 </div><!-- fragment --><p class="startli">or alternatively the output of</p>
@@ -275,7 +279,7 @@ Configuration file</h1>
 <li>Modify the control list and their upper, lower limits and default values</li>
 <li>Modify the default size of windows and dialogs, as well as the appearance of the graph</li>
 </ul>
-<p >However, modifications should be done carefully by expert users. In Linux, the configuration file is by defualt in <code>/usr/bin</code>.</p>
+<p >However, modifications should be done carefully by expert users. In Linux, the configuration file is by default in <code>/usr/bin</code> or in <code>~/local/bin</code> for local installation.</p>
 <h1><a class="anchor" id="autotoc_md11"></a>
 Known issues</h1>
 <ul>
