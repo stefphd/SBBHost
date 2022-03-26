@@ -187,7 +187,7 @@ Installation</h1>
 <ul>
 <li>Linux: installation is performed using <em>make</em> and the <code>Makefile</code> in <code>./installer/linux</code>, in particular with <code>make install</code> and <code>make uninstall</code>. Default installation is system-wide in the <code>/usr/local</code> directory. For user-specific installation in <code>~/.local</code> directory use <code>make install LOCAL=yes</code> and <code>make uninstall LOCAL=yes</code>. <dl class="section note"><dt>Note</dt><dd>System-wide installation in <code>/usr/local</code> requires the sudo/root permession, therefore it may be necessary to use <code>sudo make install</code> and <code>sudo make uninstall</code>. </dd>
 <dd>
-One may also use the <code>Makefile</code> in <code>./</code>. This actually calls that in <code>./installer/linux</code> to permerm the installation.</dd></dl>
+One may also use the <code>Makefile</code> in <code>./</code>. This actually calls that in <code>./installer/linux</code> to perform the installation.</dd></dl>
 </li>
 <li>Windows x64: just use <code>./installer/win64/SBBHost Installer.msi</code> to install the application in Windows using a setup wizard. <dl class="section attention"><dt>Attention</dt><dd>It is highly racommended to not change the installation directory. However, if you want to change the installation directory during the setup wizard, you must change the variable <code>gsettings_dir</code> in the file <code>path_to_installation/sbbhost-config.ini</code> with</dd></dl>
 <div class="fragment"><div class="line">gsettings_dir = &#39;path_to_installation\share&#39;;</div>
