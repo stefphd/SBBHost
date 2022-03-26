@@ -185,10 +185,10 @@ Documentation</h1>
 <h1><a class="anchor" id="autotoc_md6"></a>
 Installation</h1>
 <ul>
-<li><p class="startli">Linux: installation is performed using <em>make</em>, in particular with <code>make install</code> and <code>make uninstall</code>. Please note that sudo/root permission may be necessary: in such case use <code>sudo make install</code> and <code>sudo make uninstall</code>. One may also install the application locally using <code>make install LOCAL=yes</code> and <code>make uninstall LOCAL=yes</code>. In such case no sudo/root permission are necessary. You can either use the <code>Makefile</code> in <code>./</code>, or that in <code>./installer/linux</code> using</p>
-<div class="fragment"><div class="line">cd ./installer/linux</div>
-<div class="line">sudo make install</div>
-</div><!-- fragment --></li>
+<li>Linux: installation is performed using <em>make</em> and the <code>Makefile</code> in <code>./installer/linux</code>, in particular with <code>make install</code> and <code>make uninstall</code>. Default installation is system-wide in the <code>/usr/local</code> directory. For user-specific installation in <code>~/.local</code> directory use <code>make install LOCAL=yes</code> and <code>make uninstall LOCAL=yes</code>. <dl class="section note"><dt>Note</dt><dd>System-wide installation in <code>/usr/local</code> requires the sudo/root permession, therefore it may be necessary to use <code>sudo make install</code> and <code>sudo make uninstall</code>. </dd>
+<dd>
+One may also use the <code>Makefile</code> in <code>./</code>. This actually calls that in <code>./installer/linux</code> to permerm the installation.</dd></dl>
+</li>
 <li>Windows x64: just use <code>./installer/win64/SBBHost Installer.msi</code> to install the application in Windows using a setup wizard. <dl class="section attention"><dt>Attention</dt><dd>It is highly racommended to not change the installation directory. However, if you want to change the installation directory during the setup wizard, you must change the variable <code>gsettings_dir</code> in the file <code>path_to_installation/sbbhost-config.ini</code> with</dd></dl>
 <div class="fragment"><div class="line">gsettings_dir = &#39;path_to_installation\share&#39;;</div>
 </div><!-- fragment --></li>
@@ -198,13 +198,14 @@ Installation</h1>
 Building</h1>
 <ul>
 <li><p class="startli">Linux: building makes use of a makefile. Depending on what you would like to do, there are different options</p><ul>
-<li>Build the code: just use <code>make</code> or <code>make all</code> in the terminal (does not rebuild if files do not change)</li>
+<li>Build the code: <code>make build</code> in the terminal (does not rebuild if files do not change)</li>
 <li>Clean object files: <code>make clean</code></li>
 <li>Clean built files (including binaries): <code>make cleaner</code></li>
 <li>Rebuild: <code>make remake</code> (regardless if files have changed or not)</li>
-<li>Build the installer: <code>make installer</code> (this just copies the necessary files to the installation folder)</li>
+<li>Create the installer: <code>make installer</code> (this just copies the necessary files to the installation folder)</li>
+<li>Build the code, create the installer, and generate the documentation: just use <code>make</code> or <code>make all</code></li>
 </ul>
-<p class="startli">If installed, you may also use <em>Visual Studio Code</em> using <code>ctrl+shift+B</code> to build (this corresponds to <code>make all</code>). Note that the previous commands can be also used at the same time, e.g. <code>make all installer doc</code> to build code and installer and to generate the documentation.</p>
+<p class="startli">If installed, you may also use <em>Visual Studio Code</em> using <code>ctrl+shift+B</code> to build, create the installer, and generate the documentation (this corresponds to <code>make all</code>). Note that the previous commands can be also used at the same time, e.g. <code>make installer doc</code> to create the installer and generate the documentation.</p>
 </li>
 <li>Windows: just use <em>Visual Studio</em> in x64-Realase mode. Make sure to use the <em>C++17 (ISO/IEC 14882)</em> compiler. The installer is built using <em>Visual Studio</em> too.</li>
 </ul>
