@@ -139,10 +139,15 @@ Files</h1>
 <h1><a class="anchor" id="autotoc_md3"></a>
 Prerequisites</h1>
 <p >Building and installation work on Windows x64 or Linux (at least for now).</p>
-<p >For only installation in Windows x64 no prerequisites are necessary: all binary files are provided with the installer. For Linux installation it is necessary to have <em>make</em> installed. This usually can be simple done by using in the terminal</p>
+<p >For only installation in Windows x64 no prerequisites are necessary: all binary files are provided with the installer. For Linux installation it is necessary to install</p><ul>
+<li><p class="startli"><em>make</em>: this usually can be simple done by using in the terminal</p>
 <div class="fragment"><div class="line">sudo pacman -Sy make</div>
 </div><!-- fragment --><dl class="section note"><dt>Note</dt><dd>The code above works with Arch Linux distributions, similar commands may be used in other Linux distributions (e.g. <code>apt install make</code> in Debian/Ubuntu).</dd></dl>
-<p>For building the code and the installer, the following prerequisites are necessary:</p>
+</li>
+<li><em>gtkmm4</em> libraries, including all its dependencies</li>
+<li><em>fftw3</em> libraries See <em>Installation of libraries</em> for details on the installation of libraries.</li>
+</ul>
+<p >For building the code and the installer, the following prerequisites are necessary:</p>
 <ul>
 <li><em>gtkmm4</em> libraries, including all its dependencies</li>
 <li><em>fftw3</em> libraries for Linux only, while for Windows libraries are already given in <code>./lib</code></li>
