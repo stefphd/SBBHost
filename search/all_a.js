@@ -9,7 +9,8 @@ var searchData=
   ['list_5fauthor_6',['LIST_AUTHOR',['../config_8h.html#ac0243f595267bc53d1d32bf18fdf80b1',1,'config.h']]],
   ['log_7',['LOG',['../namespaceColumnType.html#a9fff1dde78f89879e585ba78832a7363',1,'ColumnType']]],
   ['log_5fbutlabel_8',['LOG_BUTLABEL',['../config_8h.html#a1cc96a9fe15698f8dd10540e740fac78',1,'config.h']]],
-  ['logdata_9',['LogData',['../classLogData.html',1,'LogData&lt; T &gt;'],['../classLogData.html#a358638bcd96d8bd3715e1cba59cd1314',1,'LogData::LogData()']]],
+  ['logdata_9',['LogData',['../classLogData.html',1,'']]],
   ['logdata_10',['logData',['../classSBBHostCore.html#a78782a96b392b983657e6b59a403991d',1,'SBBHostCore']]],
-  ['logdata_2eh_11',['LogData.h',['../LogData_8h.html',1,'']]]
+  ['logdata_11',['LogData',['../classLogData.html#aba3c2701f1b87d8998ad89a6c03e4e33',1,'LogData']]],
+  ['logdata_2eh_12',['LogData.h',['../LogData_8h.html',1,'']]]
 ];

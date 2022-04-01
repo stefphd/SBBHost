@@ -1,12 +1,15 @@
 var classTime =
 [
-    [ "getData", "classTime.html#a5b2b38ffe1aa80c56f869d06d6347f81", null ],
-    [ "getDay", "classTime.html#a99f53a2fb08e1514298ad857f8d26313", null ],
-    [ "getHour", "classTime.html#ae0ce1e970c739d756282c95ebe458baf", null ],
-    [ "getMin", "classTime.html#ac258de15a1a13d73c94ac06929899321", null ],
-    [ "getMonth", "classTime.html#aaee5a0c3f71f457265875940d3c0cbfb", null ],
-    [ "getSec", "classTime.html#a07916f5becb53f92a29bcb02b11b7c3b", null ],
-    [ "getYear", "classTime.html#acd89f95ef13a7c182664af83e132f0b3", null ],
-    [ "update", "classTime.html#a1463d5551f982b457d88b6bd4e077903", null ],
+    [ "Time", "classTime.html#a4245e409c7347d1d671858962c2ca3b5", null ],
+    [ "getData", "classTime.html#aca753f15e2951a9643f84dd1e284b1f7", null ],
+    [ "getData", "classTime.html#a324b52358367b0670a693b504865d496", null ],
+    [ "getDay", "classTime.html#a6f415d8dab8ec7a305ac8095d201224f", null ],
+    [ "getHour", "classTime.html#ab526f24a4687df0ff192b434be3112a0", null ],
+    [ "getMin", "classTime.html#aed66c3b3b03958cb6c1674d2788592dd", null ],
+    [ "getMonth", "classTime.html#aa11e4f726d8cd1eb1366cf0f4a52a147", null ],
+    [ "getSec", "classTime.html#a4bb732a0be077f71108f04469e5c3aa3", null ],
+    [ "getYear", "classTime.html#a18a220f9e0bd06fd9092d1bed5750649", null ],
+    [ "update_time", "classTime.html#a8fd93a9873ddf21ca4a8e8bf19506699", null ],
+    [ "STR_LEN", "classTime.html#a622ca758e5048573ba5a3ab9b8c46db9", null ],
     [ "tm", "classTime.html#abd79c64186da4f71f21d819433e3074e", null ]
 ];

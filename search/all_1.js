@@ -9,6 +9,7 @@ var searchData=
   ['append_5fslider_6',['append_slider',['../classHostControlDialog.html#a6bc50a071b60f3afe1945eac189157b4',1,'HostControlDialog']]],
   ['arg_7',['arg',['../namespacespectra.html#a0bf0552974bfa1d01c7a4055ca0aba4c',1,'spectra']]],
   ['argd_8',['argd',['../namespacespectra.html#a9d2a6c5c8020a43173a8670504616b73',1,'spectra']]],
-  ['author_5fcopyright_9',['AUTHOR_COPYRIGHT',['../config_8h.html#a1d7c181fb1c48d36b7a5c6748c3eaac4',1,'config.h']]],
-  ['average_10',['average',['../namespaceutils.html#aa5fdc594f3155ce031e8e07099242fe2',1,'utils']]]
+  ['author_9',['author',['../classLogData.html#a3321dbed41478dd39a2fee71473e884e',1,'LogData']]],
+  ['author_5fcopyright_10',['AUTHOR_COPYRIGHT',['../config_8h.html#a1d7c181fb1c48d36b7a5c6748c3eaac4',1,'config.h']]],
+  ['average_11',['average',['../namespaceutils.html#aa5fdc594f3155ce031e8e07099242fe2',1,'utils']]]
 ];

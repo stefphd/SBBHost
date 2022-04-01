@@ -22,6 +22,7 @@ var classSBBHostApp =
     [ "on_menu_file_saveas", "classSBBHostApp.html#a36378e6b6ad89e76cebf808010d86a41", null ],
     [ "on_menu_file_setfolder", "classSBBHostApp.html#a30840f5effe078d9d405593bfcf44673", null ],
     [ "on_menu_help_about", "classSBBHostApp.html#a5af06f67367a66ac0e43727258c3437a", null ],
+    [ "on_menu_help_help", "classSBBHostApp.html#a63ca044b56ab889732cf9414f8686689", null ],
     [ "on_menu_hostcontrol", "classSBBHostApp.html#aee7857c02e5d4e79779170b077446172", null ],
     [ "on_menu_plot_opt", "classSBBHostApp.html#a76c2657a5505aef21007fe9ae3d5c96d", null ],
     [ "on_menu_stream_connect", "classSBBHostApp.html#a08c8397f693cee8a3bb0aab17d053a29", null ],

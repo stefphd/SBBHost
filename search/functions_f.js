@@ -1,8 +1,8 @@
 var searchData=
 [
   ['save_0',['save',['../classSBBHostCore.html#ab64a4fdc2cead75569754d1dbcbe75d9',1,'SBBHostCore::save(int id)'],['../classSBBHostCore.html#a66dd90354e4483d47b4f602b4dfdf7bc',1,'SBBHostCore::save(int id, std::string name, std::string path)'],['../classLogData.html#a3cb02b64f0f707eb7a8c607aaf5bb462',1,'LogData::save()']]],
-  ['save_5fcsv_1',['save_csv',['../classSBBHostCore.html#ad66df38384e65d713ab8dc7d7d4489ab',1,'SBBHostCore']]],
-  ['save_5fcsv_5fprivate_2',['save_csv_private',['../classSBBHostCore.html#a7bd4f72b434a4ea90e25745501d1b8cc',1,'SBBHostCore']]],
+  ['save_5fdat_1',['save_dat',['../classSBBHostCore.html#a6b3fc98cf794d21bab0bcd8449f0c372',1,'SBBHostCore']]],
+  ['save_5fdat_5fprivate_2',['save_dat_private',['../classSBBHostCore.html#a09b926ec1293258fae74ad364f24205f',1,'SBBHostCore']]],
   ['save_5fmat_3',['save_mat',['../classSBBHostCore.html#a9296ccd812e3c5307faa682a89a1c203',1,'SBBHostCore']]],
   ['save_5fmat_5fprivate_4',['save_mat_private',['../classSBBHostCore.html#a03002343b8dc0b8e03d872ab6d3f3993',1,'SBBHostCore']]],
   ['sbbhostapp_5',['SBBHostApp',['../classSBBHostApp.html#ad01d5636e7f7d2aa127cb0272bb58c01',1,'SBBHostApp']]],

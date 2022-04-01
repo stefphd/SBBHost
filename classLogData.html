@@ -115,9 +115,9 @@ $(document).ready(function(){initNavTree('classLogData.html',''); initResizable(
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a358638bcd96d8bd3715e1cba59cd1314"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLogData.html#a358638bcd96d8bd3715e1cba59cd1314">LogData</a> (std::string str_name, std::string str_path, std::vector&lt; std::string &gt; signal_names, int ID, size_t num_of_signals, size_t num_of_samples)</td></tr>
-<tr class="memdesc:a358638bcd96d8bd3715e1cba59cd1314"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor.  <a href="classLogData.html#a358638bcd96d8bd3715e1cba59cd1314">More...</a><br /></td></tr>
-<tr class="separator:a358638bcd96d8bd3715e1cba59cd1314"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aba3c2701f1b87d8998ad89a6c03e4e33"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLogData.html#aba3c2701f1b87d8998ad89a6c03e4e33">LogData</a> (std::string str_name, std::string str_path, std::vector&lt; std::string &gt; signal_names, int ID, size_t num_of_signals, size_t num_of_samples, <a class="el" href="classTime.html">Time</a> *p_time=nullptr, std::string theAuthor=&quot;unknown&quot;)</td></tr>
+<tr class="memdesc:aba3c2701f1b87d8998ad89a6c03e4e33"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor.  <a href="classLogData.html#aba3c2701f1b87d8998ad89a6c03e4e33">More...</a><br /></td></tr>
+<tr class="separator:aba3c2701f1b87d8998ad89a6c03e4e33"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad029c40230569a84f5f90da7e953f3d8"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLogData.html#ad029c40230569a84f5f90da7e953f3d8">~LogData</a> ()</td></tr>
 <tr class="memdesc:ad029c40230569a84f5f90da7e953f3d8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destructor.  <a href="classLogData.html#ad029c40230569a84f5f90da7e953f3d8">More...</a><br /></td></tr>
 <tr class="separator:ad029c40230569a84f5f90da7e953f3d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -130,6 +130,12 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ad4c2814f7dd5ac8cd953d3793f96f576"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLogData.html#ad4c2814f7dd5ac8cd953d3793f96f576">push_back</a> (T *packet)</td></tr>
 <tr class="memdesc:ad4c2814f7dd5ac8cd953d3793f96f576"><td class="mdescLeft">&#160;</td><td class="mdescRight">Push data to the log buffer.  <a href="classLogData.html#ad4c2814f7dd5ac8cd953d3793f96f576">More...</a><br /></td></tr>
 <tr class="separator:ad4c2814f7dd5ac8cd953d3793f96f576"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af3ed1f13dbf4c86ce8b2da939d4ad62f"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLogData.html#af3ed1f13dbf4c86ce8b2da939d4ad62f">getAuthor</a> ()</td></tr>
+<tr class="memdesc:af3ed1f13dbf4c86ce8b2da939d4ad62f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get author name.  <a href="classLogData.html#af3ed1f13dbf4c86ce8b2da939d4ad62f">More...</a><br /></td></tr>
+<tr class="separator:af3ed1f13dbf4c86ce8b2da939d4ad62f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a343de3e92c2a4e4c842027c14319eae9"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLogData.html#a343de3e92c2a4e4c842027c14319eae9">getDate</a> ()</td></tr>
+<tr class="memdesc:a343de3e92c2a4e4c842027c14319eae9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the date.  <a href="classLogData.html#a343de3e92c2a4e4c842027c14319eae9">More...</a><br /></td></tr>
+<tr class="separator:a343de3e92c2a4e4c842027c14319eae9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3cb02b64f0f707eb7a8c607aaf5bb462"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLogData.html#a3cb02b64f0f707eb7a8c607aaf5bb462">save</a> (<a class="el" href="classFile.html">File</a> *p_file)</td></tr>
 <tr class="memdesc:a3cb02b64f0f707eb7a8c607aaf5bb462"><td class="mdescLeft">&#160;</td><td class="mdescRight">Save the log.  <a href="classLogData.html#a3cb02b64f0f707eb7a8c607aaf5bb462">More...</a><br /></td></tr>
 <tr class="separator:a3cb02b64f0f707eb7a8c607aaf5bb462"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -160,6 +166,12 @@ Public Attributes</h2></td></tr>
 <tr class="memitem:a93da2eb8672900793cb51c17cda483b3"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLogData.html#a93da2eb8672900793cb51c17cda483b3">path</a></td></tr>
 <tr class="memdesc:a93da2eb8672900793cb51c17cda483b3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Path of the corresponding log file.  <a href="classLogData.html#a93da2eb8672900793cb51c17cda483b3">More...</a><br /></td></tr>
 <tr class="separator:a93da2eb8672900793cb51c17cda483b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3321dbed41478dd39a2fee71473e884e"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLogData.html#a3321dbed41478dd39a2fee71473e884e">author</a></td></tr>
+<tr class="memdesc:a3321dbed41478dd39a2fee71473e884e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Author of the log.  <a href="classLogData.html#a3321dbed41478dd39a2fee71473e884e">More...</a><br /></td></tr>
+<tr class="separator:a3321dbed41478dd39a2fee71473e884e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a13dee0ca957442e1c18ea7306677ae8c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classTime.html">Time</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLogData.html#a13dee0ca957442e1c18ea7306677ae8c">time</a></td></tr>
+<tr class="memdesc:a13dee0ca957442e1c18ea7306677ae8c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Variable to store the initial time.  <a href="classLogData.html#a13dee0ca957442e1c18ea7306677ae8c">More...</a><br /></td></tr>
+<tr class="separator:a13dee0ca957442e1c18ea7306677ae8c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af8c411c4e793d8568a798c20002ed7b6"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLogData.html#af8c411c4e793d8568a798c20002ed7b6">id</a> = -1</td></tr>
 <tr class="memdesc:af8c411c4e793d8568a798c20002ed7b6"><td class="mdescLeft">&#160;</td><td class="mdescRight">ID of the log.  <a href="classLogData.html#af8c411c4e793d8568a798c20002ed7b6">More...</a><br /></td></tr>
 <tr class="separator:af8c411c4e793d8568a798c20002ed7b6"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -180,8 +192,8 @@ class LogData&lt; T &gt;</div><p >A templated-class for managing logged-data. </
 <dl class="section author"><dt>Author</dt><dd>Stefano Lovato </dd></dl>
 <dl class="section date"><dt>Date</dt><dd>2022 </dd></dl>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a358638bcd96d8bd3715e1cba59cd1314" name="a358638bcd96d8bd3715e1cba59cd1314"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a358638bcd96d8bd3715e1cba59cd1314">&#9670;&nbsp;</a></span>LogData()</h2>
+<a id="aba3c2701f1b87d8998ad89a6c03e4e33" name="aba3c2701f1b87d8998ad89a6c03e4e33"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aba3c2701f1b87d8998ad89a6c03e4e33">&#9670;&nbsp;</a></span>LogData()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -225,7 +237,19 @@ template&lt;typename T &gt; </div>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">size_t&#160;</td>
-          <td class="paramname"><em>num_of_samples</em>&#160;</td>
+          <td class="paramname"><em>num_of_samples</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classTime.html">Time</a> *&#160;</td>
+          <td class="paramname"><em>p_time</em> = <code>nullptr</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>theAuthor</em> = <code>&quot;unknown&quot;</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -371,6 +395,66 @@ template&lt;typename T &gt; </div>
 
 </div>
 </div>
+<a id="af3ed1f13dbf4c86ce8b2da939d4ad62f" name="af3ed1f13dbf4c86ce8b2da939d4ad62f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af3ed1f13dbf4c86ce8b2da939d4ad62f">&#9670;&nbsp;</a></span>getAuthor()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string <a class="el" href="classLogData.html">LogData</a>&lt; T &gt;::getAuthor </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get author name. </p>
+<p >Function to get the author of the log. </p><dl class="section return"><dt>Returns</dt><dd>The name of the author. </dd></dl>
+
+</div>
+</div>
+<a id="a343de3e92c2a4e4c842027c14319eae9" name="a343de3e92c2a4e4c842027c14319eae9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a343de3e92c2a4e4c842027c14319eae9">&#9670;&nbsp;</a></span>getDate()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string <a class="el" href="classLogData.html">LogData</a>&lt; T &gt;::getDate </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get the date. </p>
+<p >Function to get the creation date and time of the log. </p><dl class="section return"><dt>Returns</dt><dd>The data as a formatted string. </dd></dl>
+
+</div>
+</div>
 <a id="ad4c2814f7dd5ac8cd953d3793f96f576" name="ad4c2814f7dd5ac8cd953d3793f96f576"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ad4c2814f7dd5ac8cd953d3793f96f576">&#9670;&nbsp;</a></span>push_back()</h2>
 
@@ -446,6 +530,24 @@ template&lt;typename T &gt; </div>
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
+<a id="a3321dbed41478dd39a2fee71473e884e" name="a3321dbed41478dd39a2fee71473e884e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3321dbed41478dd39a2fee71473e884e">&#9670;&nbsp;</a></span>author</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string <a class="el" href="classLogData.html">LogData</a>&lt; T &gt;::author</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Author of the log. </p>
+
+</div>
+</div>
 <a id="a5c030c94197de56e6902ba7f363e32b4" name="a5c030c94197de56e6902ba7f363e32b4"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a5c030c94197de56e6902ba7f363e32b4">&#9670;&nbsp;</a></span>data</h2>
 
@@ -623,6 +725,24 @@ template&lt;typename T &gt; </div>
 </div><div class="memdoc">
 
 <p>Vector of signal names. </p>
+
+</div>
+</div>
+<a id="a13dee0ca957442e1c18ea7306677ae8c" name="a13dee0ca957442e1c18ea7306677ae8c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a13dee0ca957442e1c18ea7306677ae8c">&#9670;&nbsp;</a></span>time</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classTime.html">Time</a>* <a class="el" href="classLogData.html">LogData</a>&lt; T &gt;::time</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Variable to store the initial time. </p>
 
 </div>
 </div>

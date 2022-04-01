@@ -10,6 +10,7 @@ var config_8h =
     [ "CONTROL_NAMES", "config_8h.html#ab96f0791c24f767668f898fab0942e11", null ],
     [ "CONTROL_VAL", "config_8h.html#a0a3958d32e68282fccb9d9dfbc505238", null ],
     [ "DARKMODE", "config_8h.html#aae15a29bfbfea9e168f3931db948a68b", null ],
+    [ "DOC_FILE", "config_8h.html#a7d0ecdff23c109842320d7cf93ff265e", null ],
     [ "ERROR_BEEP", "config_8h.html#a9c904b5163c46a4c00f1e4aa3ce27262", null ],
     [ "EXIT_ALLSAVED", "config_8h.html#ad87c27a769ea868487220a2ea48b1a29", null ],
     [ "EXIT_CONNECTIONOK", "config_8h.html#a92502fdb57a798d4f8bd771b3aa7f1de", null ],

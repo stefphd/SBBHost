@@ -102,8 +102,8 @@ $(document).ready(function(){initNavTree('classTime.html',''); initResizable(); 
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="#pri-methods">Private Member Functions</a> &#124;
 <a href="#pri-attribs">Private Attributes</a> &#124;
+<a href="#pri-static-attribs">Static Private Attributes</a> &#124;
 <a href="classTime-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">Time Class Reference</div></div>
 </div><!--header-->
@@ -116,47 +116,120 @@ $(document).ready(function(){initNavTree('classTime.html',''); initResizable(); 
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:acd89f95ef13a7c182664af83e132f0b3"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTime.html#acd89f95ef13a7c182664af83e132f0b3">getYear</a> ()</td></tr>
-<tr class="memdesc:acd89f95ef13a7c182664af83e132f0b3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the current year.  <a href="classTime.html#acd89f95ef13a7c182664af83e132f0b3">More...</a><br /></td></tr>
-<tr class="separator:acd89f95ef13a7c182664af83e132f0b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aaee5a0c3f71f457265875940d3c0cbfb"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTime.html#aaee5a0c3f71f457265875940d3c0cbfb">getMonth</a> ()</td></tr>
-<tr class="memdesc:aaee5a0c3f71f457265875940d3c0cbfb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the current month.  <a href="classTime.html#aaee5a0c3f71f457265875940d3c0cbfb">More...</a><br /></td></tr>
-<tr class="separator:aaee5a0c3f71f457265875940d3c0cbfb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a99f53a2fb08e1514298ad857f8d26313"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTime.html#a99f53a2fb08e1514298ad857f8d26313">getDay</a> ()</td></tr>
-<tr class="memdesc:a99f53a2fb08e1514298ad857f8d26313"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the current month day.  <a href="classTime.html#a99f53a2fb08e1514298ad857f8d26313">More...</a><br /></td></tr>
-<tr class="separator:a99f53a2fb08e1514298ad857f8d26313"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae0ce1e970c739d756282c95ebe458baf"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTime.html#ae0ce1e970c739d756282c95ebe458baf">getHour</a> ()</td></tr>
-<tr class="memdesc:ae0ce1e970c739d756282c95ebe458baf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the current hour.  <a href="classTime.html#ae0ce1e970c739d756282c95ebe458baf">More...</a><br /></td></tr>
-<tr class="separator:ae0ce1e970c739d756282c95ebe458baf"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac258de15a1a13d73c94ac06929899321"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTime.html#ac258de15a1a13d73c94ac06929899321">getMin</a> ()</td></tr>
-<tr class="memdesc:ac258de15a1a13d73c94ac06929899321"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the current minute.  <a href="classTime.html#ac258de15a1a13d73c94ac06929899321">More...</a><br /></td></tr>
-<tr class="separator:ac258de15a1a13d73c94ac06929899321"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a07916f5becb53f92a29bcb02b11b7c3b"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTime.html#a07916f5becb53f92a29bcb02b11b7c3b">getSec</a> ()</td></tr>
-<tr class="memdesc:a07916f5becb53f92a29bcb02b11b7c3b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the current second.  <a href="classTime.html#a07916f5becb53f92a29bcb02b11b7c3b">More...</a><br /></td></tr>
-<tr class="separator:a07916f5becb53f92a29bcb02b11b7c3b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5b2b38ffe1aa80c56f869d06d6347f81"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTime.html#a5b2b38ffe1aa80c56f869d06d6347f81">getData</a> (char *str, size_t len)</td></tr>
-<tr class="memdesc:a5b2b38ffe1aa80c56f869d06d6347f81"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the current data-time.  <a href="classTime.html#a5b2b38ffe1aa80c56f869d06d6347f81">More...</a><br /></td></tr>
-<tr class="separator:a5b2b38ffe1aa80c56f869d06d6347f81"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-methods" name="pri-methods"></a>
-Private Member Functions</h2></td></tr>
-<tr class="memitem:a1463d5551f982b457d88b6bd4e077903"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTime.html#a1463d5551f982b457d88b6bd4e077903">update</a> ()</td></tr>
-<tr class="memdesc:a1463d5551f982b457d88b6bd4e077903"><td class="mdescLeft">&#160;</td><td class="mdescRight">Update the time.  <a href="classTime.html#a1463d5551f982b457d88b6bd4e077903">More...</a><br /></td></tr>
-<tr class="separator:a1463d5551f982b457d88b6bd4e077903"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4245e409c7347d1d671858962c2ca3b5"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTime.html#a4245e409c7347d1d671858962c2ca3b5">Time</a> ()</td></tr>
+<tr class="memdesc:a4245e409c7347d1d671858962c2ca3b5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor.  <a href="classTime.html#a4245e409c7347d1d671858962c2ca3b5">More...</a><br /></td></tr>
+<tr class="separator:a4245e409c7347d1d671858962c2ca3b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8fd93a9873ddf21ca4a8e8bf19506699"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTime.html#a8fd93a9873ddf21ca4a8e8bf19506699">update_time</a> ()</td></tr>
+<tr class="memdesc:a8fd93a9873ddf21ca4a8e8bf19506699"><td class="mdescLeft">&#160;</td><td class="mdescRight">Update the time.  <a href="classTime.html#a8fd93a9873ddf21ca4a8e8bf19506699">More...</a><br /></td></tr>
+<tr class="separator:a8fd93a9873ddf21ca4a8e8bf19506699"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a18a220f9e0bd06fd9092d1bed5750649"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTime.html#a18a220f9e0bd06fd9092d1bed5750649">getYear</a> (bool update=true)</td></tr>
+<tr class="memdesc:a18a220f9e0bd06fd9092d1bed5750649"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the current year.  <a href="classTime.html#a18a220f9e0bd06fd9092d1bed5750649">More...</a><br /></td></tr>
+<tr class="separator:a18a220f9e0bd06fd9092d1bed5750649"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa11e4f726d8cd1eb1366cf0f4a52a147"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTime.html#aa11e4f726d8cd1eb1366cf0f4a52a147">getMonth</a> (bool update=true)</td></tr>
+<tr class="memdesc:aa11e4f726d8cd1eb1366cf0f4a52a147"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the current month.  <a href="classTime.html#aa11e4f726d8cd1eb1366cf0f4a52a147">More...</a><br /></td></tr>
+<tr class="separator:aa11e4f726d8cd1eb1366cf0f4a52a147"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6f415d8dab8ec7a305ac8095d201224f"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTime.html#a6f415d8dab8ec7a305ac8095d201224f">getDay</a> (bool update=true)</td></tr>
+<tr class="memdesc:a6f415d8dab8ec7a305ac8095d201224f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the current month day.  <a href="classTime.html#a6f415d8dab8ec7a305ac8095d201224f">More...</a><br /></td></tr>
+<tr class="separator:a6f415d8dab8ec7a305ac8095d201224f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab526f24a4687df0ff192b434be3112a0"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTime.html#ab526f24a4687df0ff192b434be3112a0">getHour</a> (bool update=true)</td></tr>
+<tr class="memdesc:ab526f24a4687df0ff192b434be3112a0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the current hour.  <a href="classTime.html#ab526f24a4687df0ff192b434be3112a0">More...</a><br /></td></tr>
+<tr class="separator:ab526f24a4687df0ff192b434be3112a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aed66c3b3b03958cb6c1674d2788592dd"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTime.html#aed66c3b3b03958cb6c1674d2788592dd">getMin</a> (bool update=true)</td></tr>
+<tr class="memdesc:aed66c3b3b03958cb6c1674d2788592dd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the current minute.  <a href="classTime.html#aed66c3b3b03958cb6c1674d2788592dd">More...</a><br /></td></tr>
+<tr class="separator:aed66c3b3b03958cb6c1674d2788592dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4bb732a0be077f71108f04469e5c3aa3"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTime.html#a4bb732a0be077f71108f04469e5c3aa3">getSec</a> (bool update=true)</td></tr>
+<tr class="memdesc:a4bb732a0be077f71108f04469e5c3aa3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the current second.  <a href="classTime.html#a4bb732a0be077f71108f04469e5c3aa3">More...</a><br /></td></tr>
+<tr class="separator:a4bb732a0be077f71108f04469e5c3aa3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a324b52358367b0670a693b504865d496"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTime.html#a324b52358367b0670a693b504865d496">getData</a> (char *str, size_t len, bool update=true)</td></tr>
+<tr class="memdesc:a324b52358367b0670a693b504865d496"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the current date-time.  <a href="classTime.html#a324b52358367b0670a693b504865d496">More...</a><br /></td></tr>
+<tr class="separator:a324b52358367b0670a693b504865d496"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aca753f15e2951a9643f84dd1e284b1f7"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTime.html#aca753f15e2951a9643f84dd1e284b1f7">getData</a> (bool update=true)</td></tr>
+<tr class="memdesc:aca753f15e2951a9643f84dd1e284b1f7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the current data-time.  <a href="classTime.html#aca753f15e2951a9643f84dd1e284b1f7">More...</a><br /></td></tr>
+<tr class="separator:aca753f15e2951a9643f84dd1e284b1f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
 <tr class="memitem:abd79c64186da4f71f21d819433e3074e"><td class="memItemLeft" align="right" valign="top">struct tm&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTime.html#abd79c64186da4f71f21d819433e3074e">tm</a></td></tr>
 <tr class="memdesc:abd79c64186da4f71f21d819433e3074e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Variable to store the current time.  <a href="classTime.html#abd79c64186da4f71f21d819433e3074e">More...</a><br /></td></tr>
 <tr class="separator:abd79c64186da4f71f21d819433e3074e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-static-attribs" name="pri-static-attribs"></a>
+Static Private Attributes</h2></td></tr>
+<tr class="memitem:a622ca758e5048573ba5a3ab9b8c46db9"><td class="memItemLeft" align="right" valign="top">static constexpr int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTime.html#a622ca758e5048573ba5a3ab9b8c46db9">STR_LEN</a> = 256</td></tr>
+<tr class="memdesc:a622ca758e5048573ba5a3ab9b8c46db9"><td class="mdescLeft">&#160;</td><td class="mdescRight">String length to use as buffer.  <a href="classTime.html#a622ca758e5048573ba5a3ab9b8c46db9">More...</a><br /></td></tr>
+<tr class="separator:a622ca758e5048573ba5a3ab9b8c46db9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p >A class to get system time. </p>
 <p >Class to get the system time in Windows and Linux. Actually this is just a wrapper for the localtime function of the time library. </p><dl class="section author"><dt>Author</dt><dd>Stefano Lovato </dd></dl>
 <dl class="section date"><dt>Date</dt><dd>2022 </dd></dl>
-</div><h2 class="groupheader">Member Function Documentation</h2>
-<a id="a5b2b38ffe1aa80c56f869d06d6347f81" name="a5b2b38ffe1aa80c56f869d06d6347f81"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5b2b38ffe1aa80c56f869d06d6347f81">&#9670;&nbsp;</a></span>getData()</h2>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a4245e409c7347d1d671858962c2ca3b5" name="a4245e409c7347d1d671858962c2ca3b5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4245e409c7347d1d671858962c2ca3b5">&#9670;&nbsp;</a></span>Time()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Time::Time </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Constructor. </p>
+<p >Constructor for <a class="el" href="classTime.html" title="A class to get system time.">Time</a> object. It automatically updates the time </p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="aca753f15e2951a9643f84dd1e284b1f7" name="aca753f15e2951a9643f84dd1e284b1f7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aca753f15e2951a9643f84dd1e284b1f7">&#9670;&nbsp;</a></span>getData() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string Time::getData </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>update</em> = <code>true</code></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get the current data-time. </p>
+<p >Function to get the current data-time with format YYYY-MM-DD hh::mm::ss. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">update</td><td>A flag to update the time before getting the value (default is true). </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The date-time as a string. </dd></dl>
+
+</div>
+</div>
+<a id="a324b52358367b0670a693b504865d496" name="a324b52358367b0670a693b504865d496"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a324b52358367b0670a693b504865d496">&#9670;&nbsp;</a></span>getData() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -174,7 +247,13 @@ Private Attributes</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">size_t&#160;</td>
-          <td class="paramname"><em>len</em>&#160;</td>
+          <td class="paramname"><em>len</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>update</em> = <code>true</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -189,11 +268,12 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Get the current data-time. </p>
-<p >Function to get the current data-time with format YYYY-MM-DD hh::mm::ss. </p><dl class="params"><dt>Parameters</dt><dd>
+<p>Get the current date-time. </p>
+<p >Function to get the current date-time with format YYYY-MM-DD hh::mm::ss. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">str</td><td>A pointer to char to store the string. </td></tr>
     <tr><td class="paramname">len</td><td>The length of the char buffer. </td></tr>
+    <tr><td class="paramname">update</td><td>A flag to update the time before getting the value (default is true). </td></tr>
   </table>
   </dd>
 </dl>
@@ -201,8 +281,8 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="a99f53a2fb08e1514298ad857f8d26313" name="a99f53a2fb08e1514298ad857f8d26313"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a99f53a2fb08e1514298ad857f8d26313">&#9670;&nbsp;</a></span>getDay()</h2>
+<a id="a6f415d8dab8ec7a305ac8095d201224f" name="a6f415d8dab8ec7a305ac8095d201224f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6f415d8dab8ec7a305ac8095d201224f">&#9670;&nbsp;</a></span>getDay()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -213,7 +293,8 @@ Private Attributes</h2></td></tr>
         <tr>
           <td class="memname">int Time::getDay </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>update</em> = <code>true</code></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -225,12 +306,18 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Get the current month day. </p>
-<p >Function to get the current month day (from 1). </p><dl class="section return"><dt>Returns</dt><dd>The current month day. </dd></dl>
+<p >Function to get the current month day (from 1). </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">update</td><td>A flag to update the time before getting the value (default is true). </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The current month day. </dd></dl>
 
 </div>
 </div>
-<a id="ae0ce1e970c739d756282c95ebe458baf" name="ae0ce1e970c739d756282c95ebe458baf"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae0ce1e970c739d756282c95ebe458baf">&#9670;&nbsp;</a></span>getHour()</h2>
+<a id="ab526f24a4687df0ff192b434be3112a0" name="ab526f24a4687df0ff192b434be3112a0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab526f24a4687df0ff192b434be3112a0">&#9670;&nbsp;</a></span>getHour()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -241,7 +328,8 @@ Private Attributes</h2></td></tr>
         <tr>
           <td class="memname">int Time::getHour </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>update</em> = <code>true</code></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -253,12 +341,18 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Get the current hour. </p>
-<p >Function to get the current hour. </p><dl class="section return"><dt>Returns</dt><dd>The current hour. </dd></dl>
+<p >Function to get the current hour. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">update</td><td>A flag to update the time before getting the value (default is true). </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The current hour. </dd></dl>
 
 </div>
 </div>
-<a id="ac258de15a1a13d73c94ac06929899321" name="ac258de15a1a13d73c94ac06929899321"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac258de15a1a13d73c94ac06929899321">&#9670;&nbsp;</a></span>getMin()</h2>
+<a id="aed66c3b3b03958cb6c1674d2788592dd" name="aed66c3b3b03958cb6c1674d2788592dd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aed66c3b3b03958cb6c1674d2788592dd">&#9670;&nbsp;</a></span>getMin()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -269,7 +363,8 @@ Private Attributes</h2></td></tr>
         <tr>
           <td class="memname">int Time::getMin </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>update</em> = <code>true</code></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -281,12 +376,18 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Get the current minute. </p>
-<p >Function to get the current minute. </p><dl class="section return"><dt>Returns</dt><dd>The current minute. </dd></dl>
+<p >Function to get the current minute. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">update</td><td>A flag to update the time before getting the value (default is true). </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The current minute. </dd></dl>
 
 </div>
 </div>
-<a id="aaee5a0c3f71f457265875940d3c0cbfb" name="aaee5a0c3f71f457265875940d3c0cbfb"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aaee5a0c3f71f457265875940d3c0cbfb">&#9670;&nbsp;</a></span>getMonth()</h2>
+<a id="aa11e4f726d8cd1eb1366cf0f4a52a147" name="aa11e4f726d8cd1eb1366cf0f4a52a147"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa11e4f726d8cd1eb1366cf0f4a52a147">&#9670;&nbsp;</a></span>getMonth()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -297,7 +398,8 @@ Private Attributes</h2></td></tr>
         <tr>
           <td class="memname">int Time::getMonth </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>update</em> = <code>true</code></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -309,12 +411,18 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Get the current month. </p>
-<p >Function to get the current month. </p><dl class="section return"><dt>Returns</dt><dd>The current month. </dd></dl>
+<p >Function to get the current month. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">update</td><td>A flag to update the time before getting the value (default is true). </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The current month. </dd></dl>
 
 </div>
 </div>
-<a id="a07916f5becb53f92a29bcb02b11b7c3b" name="a07916f5becb53f92a29bcb02b11b7c3b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a07916f5becb53f92a29bcb02b11b7c3b">&#9670;&nbsp;</a></span>getSec()</h2>
+<a id="a4bb732a0be077f71108f04469e5c3aa3" name="a4bb732a0be077f71108f04469e5c3aa3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4bb732a0be077f71108f04469e5c3aa3">&#9670;&nbsp;</a></span>getSec()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -325,7 +433,8 @@ Private Attributes</h2></td></tr>
         <tr>
           <td class="memname">int Time::getSec </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>update</em> = <code>true</code></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -337,12 +446,18 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Get the current second. </p>
-<p >Function to get the current second. </p><dl class="section return"><dt>Returns</dt><dd>The current second. </dd></dl>
+<p >Function to get the current second. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">update</td><td>A flag to update the time before getting the value (default is true). </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The current second. </dd></dl>
 
 </div>
 </div>
-<a id="acd89f95ef13a7c182664af83e132f0b3" name="acd89f95ef13a7c182664af83e132f0b3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#acd89f95ef13a7c182664af83e132f0b3">&#9670;&nbsp;</a></span>getYear()</h2>
+<a id="a18a220f9e0bd06fd9092d1bed5750649" name="a18a220f9e0bd06fd9092d1bed5750649"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a18a220f9e0bd06fd9092d1bed5750649">&#9670;&nbsp;</a></span>getYear()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -352,6 +467,41 @@ Private Attributes</h2></td></tr>
       <table class="memname">
         <tr>
           <td class="memname">int Time::getYear </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>update</em> = <code>true</code></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get the current year. </p>
+<p >Function to get the current year. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">update</td><td>A flag to update the time before getting the value (default is true). </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The current year. </dd></dl>
+
+</div>
+</div>
+<a id="a8fd93a9873ddf21ca4a8e8bf19506699" name="a8fd93a9873ddf21ca4a8e8bf19506699"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8fd93a9873ddf21ca4a8e8bf19506699">&#9670;&nbsp;</a></span>update_time()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Time::update_time </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -364,13 +514,14 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Get the current year. </p>
-<p >Function to get the current year. </p><dl class="section return"><dt>Returns</dt><dd>The current year. </dd></dl>
+<p>Update the time. </p>
+<p >Function to update the time stored in tm (to be called every time). </p>
 
 </div>
 </div>
-<a id="a1463d5551f982b457d88b6bd4e077903" name="a1463d5551f982b457d88b6bd4e077903"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1463d5551f982b457d88b6bd4e077903">&#9670;&nbsp;</a></span>update()</h2>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a id="a622ca758e5048573ba5a3ab9b8c46db9" name="a622ca758e5048573ba5a3ab9b8c46db9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a622ca758e5048573ba5a3ab9b8c46db9">&#9670;&nbsp;</a></span>STR_LEN</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -379,25 +530,20 @@ Private Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void Time::update </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
+          <td class="memname">constexpr int Time::STR_LEN = 256</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">constexpr</span><span class="mlabel">private</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
-<p>Update the time. </p>
-<p >Function to update the time stored in tm (to be called every time). </p>
+<p>String length to use as buffer. </p>
 
 </div>
 </div>
-<h2 class="groupheader">Member Data Documentation</h2>
 <a id="abd79c64186da4f71f21d819433e3074e" name="abd79c64186da4f71f21d819433e3074e"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#abd79c64186da4f71f21d819433e3074e">&#9670;&nbsp;</a></span>tm</h2>
 
