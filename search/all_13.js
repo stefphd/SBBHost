@@ -1,8 +1,6 @@
 var searchData=
 [
-  ['update_5ffps_0',['UPDATE_FPS',['../config_8h.html#a5f2b2292745dcda7de378ef4c971a451',1,'config.h']]],
-  ['update_5flogname_1',['update_logname',['../classPlotTreeView.html#a16871ffc0b6f3e612642235740f63aed',1,'PlotTreeView']]],
-  ['update_5ftime_2',['update_time',['../classTime.html#a8fd93a9873ddf21ca4a8e8bf19506699',1,'Time']]],
-  ['use_5fdarkmode_3',['use_darkmode',['../classParams.html#a831be4d351f2f68335bc78072f5941ff',1,'Params']]],
-  ['utils_4',['utils',['../namespaceutils.html',1,'']]]
+  ['value_0',['value',['../classPacket.html#a2f7abef9158089e95f7043c27647cfea',1,'Packet']]],
+  ['vbox_1',['vbox',['../classSlider.html#a7f4537920cde7dafdbdcbe79cbd1023c',1,'Slider']]],
+  ['version_2',['VERSION',['../config_8h.html#a1c6d5de492ac61ad29aec7aa9a436bbf',1,'config.h']]]
 ];

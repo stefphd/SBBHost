@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['value_0',['value',['../classPacket.html#a2f7abef9158089e95f7043c27647cfea',1,'Packet']]],
-  ['vbox_1',['vbox',['../classSlider.html#a7f4537920cde7dafdbdcbe79cbd1023c',1,'Slider::vbox()'],['../classHostControlDialog.html#ace09550ba68c4a4719a5b1bee554a98d',1,'HostControlDialog::vbox()']]]
+  ['window_5fsamples_0',['window_samples',['../classParams.html#a96176eb045b20cf6f4b7925914d893ab',1,'Params']]],
+  ['winsamples_1',['winsamples',['../classSettingsDialog.html#aef26425426cca6dc2646dc59daab2987',1,'SettingsDialog']]]
 ];

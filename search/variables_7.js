@@ -5,6 +5,6 @@ var searchData=
   ['graph_5foffsety_2',['graph_offsety',['../classParams.html#a188cac75dc8d51aa8ce872348990ead2',1,'Params']]],
   ['graph_5fwidth_3',['graph_width',['../classParams.html#a3ca083ab809b3608ea9694e70eb9b03e',1,'Params']]],
   ['green_4',['green',['../namespaceColors.html#a190c5057ffe2ecea608821eef675cdc1',1,'Colors']]],
-  ['grid_5',['grid',['../classHostControlDialog.html#aee9598fe6f7d6c769184d022b6e0e9d2',1,'HostControlDialog']]],
+  ['grid_5',['grid',['../classHostControl.html#ac591a4ad2c8f7faf4f54f1dc7334bc98',1,'HostControl']]],
   ['gsettings_5fdir_6',['gsettings_dir',['../classParams.html#a04ef19ad61b034d0d58409daf360c43b',1,'Params']]]
 ];

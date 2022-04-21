@@ -10,9 +10,9 @@ var dir_d44c64559bbebec7f509842c48db8b23 =
     [ "File.h", "File_8h.html", [
       [ "File", "classFile.html", "classFile" ]
     ] ],
-    [ "HostControlDialog.h", "HostControlDialog_8h.html", [
+    [ "HostControl.h", "HostControl_8h.html", [
       [ "Slider", "classSlider.html", "classSlider" ],
-      [ "HostControlDialog", "classHostControlDialog.html", "classHostControlDialog" ]
+      [ "HostControl", "classHostControl.html", "classHostControl" ]
     ] ],
     [ "HostPort.h", "HostPort_8h.html", "HostPort_8h" ],
     [ "IniReader.h", "IniReader_8h.html", [

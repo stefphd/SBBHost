@@ -15,8 +15,6 @@ var classParams =
     [ "graph_width", "classParams.html#a3ca083ab809b3608ea9694e70eb9b03e", null ],
     [ "gsettings_dir", "classParams.html#a04ef19ad61b034d0d58409daf360c43b", null ],
     [ "header", "classParams.html#a0586b5a7cca9c4d81252777f10f5e095", null ],
-    [ "hostControlDialog_height", "classParams.html#a71d372f736049f455e3a0cd1d7d15c8b", null ],
-    [ "hostControlDialog_width", "classParams.html#aa3a85fbb4c5425ba9f24816939d0b544", null ],
     [ "label_scale", "classParams.html#aa10e04c1241b1a9d2a1fce61a9333312", null ],
     [ "line_width", "classParams.html#a5e8ae6ea323e7084fe7a0569d3f6e0df", null ],
     [ "mainWin_height", "classParams.html#aeaf22b5f712a0f841b5725a4608d9ecf", null ],

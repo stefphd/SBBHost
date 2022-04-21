@@ -3,7 +3,7 @@ var searchData=
   ['name_0',['name',['../classLogData.html#a8f08a5deb97a14f4f030e1dfe390a1b6',1,'LogData']]],
   ['name_5fcol_1',['name_col',['../classPlotTreeView.html#a9b2b7a47befd756437bd095baea1062a',1,'PlotTreeView']]],
   ['name_5frender_2',['name_render',['../classPlotTreeView.html#aca71e6a2ffb3b901fb5278c7ab4b328f',1,'PlotTreeView']]],
-  ['nanval_3',['nanVal',['../classHostControlDialog.html#afb13797f24d1406e5d9c9b69a4a13f0c',1,'HostControlDialog']]],
+  ['nanval_3',['nanVal',['../classHostControl.html#aeea093373f7372e53816e505d0acd236',1,'HostControl']]],
   ['notebook_4',['noteBook',['../classSBBHostApp.html#a95ce3511c3af4a273ff3359ba409cfe5',1,'SBBHostApp::noteBook()'],['../classSettingsDialog.html#aa0297e01b941f886a202170b27e63b16',1,'SettingsDialog::noteBook()']]],
   ['num_5fof_5fcontrols_5',['num_of_controls',['../classParams.html#a1cfa7a609207dd747eade4bdad41151f',1,'Params']]],
   ['num_5fof_5fsignals_6',['num_of_signals',['../classParams.html#aae57fdaf1ac04d5e57db0590102cf3af',1,'Params']]],

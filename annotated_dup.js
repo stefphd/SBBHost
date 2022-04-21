@@ -6,7 +6,7 @@ var annotated_dup =
     [ "ComboChoiceEntryLabel", "classComboChoiceEntryLabel.html", "classComboChoiceEntryLabel" ],
     [ "ComboEntryLabel", "classComboEntryLabel.html", "classComboEntryLabel" ],
     [ "File", "classFile.html", "classFile" ],
-    [ "HostControlDialog", "classHostControlDialog.html", "classHostControlDialog" ],
+    [ "HostControl", "classHostControl.html", "classHostControl" ],
     [ "HostPort", "classHostPort.html", "classHostPort" ],
     [ "IniReader", "classIniReader.html", "classIniReader" ],
     [ "LogData", "classLogData.html", "classLogData" ],

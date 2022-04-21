@@ -190,7 +190,7 @@ Documentation</h1>
 <h1><a class="anchor" id="autotoc_md6"></a>
 Installation</h1>
 <ul>
-<li>Linux: installation is performed using <em>make</em> and the <code>Makefile</code> in <code>./installer/linux</code>, in particular with <code>make install</code> and <code>make uninstall</code>. Default installation is system-wide in the <code>/usr/local</code> directory. For user-specific installation in <code>~/.local</code> directory use <code>make install LOCAL=yes</code> and <code>make uninstall LOCAL=yes</code>. <dl class="section note"><dt>Note</dt><dd>System-wide installation in <code>/usr/local</code> requires the sudo/root permession, therefore it may be necessary to use <code>sudo make install</code> and <code>sudo make uninstall</code>. </dd>
+<li>Linux: installation is performed using <em>make</em> and the <code>Makefile</code> in <code>./installer/linux</code>, in particular with <code>make install</code> and <code>make uninstall</code>. Default installation is user-specific in the <code>$HOME/.local</code> directory. For system-wide installation in <code>/usr/local</code> directory use <code>make install GLOBAL=yes</code> and <code>make uninstall GLOBAL=yes</code>. <dl class="section note"><dt>Note</dt><dd>System-wide installation in <code>/usr/local</code> requires the sudo/root permession, therefore it may be necessary to use <code>sudo make install GLOBAL=yes</code> and <code>sudo make uninstall GLOBAL=yes</code>. </dd>
 <dd>
 One may also use the <code>Makefile</code> in <code>./</code>. This actually calls that in <code>./installer/linux</code> to perform the installation.</dd></dl>
 </li>
@@ -290,7 +290,8 @@ Configuration file</h1>
 Known issues</h1>
 <ul>
 <li>Help me to find issues</li>
-<li><p class="startli">2+2=5</p>
+<li>2+2=5</li>
+<li><p class="startli">mesa-21.3.7-2 required, not working with</p>
 <dl class="todo"><dt><b><a class="el" href="todo.html#_todo000001">Todo:</a></b></dt><dd><p class="startdd">add more gestures to move and zoom in plots: e.g. press roll to move, and roll to zoom </p>
 <p class="interdd">drag and drop in Windows </p>
 <p class="interdd">Implement help but for linux and installation </p>

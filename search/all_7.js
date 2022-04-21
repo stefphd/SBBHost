@@ -14,7 +14,7 @@ var searchData=
   ['get_5fselected_11',['get_selected',['../classStreamTreeView.html#afe4d22b665008435c976b75498e54aaf',1,'StreamTreeView::get_selected()'],['../classComboEntryLabel.html#ae94278271172f1ad458572600ee1f81e',1,'ComboEntryLabel::get_selected()'],['../classComboChoiceEntryLabel.html#a29675fea314107388ab001d689b54468',1,'ComboChoiceEntryLabel::get_selected()'],['../classPlotTreeView.html#a96935c504b2a5fe89dfb64b0a05444d6',1,'PlotTreeView::get_selected()']]],
   ['get_5ftext_12',['get_text',['../classTextEntryLabel.html#a23ecdd7dc51ad8444dc051038ecf8a40',1,'TextEntryLabel']]],
   ['get_5fvalue_13',['get_value',['../classSlider.html#ad9cf4764016de886aec31295bfbc6e40',1,'Slider::get_value()'],['../classSpinEntryLabel.html#a73c0f5f2f98833f41026a5bda904f0c8',1,'SpinEntryLabel::get_value()']]],
-  ['get_5fvalues_14',['get_values',['../classHostControlDialog.html#a63f3afe6b0b2cef3602e042b910132f6',1,'HostControlDialog']]],
+  ['get_5fvalues_14',['get_values',['../classHostControl.html#a01df6e319447d8079c95ab0186486ccc',1,'HostControl']]],
   ['getauthor_15',['getAuthor',['../classLogData.html#af3ed1f13dbf4c86ce8b2da939d4ad62f',1,'LogData']]],
   ['getbaud_16',['getBaud',['../classHostPort.html#a3e13fca320eca14cc12c94f6a269b35a',1,'HostPort']]],
   ['getdata_17',['getData',['../classTime.html#a324b52358367b0670a693b504865d496',1,'Time::getData(char *str, size_t len, bool update=true)'],['../classTime.html#aca753f15e2951a9643f84dd1e284b1f7',1,'Time::getData(bool update=true)']]],
@@ -45,7 +45,7 @@ var searchData=
   ['graph_5fwidth_42',['GRAPH_WIDTH',['../config_8h.html#a0a5ecd0f9f88b8a1c2bdc774273984b0',1,'config.h']]],
   ['graph_5fwidth_43',['graph_width',['../classParams.html#a3ca083ab809b3608ea9694e70eb9b03e',1,'Params']]],
   ['green_44',['green',['../namespaceColors.html#a190c5057ffe2ecea608821eef675cdc1',1,'Colors']]],
-  ['grid_45',['grid',['../classHostControlDialog.html#aee9598fe6f7d6c769184d022b6e0e9d2',1,'HostControlDialog']]],
+  ['grid_45',['grid',['../classHostControl.html#ac591a4ad2c8f7faf4f54f1dc7334bc98',1,'HostControl']]],
   ['gsettings_5fdir_46',['gsettings_dir',['../classParams.html#a04ef19ad61b034d0d58409daf360c43b',1,'Params']]],
   ['gsettings_5fschema_5fdir_5fkey_47',['GSETTINGS_SCHEMA_DIR_KEY',['../config_8h.html#ae7364012210f6215c40e4bcd668de22b',1,'config.h']]],
   ['gsettings_5fschema_5fdir_5fval_48',['GSETTINGS_SCHEMA_DIR_VAL',['../config_8h.html#a0e495a8bbbf4b191cd01e36872e9d20d',1,'config.h']]]

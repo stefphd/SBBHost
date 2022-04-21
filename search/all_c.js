@@ -7,7 +7,7 @@ var searchData=
   ['name_5frender_5fon_5fedited_4',['name_render_on_edited',['../classPlotTreeView.html#aba55b36930b1556eb960968eaf6ff4bd',1,'PlotTreeView']]],
   ['name_5frender_5fon_5fediting_5fstarted_5',['name_render_on_editing_started',['../classPlotTreeView.html#a5a3157280860d7ee7bc97eb3fc0a226b',1,'PlotTreeView']]],
   ['nan_5fval_6',['NAN_VAL',['../config_8h.html#a1ada7fd1f94ea9dae26b2767bf35d3ee',1,'config.h']]],
-  ['nanval_7',['nanVal',['../classHostControlDialog.html#afb13797f24d1406e5d9c9b69a4a13f0c',1,'HostControlDialog']]],
+  ['nanval_7',['nanVal',['../classHostControl.html#aeea093373f7372e53816e505d0acd236',1,'HostControl']]],
   ['notebook_8',['noteBook',['../classSettingsDialog.html#aa0297e01b941f886a202170b27e63b16',1,'SettingsDialog::noteBook()'],['../classSBBHostApp.html#a95ce3511c3af4a273ff3359ba409cfe5',1,'SBBHostApp::noteBook()']]],
   ['null_5fid_9',['NULL_ID',['../config_8h.html#a59d6223ecf7b4cea9bdae1e3db83c5ff',1,'config.h']]],
   ['null_5fport_10',['NULL_PORT',['../config_8h.html#a7fd93374ccf8dd7f2c4095c203a53a54',1,'config.h']]],

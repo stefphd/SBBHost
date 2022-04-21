@@ -13,7 +13,7 @@ var searchData=
   ['get_5fselected_10',['get_selected',['../classComboChoiceEntryLabel.html#a29675fea314107388ab001d689b54468',1,'ComboChoiceEntryLabel::get_selected()'],['../classStreamTreeView.html#afe4d22b665008435c976b75498e54aaf',1,'StreamTreeView::get_selected()'],['../classPlotTreeView.html#a96935c504b2a5fe89dfb64b0a05444d6',1,'PlotTreeView::get_selected()'],['../classComboEntryLabel.html#ae94278271172f1ad458572600ee1f81e',1,'ComboEntryLabel::get_selected()']]],
   ['get_5ftext_11',['get_text',['../classTextEntryLabel.html#a23ecdd7dc51ad8444dc051038ecf8a40',1,'TextEntryLabel']]],
   ['get_5fvalue_12',['get_value',['../classSlider.html#ad9cf4764016de886aec31295bfbc6e40',1,'Slider::get_value()'],['../classSpinEntryLabel.html#a73c0f5f2f98833f41026a5bda904f0c8',1,'SpinEntryLabel::get_value()']]],
-  ['get_5fvalues_13',['get_values',['../classHostControlDialog.html#a63f3afe6b0b2cef3602e042b910132f6',1,'HostControlDialog']]],
+  ['get_5fvalues_13',['get_values',['../classHostControl.html#a01df6e319447d8079c95ab0186486ccc',1,'HostControl']]],
   ['getauthor_14',['getAuthor',['../classLogData.html#af3ed1f13dbf4c86ce8b2da939d4ad62f',1,'LogData']]],
   ['getbaud_15',['getBaud',['../classHostPort.html#a3e13fca320eca14cc12c94f6a269b35a',1,'HostPort']]],
   ['getdata_16',['getData',['../classTime.html#a324b52358367b0670a693b504865d496',1,'Time::getData(char *str, size_t len, bool update=true)'],['../classTime.html#aca753f15e2951a9643f84dd1e284b1f7',1,'Time::getData(bool update=true)']]],

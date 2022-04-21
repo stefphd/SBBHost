@@ -18,13 +18,12 @@ var searchData=
   ['filename_5fformat_5fentries_15',['FILENAME_FORMAT_ENTRIES',['../config_8h.html#a9f6cab835dbfa8ce3f1a84ee2879804c',1,'config.h']]],
   ['filename_5fformat_5fstring_16',['FILENAME_FORMAT_STRING',['../config_8h.html#a8695a7a2c2b89a3c34e95da6c97d037c',1,'config.h']]],
   ['filename_5fmaxsize_17',['FILENAME_MAXSIZE',['../config_8h.html#acf1986d9291d2530b2bb7629d39c4655',1,'config.h']]],
-  ['fill_18',['fill',['../classHostControlDialog.html#a5fe428ce1add7cbdc60dfc355020aed7',1,'HostControlDialog']]],
-  ['find_19',['find',['../classSBBHostCore.html#ad361d786da1a54a53be673e79bdf8ed9',1,'SBBHostCore']]],
-  ['flush_20',['flush',['../classSerial.html#a63b7abf172cad25bfc998b3b1f98310f',1,'Serial']]],
-  ['force_5fclose_21',['force_close',['../classSBBHostApp.html#a4a156b0fc79894a7dc25cfefee8823b0',1,'SBBHostApp']]],
-  ['forward_5fsampes_22',['FORWARD_SAMPES',['../config_8h.html#a2371ff2c9a050dfc110698814447a5d3',1,'config.h']]],
-  ['forward_5fsamples_23',['forward_samples',['../classParams.html#a5ced175e8beb268e09f8e8a792675b8b',1,'Params']]],
-  ['fps_24',['fps',['../classParams.html#a73570dc7c41f2b56eb6457cc3ae0f5ea',1,'Params::fps()'],['../classSettingsDialog.html#acace43db564e7f60343fea5f9a036f25',1,'SettingsDialog::fps()']]],
-  ['frequency_25',['frequency',['../namespacespectra.html#acdf808a2ab1346accc48705ac598133b',1,'spectra']]],
-  ['frf_5fplotid_26',['FRF_PLOTID',['../config_8h.html#a1cc28a8760b22cec072a00b9c60b4b37',1,'config.h']]]
+  ['find_18',['find',['../classSBBHostCore.html#ad361d786da1a54a53be673e79bdf8ed9',1,'SBBHostCore']]],
+  ['flush_19',['flush',['../classSerial.html#a63b7abf172cad25bfc998b3b1f98310f',1,'Serial']]],
+  ['force_5fclose_20',['force_close',['../classSBBHostApp.html#a4a156b0fc79894a7dc25cfefee8823b0',1,'SBBHostApp']]],
+  ['forward_5fsampes_21',['FORWARD_SAMPES',['../config_8h.html#a2371ff2c9a050dfc110698814447a5d3',1,'config.h']]],
+  ['forward_5fsamples_22',['forward_samples',['../classParams.html#a5ced175e8beb268e09f8e8a792675b8b',1,'Params']]],
+  ['fps_23',['fps',['../classSettingsDialog.html#acace43db564e7f60343fea5f9a036f25',1,'SettingsDialog::fps()'],['../classParams.html#a73570dc7c41f2b56eb6457cc3ae0f5ea',1,'Params::fps()']]],
+  ['frequency_24',['frequency',['../namespacespectra.html#acdf808a2ab1346accc48705ac598133b',1,'spectra']]],
+  ['frf_5fplotid_25',['FRF_PLOTID',['../config_8h.html#a1cc28a8760b22cec072a00b9c60b4b37',1,'config.h']]]
 ];

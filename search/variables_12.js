@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['use_5fdarkmode_0',['use_darkmode',['../classParams.html#a831be4d351f2f68335bc78072f5941ff',1,'Params']]]
+  ['value_0',['value',['../classPacket.html#a2f7abef9158089e95f7043c27647cfea',1,'Packet']]],
+  ['vbox_1',['vbox',['../classSlider.html#a7f4537920cde7dafdbdcbe79cbd1023c',1,'Slider']]]
 ];

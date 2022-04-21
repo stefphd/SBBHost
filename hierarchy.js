@@ -17,6 +17,7 @@ var hierarchy =
     ] ],
     [ "File", "classFile.html", null ],
     [ "Gtk::Frame", null, [
+      [ "HostControl", "classHostControl.html", null ],
       [ "Slider", "classSlider.html", null ]
     ] ],
     [ "utils::hhmmss_t", "structutils_1_1hhmmss__t.html", null ],
@@ -32,8 +33,5 @@ var hierarchy =
     [ "Gtk::TreeView", null, [
       [ "PlotTreeView", "classPlotTreeView.html", null ],
       [ "StreamTreeView", "classStreamTreeView.html", null ]
-    ] ],
-    [ "Gtk::Window", null, [
-      [ "HostControlDialog", "classHostControlDialog.html", null ]
     ] ]
 ];

@@ -1,11 +1,13 @@
 var searchData=
 [
-  ['warning_0',['warning',['../classSBBHostApp.html#a0ed533445efaf9ace77ae58b7128ee95',1,'SBBHostApp']]],
-  ['warning_5fbeep_1',['WARNING_BEEP',['../config_8h.html#a72c53f0814ff9159babadc5bb5f7bf20',1,'config.h']]],
-  ['website_2',['WEBSITE',['../config_8h.html#a9362383b46e548337a24266723479148',1,'config.h']]],
-  ['website_5flabel_3',['WEBSITE_LABEL',['../config_8h.html#ab5e779bdcdc5787d79125da092a63b1f',1,'config.h']]],
-  ['window_5fsamples_4',['window_samples',['../classParams.html#a96176eb045b20cf6f4b7925914d893ab',1,'Params']]],
-  ['window_5fsamples_5',['WINDOW_SAMPLES',['../config_8h.html#ae6a04b0bccd623fe959af9766691ae88',1,'config.h']]],
-  ['winsamples_6',['winsamples',['../classSettingsDialog.html#aef26425426cca6dc2646dc59daab2987',1,'SettingsDialog']]],
-  ['write_7',['write',['../classFile.html#ae759885ab0333f3d0e06f475e0dbd54d',1,'File::write()'],['../classHostPort.html#a676f5a964976be9ce90b8918214eafb6',1,'HostPort::write()'],['../classSerial.html#ac0095e29d403869422578698a31d5e09',1,'Serial::write(unsigned char c)'],['../classSerial.html#a3c6d8bd9907afde68512549250768576',1,'Serial::write(unsigned char *buf, size_t len)']]]
+  ['_7efile_0',['~File',['../classFile.html#ac704ebdf5f57d7a1c5ddf409d797fb69',1,'File']]],
+  ['_7ehostport_1',['~HostPort',['../classHostPort.html#a09021737580cfc91b51c89911c8b1950',1,'HostPort']]],
+  ['_7einireader_2',['~IniReader',['../classIniReader.html#ae7762190218d27afa0f2a580db28ccab',1,'IniReader']]],
+  ['_7elogdata_3',['~LogData',['../classLogData.html#ad029c40230569a84f5f90da7e953f3d8',1,'LogData']]],
+  ['_7eparams_4',['~Params',['../classParams.html#a718541a736b5b4b829652af720dfb242',1,'Params']]],
+  ['_7eplottreeview_5',['~PlotTreeView',['../classPlotTreeView.html#aa085a49ba210b820289f14a354668666',1,'PlotTreeView']]],
+  ['_7esbbhostapp_6',['~SBBHostApp',['../classSBBHostApp.html#a660a7581d63e28feeb4c087411d8e451',1,'SBBHostApp']]],
+  ['_7esbbhostcore_7',['~SBBHostCore',['../classSBBHostCore.html#a1fa68bdea33ab1a70424168b7e9a879e',1,'SBBHostCore']]],
+  ['_7eserial_8',['~Serial',['../classSerial.html#a5b32c394c0ff923a4ef1c13cfb20a6ba',1,'Serial']]],
+  ['_7estreamtreeview_9',['~StreamTreeView',['../classStreamTreeView.html#a7dbeb0da4b93039c69dbc7a6e8fba8f7',1,'StreamTreeView']]]
 ];
