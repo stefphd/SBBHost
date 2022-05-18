@@ -242,12 +242,12 @@ var NAVTREEINDEX0 =
 "classPlotTreeView.html#aedfa0c3eb207f4d36860c9b4864cffa9":[3,0,10,23],
 "classPlotTreeView.html#af631efb16e7d53142cb1e4dcbc86850b":[3,0,10,35],
 "classSBBHostApp.html":[3,0,11],
+"classSBBHostApp.html#a027fcafce0332160fd9df447a120f770":[3,0,11,60],
+"classSBBHostApp.html#a04705fba027afa7944d930979bac98ff":[3,0,11,23],
 "classSBBHostApp.html#a08ae2b67a8a4adaa26c9b258e6a193b4":[3,0,11,7],
 "classSBBHostApp.html#a08c8397f693cee8a3bb0aab17d053a29":[3,0,11,24],
-"classSBBHostApp.html#a0b488f1876aa7582d519894d22ed5d49":[3,0,11,64],
+"classSBBHostApp.html#a0b488f1876aa7582d519894d22ed5d49":[3,0,11,68],
 "classSBBHostApp.html#a0ead43c2df3b79efbfcc73013c879da4":[3,0,11,11],
-"classSBBHostApp.html#a0ed533445efaf9ace77ae58b7128ee95":[3,0,11,42],
-"classSBBHostApp.html#a10abd4a5b44d47d73bf5c557c86a0431":[3,0,11,27],
-"classSBBHostApp.html#a19f2adbb1651184e82dbc16cd86f023b":[3,0,11,70],
-"classSBBHostApp.html#a1e93b286668cbf5fa660c44fa7e42f24":[3,0,11,76]
+"classSBBHostApp.html#a0ed533445efaf9ace77ae58b7128ee95":[3,0,11,41],
+"classSBBHostApp.html#a10abd4a5b44d47d73bf5c557c86a0431":[3,0,11,26]
 };

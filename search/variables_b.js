@@ -9,8 +9,9 @@ var searchData=
   ['maxentry_6',['maxEntry',['../classSlider.html#a3d0dd0fbed9eab3b2578d8b9cacb4f72',1,'Slider']]],
   ['maxlabel_7',['maxLabel',['../classSlider.html#af0bc9cf34f506cf70835179253ee78c2',1,'Slider']]],
   ['maxmissings_8',['maxmissings',['../classSettingsDialog.html#a3647273739bfb09a4df3533c40c786b0',1,'SettingsDialog']]],
-  ['messagedialog_5fheight_9',['messageDialog_height',['../classParams.html#a7bbecdb302988a6d00c4e3b08ce86aea',1,'Params']]],
-  ['messagedialog_5fwidth_10',['messageDialog_width',['../classParams.html#acfbdd2db6bfa92f59b8711b5a6503190',1,'Params']]],
-  ['minentry_11',['minEntry',['../classSlider.html#a4f15cc4b007b77336a3653f14d1da14f',1,'Slider']]],
-  ['minlabel_12',['minLabel',['../classSlider.html#a91894dc784ceb5307122050cdc6a61b6',1,'Slider']]]
+  ['menubutton_9',['menubutton',['../classSBBHostApp.html#a82386c0fbe974c48ab0a872064739374',1,'SBBHostApp']]],
+  ['messagedialog_5fheight_10',['messageDialog_height',['../classParams.html#a7bbecdb302988a6d00c4e3b08ce86aea',1,'Params']]],
+  ['messagedialog_5fwidth_11',['messageDialog_width',['../classParams.html#acfbdd2db6bfa92f59b8711b5a6503190',1,'Params']]],
+  ['minentry_12',['minEntry',['../classSlider.html#a4f15cc4b007b77336a3653f14d1da14f',1,'Slider']]],
+  ['minlabel_13',['minLabel',['../classSlider.html#a91894dc784ceb5307122050cdc6a61b6',1,'Slider']]]
 ];

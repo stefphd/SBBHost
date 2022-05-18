@@ -73,8 +73,9 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "EntryLabel_8h.html",
-"classSBBHostApp.html#a23396123abe93bfa57cc8a2773881fa0",
-"config_8h.html#a1d7c181fb1c48d36b7a5c6748c3eaac4"
+"classSBBHostApp.html#a19f2adbb1651184e82dbc16cd86f023b",
+"config_8h.html#a0e495a8bbbf4b191cd01e36872e9d20d",
+"structutils_1_1hhmmss__t.html#a14ba8d2b3eba86c23f24c7a598f98744"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';
