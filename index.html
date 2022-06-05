@@ -165,7 +165,7 @@ Installation (user)</h1>
 <div class="line">make installer</div>
 <div class="line">cd installer/linux</div>
 <div class="line">make install</div>
-</div><!-- fragment --><p class="startli">Use <code>make uninstall</code> for unistalling. Default installation is user-specific in the <code>$HOME/.local</code> directory. For system-wide installation in <code>/usr/local</code> directory use <code>make install GLOBAL=yes</code> and <code>make uninstall GLOBAL=yes</code>. </p><dl class="section note"><dt>Note</dt><dd>System-wide installation in <code>/usr/local</code> requires the sudo/root permession, therefore it may be necessary to use <code>sudo make install GLOBAL=yes</code> and <code>sudo make uninstall GLOBAL=yes</code>.</dd></dl>
+</div><!-- fragment --><p class="startli">Use <code>make uninstall</code> for unistalling. Installation requires root permission.</p>
 </li>
 <li><p class="startli">Windows x64: just use <code>./installer/win64/SBBHost Installer.msi</code> to install the application in Windows using a setup wizard. </p><dl class="section attention"><dt>Attention</dt><dd>It is highly racommended to not change the installation directory. However, if you want to change the installation directory during the setup wizard, you must change the variable <code>gsettings_dir</code> in the file <code>path_to_installation/sbbhost-config.ini</code> with</dd></dl>
 <div class="fragment"><div class="line">gsettings_dir = &#39;path_to_installation\share&#39;;</div>
@@ -214,6 +214,7 @@ Building (for develpement)</h1>
 <li>Create the installer: <code>make installer</code> (this just copies the necessary files to the installation folder)</li>
 <li>Build the code, create the installer, and generate the documentation: just use <code>make</code> or <code>make all</code></li>
 </ul>
+<p class="startli">To build the debug version, just use <code>make build USERCFLAGS=-DDEBUG</code> (be sure to clean the binaries before).</p>
 <p class="startli">If installed, you may also use <em>Visual Studio Code</em> using <code>ctrl+shift+B</code> to build, create the installer, and generate the documentation (this corresponds to <code>make all</code>). Note that the previous commands can be also used at the same time, e.g. <code>make installer doc</code> to create the installer and generate the documentation.</p>
 </li>
 <li>Windows: just use <em>Visual Studio</em> in x64-Realase mode. Make sure to use the <em>C++17 (ISO/IEC 14882)</em> compiler. The installer is built using <em>Visual Studio</em> too.</li>
