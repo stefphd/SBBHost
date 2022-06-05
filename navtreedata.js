@@ -30,14 +30,14 @@ var NAVTREE =
       [ "Files", "index.html#autotoc_md2", null ],
       [ "Prerequisites", "index.html#autotoc_md3", null ],
       [ "Installation (user)", "index.html#autotoc_md4", null ],
-      [ "Documentation", "index.html#autotoc_md5", [
-        [ "Installation of libraries (for development)", "index.html#autotoc_md6", null ]
+      [ "Configuration file", "index.html#autotoc_md5", null ],
+      [ "Documentation (for development)", "index.html#autotoc_md6", [
+        [ "Installation of libraries (for development)", "index.html#autotoc_md7", null ]
       ] ],
-      [ "Building (for develpement)", "index.html#autotoc_md7", null ],
-      [ "Workaround with <em>gtkmm</em> in Windows x64", "index.html#autotoc_md8", [
-        [ "Tips", "index.html#autotoc_md9", null ]
+      [ "Building (for develpement)", "index.html#autotoc_md8", null ],
+      [ "Workaround with <em>gtkmm</em> in Windows x64", "index.html#autotoc_md9", [
+        [ "Tips", "index.html#autotoc_md10", null ]
       ] ],
-      [ "Configuration file", "index.html#autotoc_md10", null ],
       [ "Known issues", "index.html#autotoc_md11", null ]
     ] ],
     [ "Todo List", "todo.html", null ],

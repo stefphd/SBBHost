@@ -106,7 +106,7 @@ $(document).ready(function(){initNavTree('index.html',''); initResizable(); });
 <div class="textblock"><p ><a class="anchor" id="md_README"></a> Application for host communication with the self-balancing-bike microcontroller.</p>
 <h1><a class="anchor" id="autotoc_md1"></a>
 About</h1>
-<p >SBB Host is a desktop application used for the communication with the self-balancing-bike microcontroller via USB. It can be used for signal streaming from the microcontroller, control of the motor drivers, and reading of the log files (having extension *.sbb)</p>
+<p >SBB Host is a desktop application used for the communication with the self-balancing-bike microcontroller via USB. It can be used for signal streaming from the microcontroller, control of the motor drivers, and reading of the log files (having extension *.sbb).</p>
 <h1><a class="anchor" id="autotoc_md2"></a>
 Files</h1>
 <p >Files:</p>
@@ -136,9 +136,10 @@ Files</h1>
 <li><code>./installer/win64</code>: contains the Windows x64 installer</li>
 <li><code>./installer/linux</code>: contains the Linux installation files</li>
 </ul>
+<p >Note that some of the above folders are created during building only.</p>
 <h1><a class="anchor" id="autotoc_md3"></a>
 Prerequisites</h1>
-<p >Building and installation work on Windows x64 or Linux (at least for now).</p>
+<p >Building and installation work on Windows x64 or Linux.</p>
 <p >For only installation in Windows x64 no prerequisites are necessary: all binary files are provided with the installer. For Linux installation it is necessary to install</p><ul>
 <li><p class="startli"><em>make</em>: this usually can be simple done by using in the terminal</p>
 <div class="fragment"><div class="line">sudo pacman -Sy make</div>
@@ -162,10 +163,15 @@ Installation (user)</h1>
 <li>ArchLinux: installation can be performed using the AUR with pacman.</li>
 <li><p class="startli">For other distributions the installation steps involve:</p>
 <div class="fragment"><div class="line">make build</div>
-<div class="line">make installer</div>
-<div class="line">cd installer/linux</div>
 <div class="line">make install</div>
-</div><!-- fragment --><p class="startli">Use <code>make uninstall</code> for unistalling. Installation requires root permission.</p>
+</div><!-- fragment --><p class="startli">Use <code>make uninstall</code> for unistalling. Installation requires root permission. This actually adds the following files to the root</p><ul>
+<li><code>/usr/bin/sbbhost</code></li>
+<li><code>/etc/sbbhost-config.ini</code></li>
+<li><code>/usr/share/sbbhost/sbbhost-toolbar.xml</code></li>
+<li><code>/usr/share/doc/sbbhost/README.md</code></li>
+<li><code>/usr/share/applications/sbbhost.desktop</code></li>
+<li><code>/usr/share/pixmaps/sbbhost-icon.svg</code></li>
+</ul>
 </li>
 <li><p class="startli">Windows x64: just use <code>./installer/win64/SBBHost Installer.msi</code> to install the application in Windows using a setup wizard. </p><dl class="section attention"><dt>Attention</dt><dd>It is highly racommended to not change the installation directory. However, if you want to change the installation directory during the setup wizard, you must change the variable <code>gsettings_dir</code> in the file <code>path_to_installation/sbbhost-config.ini</code> with</dd></dl>
 <div class="fragment"><div class="line">gsettings_dir = &#39;path_to_installation\share&#39;;</div>
@@ -173,7 +179,19 @@ Installation (user)</h1>
 </li>
 </ul>
 <h1><a class="anchor" id="autotoc_md5"></a>
-Documentation</h1>
+Configuration file</h1>
+<p >After installation, the configuration file <code>path/to/installation/sbbhost-config.ini</code> may be changed in order to configure the application with special features. These include:</p>
+<ul>
+<li>Default values for buadrate and timeout of the serial port</li>
+<li>Header and terminator bytes of the data packet</li>
+<li>Enable the darkmode on startup</li>
+<li>Modify the signal list</li>
+<li>Modify the control list and their upper, lower limits and default values</li>
+<li>Modify the default size of windows and dialogs, as well as the appearance of the graph</li>
+</ul>
+<p >However, modifications should be done carefully by expert users. In Linux, the configuration file is in <code>/etc</code>.</p>
+<h1><a class="anchor" id="autotoc_md6"></a>
+Documentation (for development)</h1>
 <p >Documentation for the source code (but not for the used libraries in <code>./lib</code>) can be generated from the source using <em>doxygen</em> (see <a href="https://www.doxygen.nl/download.html">https://www.doxygen.nl/download.html</a> for download) with</p>
 <div class="fragment"><div class="line">doxygen</div>
 </div><!-- fragment --><p >or also using <em>make</em></p>
@@ -185,7 +203,7 @@ Documentation</h1>
 <div class="line">make</div>
 </div><!-- fragment --><p >which generates the pdf file <code>./doc/latex/refman.pdf</code>. Note that this requires having latex installed.</p>
 <dl class="section note"><dt>Note</dt><dd>Documentation generation has been tested on Linux only, but it should work also in Windows.</dd></dl>
-<h2><a class="anchor" id="autotoc_md6"></a>
+<h2><a class="anchor" id="autotoc_md7"></a>
 Installation of libraries (for development)</h2>
 <p ><em>gtkmm4</em> libraries (including all its dependencies) can be installed with:</p>
 <ul>
@@ -203,7 +221,7 @@ Installation of libraries (for development)</h2>
 </li>
 <li>Windows: no installation is required, since pre-compiled binaries are provided</li>
 </ul>
-<h1><a class="anchor" id="autotoc_md7"></a>
+<h1><a class="anchor" id="autotoc_md8"></a>
 Building (for develpement)</h1>
 <ul>
 <li><p class="startli">Linux: building makes use of a makefile. Depending on what you would like to do, there are different options</p><ul>
@@ -211,15 +229,13 @@ Building (for develpement)</h1>
 <li>Clean object files: <code>make clean</code></li>
 <li>Clean built files (including binaries): <code>make cleaner</code></li>
 <li>Rebuild: <code>make remake</code> (regardless if files have changed or not)</li>
-<li>Create the installer: <code>make installer</code> (this just copies the necessary files to the installation folder)</li>
-<li>Build the code, create the installer, and generate the documentation: just use <code>make</code> or <code>make all</code></li>
+<li>Build the code and generate the documentation: just use <code>make</code> or <code>make all</code></li>
 </ul>
-<p class="startli">To build the debug version, just use <code>make build USERCFLAGS=-DDEBUG</code> (be sure to clean the binaries before).</p>
-<p class="startli">If installed, you may also use <em>Visual Studio Code</em> using <code>ctrl+shift+B</code> to build, create the installer, and generate the documentation (this corresponds to <code>make all</code>). Note that the previous commands can be also used at the same time, e.g. <code>make installer doc</code> to create the installer and generate the documentation.</p>
+<p class="startli">To build the debug version, just use <code>make build USERCFLAGS=-DDEBUG</code> (be sure to clean the binaries before). The debug version allows standalone usage, i.e. without installation. If installed, you may also use <em>Visual Studio Code</em> using <code>ctrl+shift+B</code> to build and generate the documentation (this corresponds to <code>make all</code>).</p>
 </li>
 <li>Windows: just use <em>Visual Studio</em> in x64-Realase mode. Make sure to use the <em>C++17 (ISO/IEC 14882)</em> compiler. The installer is built using <em>Visual Studio</em> too.</li>
 </ul>
-<h1><a class="anchor" id="autotoc_md8"></a>
+<h1><a class="anchor" id="autotoc_md9"></a>
 Workaround with &lt;em&gt;gtkmm&lt;/em&gt; in Windows x64</h1>
 <p >The <em>gtkmm-4.0</em> libraries have been initially meant to be used in Linux systems, therefore it is not trivial to use them in Windows, especially with <em>Visual Studio</em>. The workaround is to use <em>vcpkg</em>, which is a tool for installing packages in Windows.</p>
 <p >Accordingly to the README file in <a href="https://github.com/microsoft/vcpkg">https://github.com/microsoft/vcpkg</a>, installation is performed with:</p>
@@ -273,24 +289,12 @@ Workaround with &lt;em&gt;gtkmm&lt;/em&gt; in Windows x64</h1>
 <div class="fragment"><div class="line">pkgconf --cflags-only-I gtkmm-4.0 --with-path=C:\src\vcpkg\installed\x64-windows\lib\pkgconfig</div>
 </div><!-- fragment --></li>
 </ul>
-<h2><a class="anchor" id="autotoc_md9"></a>
+<h2><a class="anchor" id="autotoc_md10"></a>
 Tips</h2>
 <ul>
 <li>You may also install the x32 version of the packages. In such case use <code>.\vcpkg\vcpkg install gtkmm</code>and<code>.\vcpkg\vcpkg install pkgconf</code> and replace all <code>x64-windows</code> with <code>x86-windows</code> in all commands.</li>
 <li>When using <code>gtkmm</code> you may need to add an environment variable named <code>GSETTINGS_SCHEMA_DIR</code> pointing to <code>C:\src\vcpkg\installed\x64-windows\share\glib-2.0\schemas</code>. You may also make a local copy of this directory in your project folder, which can be copied in the binary folder. This environment variable may be either global or local (you can use <code>putenv</code> command in C)</li>
 </ul>
-<h1><a class="anchor" id="autotoc_md10"></a>
-Configuration file</h1>
-<p >After installation, the configuration file <code>path_to_installation/config.ini</code> may be changed in order to configure the application with special features. These include:</p>
-<ul>
-<li>Default values for buadrate and timeout of the serial port</li>
-<li>Header and terminator bytes of the data packet</li>
-<li>Enable the darkmode on startup</li>
-<li>Modify the signal list</li>
-<li>Modify the control list and their upper, lower limits and default values</li>
-<li>Modify the default size of windows and dialogs, as well as the appearance of the graph</li>
-</ul>
-<p >However, modifications should be done carefully by expert users. In Linux, the configuration file is by default in <code>/usr/bin</code> or in <code>~/local/bin</code> for local installation.</p>
 <h1><a class="anchor" id="autotoc_md11"></a>
 Known issues</h1>
 <ul>
