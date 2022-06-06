@@ -1,0 +1,54 @@
+<interface>
+    
+  <menu id='signaltreeopoover'>
+    <section>
+      <item>
+        <attribute name='label' translatable='yes'>Set color</attribute>
+        <attribute name='action'>signalpopover.set_color</attribute>
+      </item>
+      <submenu>
+        <attribute name='label' translatable='yes'>Set line type</attribute>
+        <section>
+          <item>
+            <attribute name='label' translatable='yes'>Solid</attribute>
+            <attribute name='action'>signalpopover.set_linetype</attribute>
+            <attribute name='target' type='i'>0</attribute>
+          </item>
+          <item>
+            <attribute name='label' translatable='yes'>Dashed</attribute>
+            <attribute name='action'>signalpopover.set_linetype</attribute>
+            <attribute name='target' type='i'>1</attribute>
+          </item>
+          <item>
+            <attribute name='label' translatable='yes'>Dotted</attribute>
+            <attribute name='action'>signalpopover.set_linetype</attribute>
+            <attribute name='target' type='i'>2</attribute>
+          </item>
+          <item>
+            <attribute name='label' translatable='yes'>Circle</attribute>
+            <attribute name='action'>signalpopover.set_linetype</attribute>
+            <attribute name='target' type='i'>3</attribute>
+          </item>
+        </section>
+      </submenu>
+    </section>
+  </menu>
+
+  <menu id='logtreeopoover'>
+    <section>
+      <item>
+        <attribute name='label' translatable='yes'>_Save</attribute>
+        <attribute name='action'>logpopover.save</attribute>
+      </item>
+      <!-- <item>
+        <attribute name='label' translatable='yes'>Save _As</attribute>
+        <attribute name='action'>logpopover.saveas</attribute>
+      </item>-->
+      <item>
+        <attribute name='label' translatable='yes'>_Delete</attribute>
+        <attribute name='action'>logpopover.delete</attribute>
+      </item>
+    </section>
+  </menu>
+  
+</interface>

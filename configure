@@ -1,0 +1,52 @@
+#!/bin/bash
+
+TARGET=sbbhost
+NAME="SBB Host"
+VERSION=0.1
+COMMENT="Application for host communication with the self-balancing-bike microcontroller"
+TYPE=Application
+CATEGORIES="Science;Math;DataVisualization;NumericalAnalysis;Engineering;GTK"
+TERMINAL="false"
+STARTUPNOTIFY="true"
+ICON=sbbhost-icon.svg
+
+POSITIONAL_ARGS=()
+PREFIX=/usr/local
+while [[ $# -gt 0 ]]; do
+  case $1 in
+    --prefix)
+      PREFIX="$2"
+      shift # past argument
+      shift # past value
+      ;;
+    --*)
+      echo "Unknown option $1"
+      exit 1
+      ;;
+    *)
+      POSITIONAL_ARGS+=("$1") # save positional arg
+      shift # past argument
+      ;;
+  esac
+done
+
+#Update dirs.h
+printf '#define TOOLBAR_XML_LINUX "%s/share/%s/%s-toolbar.xml"\n' "$PREFIX" "$TARGET" "$TARGET" > ./include/dirs.h
+printf '#define CONFIG_FILE_LINUX "%s/share/%s/%s-config.ini"\n' "$PREFIX" "$TARGET" "$TARGET" >> ./include/dirs.h
+
+#Update installation_path.txt
+printf '%s' $PREFIX > installation_path.txt
+
+#Update desktop file
+printf "[Desktop Entry]\n" > ./resource/sbbhost.desktop
+printf "Name=%s\n" "$NAME" >> ./resource/sbbhost.desktop
+printf "Version=%s\n" "$VERSION" >> ./resource/sbbhost.desktop
+printf "Type=%s\n" "$TYPE" >> ./resource/sbbhost.desktop
+printf "Comment=%s\n" "$COMMENT" >> ./resource/sbbhost.desktop
+printf "Categories=%s\n" "$CATEGORIES" >> ./resource/sbbhost.desktop
+printf "Terminal=%s\n" "$TERMINAL" >> ./resource/sbbhost.desktop
+printf "StartupNotify=%s\n" "$STARTUPNOTIFY" >> ./resource/sbbhost.desktop
+printf "Exec=%s/bin/%s\n" "$PREFIX" "$TARGET" >> ./resource/sbbhost.desktop
+printf "TryExec=%s/bin/%s\n" "$PREFIX" "$TARGET" >> ./resource/sbbhost.desktop
+printf "Path=%s/bin\n" "$PREFIX" >> ./resource/sbbhost.desktop
+printf "Icon=%s/share/pixmaps/%s\n" "$PREFIX" "$ICON" >> ./resource/sbbhost.desktop

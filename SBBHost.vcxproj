@@ -1,0 +1,292 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="include\config.h" />
+    <ClInclude Include="include\EntryLabel.h" />
+    <ClInclude Include="include\File.h" />
+    <ClInclude Include="include\HostControlDialog.h" />
+    <ClInclude Include="include\HostPort.h" />
+    <ClInclude Include="include\IniReader.h" />
+    <ClInclude Include="include\LogData.h" />
+    <ClInclude Include="include\Packet.h" />
+    <ClInclude Include="include\Params.h" />
+    <ClInclude Include="include\PlotTreeView.h" />
+    <ClInclude Include="include\SBBHostApp.h" />
+    <ClInclude Include="include\SBBHostCore.h" />
+    <ClInclude Include="include\Serial.h" />
+    <ClInclude Include="include\SettingsDialog.h" />
+    <ClInclude Include="include\spectra.h" />
+    <ClInclude Include="include\StreamTreeView.h" />
+    <ClInclude Include="include\Timepp.h" />
+    <ClInclude Include="include\TreeColumns.h" />
+    <ClInclude Include="include\SBBUtils.h" />
+    <ClInclude Include="lib\cairoplotter\plotter.hpp" />
+    <ClInclude Include="lib\fftw\include\fftw3.h" />
+    <ClInclude Include="lib\tinymatwriter\tinymatwriter.h" />
+    <ClInclude Include="lib\tinymatwriter\tinymatwriter_export.h" />
+    <ClInclude Include="resource.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="lib\cairoplotter\plotter.cpp" />
+    <ClCompile Include="lib\cairoplotter\plottercoords.cpp" />
+    <ClCompile Include="lib\cairoplotter\plotterevents.cpp" />
+    <ClCompile Include="lib\cairoplotter\plotterlabels.cpp" />
+    <ClCompile Include="lib\cairoplotter\plotteroptions.cpp" />
+    <ClCompile Include="lib\cairoplotter\plotterseries.cpp" />
+    <ClCompile Include="lib\cairoplotter\plotterthemes.cpp" />
+    <ClCompile Include="lib\cairoplotter\plotterwidgets.cpp" />
+    <ClCompile Include="lib\tinymatwriter\tinymatwriter.cpp" />
+    <ClCompile Include="src\EntryLabel.cpp" />
+    <ClCompile Include="src\File.cpp" />
+    <ClCompile Include="src\HostControlDialog.cpp" />
+    <ClCompile Include="src\HostPort.cpp" />
+    <ClCompile Include="src\IniReader.cpp" />
+    <ClCompile Include="src\main.cpp" />
+    <ClCompile Include="src\Params.cpp" />
+    <ClCompile Include="src\PlotTreeView.cpp" />
+    <ClCompile Include="src\SBBHostApp.cpp" />
+    <ClCompile Include="src\SBBHostCore.cpp" />
+    <ClCompile Include="src\Serial.cpp" />
+    <ClCompile Include="src\SettingsDialog.cpp" />
+    <ClCompile Include="src\spectra.cpp" />
+    <ClCompile Include="src\StreamTreeView.cpp" />
+    <ClCompile Include="src\SBBUtils.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resource\sbbhost-config.ini">
+      <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</DeploymentContent>
+      <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</DeploymentContent>
+    </None>
+    <None Include="README.md" />
+    <None Include="resource\share\gschema.dtd" />
+    <None Include="resource\share\gschemas.compiled" />
+  </ItemGroup>
+  <ItemGroup>
+    <Xml Include="resource\sbbhost-toolbar.xml">
+      <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</DeploymentContent>
+      <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</DeploymentContent>
+    </Xml>
+    <Xml Include="resource\share\org.gtk.gtk4.Settings.ColorChooser.gschema.xml" />
+    <Xml Include="resource\share\org.gtk.gtk4.Settings.Debug.gschema.xml" />
+    <Xml Include="resource\share\org.gtk.gtk4.Settings.EmojiChooser.gschema.xml" />
+    <Xml Include="resource\share\org.gtk.gtk4.Settings.FileChooser.gschema.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="SBBHost.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="resource\sbbhost-icon.ico">
+      <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</DeploymentContent>
+      <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</DeploymentContent>
+    </Image>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>16.0</VCProjectVersion>
+    <Keyword>Win32Proj</Keyword>
+    <ProjectGuid>{212344cc-9a92-4f3c-b5b3-d75ba7398630}</ProjectGuid>
+    <RootNamespace>SBBHost</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <CharacterSet>NotSet</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>NotSet</CharacterSet>
+    <PreferredToolArchitecture>x64</PreferredToolArchitecture>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <CharacterSet>NotSet</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>NotSet</CharacterSet>
+    <PreferredToolArchitecture>x64</PreferredToolArchitecture>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+    <OutDir>$(SolutionDir)bin\win64</OutDir>
+    <IntDir>.build/</IntDir>
+    <TargetName>sbbhost</TargetName>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <LinkIncremental>false</LinkIncremental>
+    <OutDir>$(SolutionDir)bin\win64</OutDir>
+    <IntDir>.build/</IntDir>
+    <TargetName>sbbhost</TargetName>
+  </PropertyGroup>
+  <PropertyGroup Label="Vcpkg" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <VcpkgUseStatic>false</VcpkgUseStatic>
+  </PropertyGroup>
+  <PropertyGroup Label="Vcpkg" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <VcpkgUseStatic>false</VcpkgUseStatic>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <UndefinePreprocessorDefinitions>%(UndefinePreprocessorDefinitions)</UndefinePreprocessorDefinitions>
+      <AdditionalIncludeDirectories>
+      </AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>NotSet</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+    <ResourceCompile>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions);_CRT_SECURE_NO_WARNINGS</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <UndefinePreprocessorDefinitions>%(UndefinePreprocessorDefinitions)</UndefinePreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(SolutionDir)include;$(SolutionDir)src;$(SolutionDir)lib;$(SolutionDir)lib\cairoplotter;$(SolutionDir)lib\tinymatwriter;$(SolutionDir)resource</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>NotSet</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+    <ResourceCompile>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <PostBuildEvent>
+      <Command>mkdir "$(SolutionDir)bin\win64\share"
+copy "$(SolutionDir)resource\share" "$(SolutionDir)\bin\win64\share"
+copy "$(SolutionDir)resource\gdbus.exe" "$(SolutionDir)\bin\win64\gdbus.exe"
+copy "$(SolutionDir)resource\sbbhost-config.ini" "$(SolutionDir)\bin\win64\sbbhost-config.ini"
+copy "$(SolutionDir)resource\sbbhost-icon.ico" "$(SolutionDir)\bin\win64\sbbhost-icon.ico"
+copy "$(SolutionDir)resource\sbbhost-toolbar.xml" "$(SolutionDir)\bin\win64\sbbhost-toolbar.xml"
+</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <UndefinePreprocessorDefinitions>%(UndefinePreprocessorDefinitions)</UndefinePreprocessorDefinitions>
+      <AdditionalIncludeDirectories>
+      </AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>NotSet</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+    <ResourceCompile>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions);_CRT_SECURE_NO_WARNINGS</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <UndefinePreprocessorDefinitions>%(UndefinePreprocessorDefinitions)</UndefinePreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(SolutionDir)include;$(SolutionDir)src;$(SolutionDir)lib;$(SolutionDir)lib\cairoplotter;$(SolutionDir)lib\tinymatwriter;$(SolutionDir)lib\fftw\include;$(SolutionDir)resource</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>NotSet</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>$(ProjectDir)lib\fftw\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>libfftw3-3.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+    <ResourceCompile>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <PostBuildEvent>
+      <Command>xcopy /d /y "$(SolutionDir)resource\gdbus.exe" "$(SolutionDir)bin\win64\"
+xcopy /d /y "$(SolutionDir)resource\sbbhost-config.ini" "$(SolutionDir)bin\win64\"
+xcopy /d /y "$(SolutionDir)resource\sbbhost-icon.ico" "$(SolutionDir)bin\win64\"
+xcopy /d /y "$(SolutionDir)resource\sbbhost-toolbar.xml" "$(SolutionDir)bin\win64\"
+xcopy /d /y "$(SolutionDir)resource\share\*.*" "$(SolutionDir)bin\win64\share\"
+xcopy /d /y "$(SolutionDir)lib\fftw\bin\*.*" "$(SolutionDir)bin\win64\"
+
+</Command>
+    </PostBuildEvent>
+    <PreLinkEvent>
+      <Command>
+      </Command>
+    </PreLinkEvent>
+    <PreBuildEvent>
+      <Command>rmdir /s /q "$(SolutionDir)bin\win64"</Command>
+    </PreBuildEvent>
+  </ItemDefinitionGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

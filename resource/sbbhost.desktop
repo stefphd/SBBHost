@@ -1,0 +1,12 @@
+[Desktop Entry]
+Name=SBB Host
+Version=0.1
+Type=Application
+Comment=Application for host communication with the self-balancing-bike microcontroller
+Categories=Science;Math;DataVisualization;NumericalAnalysis;Engineering;GTK
+Terminal=false
+StartupNotify=true
+Exec=./bin/sbbhost
+TryExec=./bin/sbbhost
+Path=./bin
+Icon=./share/pixmaps/sbbhost-icon.svg

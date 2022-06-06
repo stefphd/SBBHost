@@ -1,0 +1,23 @@
+//gtkmm includes generated using:
+//pkg-config --cflags-only-I gtkmm-4.0 | sed 's/-I\([^ ]*\)/"\1",\n/g'
+{
+    "configurations": [
+        {
+            "name": "Linux",
+            "includePath": [
+                "${workspaceFolder}/include/**",
+                "${workspaceFolder}/src/**",
+                "${workspaceFolder}/resource/**",
+                "${workspaceFolder}/lib/**",
+                "/usr/include/**",
+                "/usr/lib/**"       
+            ],
+            "defines": [],
+            "compilerPath": "/usr/bin/gcc",
+            "cStandard": "gnu17",
+            "cppStandard": "gnu++17",
+            "intelliSenseMode": "linux-gcc-x64"
+        }
+    ],
+    "version": 4
+}

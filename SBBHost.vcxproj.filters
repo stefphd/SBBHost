@@ -1,0 +1,219 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="include">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="lib">
+      <UniqueIdentifier>{be7ff260-1ff3-480e-b636-a9f29a7ace48}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="lib\cairoplot">
+      <UniqueIdentifier>{b85ace50-eda7-447f-8572-18880f908d76}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="resource">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="src">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="resource\share">
+      <UniqueIdentifier>{d9832bd6-5b7a-4792-b18c-0ed1fc5f8714}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="lib\tinymatwriter">
+      <UniqueIdentifier>{7edbe030-8afb-4bbc-9d0c-ad72aadd39e5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="lib\fftw">
+      <UniqueIdentifier>{3867b4f6-fb99-432d-be2d-6b7e6f87ad02}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="include\config.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\EntryLabel.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\File.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\HostControlDialog.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\HostPort.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\IniReader.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\LogData.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Packet.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\PlotTreeView.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\SBBHostApp.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\SBBHostCore.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Serial.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\SettingsDialog.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\StreamTreeView.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Timepp.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\TreeColumns.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\SBBUtils.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="lib\cairoplotter\plotter.hpp">
+      <Filter>lib\cairoplot</Filter>
+    </ClInclude>
+    <ClInclude Include="resource.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="lib\tinymatwriter\tinymatwriter.h">
+      <Filter>lib\tinymatwriter</Filter>
+    </ClInclude>
+    <ClInclude Include="lib\tinymatwriter\tinymatwriter_export.h">
+      <Filter>lib\tinymatwriter</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Params.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\spectra.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="lib\fftw\include\fftw3.h">
+      <Filter>lib\fftw</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="lib\cairoplotter\plotter.cpp">
+      <Filter>lib\cairoplot</Filter>
+    </ClCompile>
+    <ClCompile Include="lib\cairoplotter\plottercoords.cpp">
+      <Filter>lib\cairoplot</Filter>
+    </ClCompile>
+    <ClCompile Include="lib\cairoplotter\plotterevents.cpp">
+      <Filter>lib\cairoplot</Filter>
+    </ClCompile>
+    <ClCompile Include="lib\cairoplotter\plotterlabels.cpp">
+      <Filter>lib\cairoplot</Filter>
+    </ClCompile>
+    <ClCompile Include="lib\cairoplotter\plotteroptions.cpp">
+      <Filter>lib\cairoplot</Filter>
+    </ClCompile>
+    <ClCompile Include="lib\cairoplotter\plotterseries.cpp">
+      <Filter>lib\cairoplot</Filter>
+    </ClCompile>
+    <ClCompile Include="lib\cairoplotter\plotterthemes.cpp">
+      <Filter>lib\cairoplot</Filter>
+    </ClCompile>
+    <ClCompile Include="lib\cairoplotter\plotterwidgets.cpp">
+      <Filter>lib\cairoplot</Filter>
+    </ClCompile>
+    <ClCompile Include="src\EntryLabel.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\File.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\HostControlDialog.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\HostPort.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\IniReader.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\main.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\PlotTreeView.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\SBBHostApp.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\SBBHostCore.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Serial.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\SettingsDialog.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\StreamTreeView.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\SBBUtils.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="lib\tinymatwriter\tinymatwriter.cpp">
+      <Filter>lib\tinymatwriter</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Params.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\spectra.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="README.md" />
+    <None Include="resource\share\gschema.dtd">
+      <Filter>resource\share</Filter>
+    </None>
+    <None Include="resource\share\gschemas.compiled">
+      <Filter>resource\share</Filter>
+    </None>
+    <None Include="resource\sbbhost-config.ini">
+      <Filter>resource</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Xml Include="resource\share\org.gtk.gtk4.Settings.ColorChooser.gschema.xml">
+      <Filter>resource\share</Filter>
+    </Xml>
+    <Xml Include="resource\share\org.gtk.gtk4.Settings.Debug.gschema.xml">
+      <Filter>resource\share</Filter>
+    </Xml>
+    <Xml Include="resource\share\org.gtk.gtk4.Settings.EmojiChooser.gschema.xml">
+      <Filter>resource\share</Filter>
+    </Xml>
+    <Xml Include="resource\share\org.gtk.gtk4.Settings.FileChooser.gschema.xml">
+      <Filter>resource\share</Filter>
+    </Xml>
+    <Xml Include="resource\sbbhost-toolbar.xml">
+      <Filter>resource</Filter>
+    </Xml>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="SBBHost.rc">
+      <Filter>resource</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="resource\sbbhost-icon.ico">
+      <Filter>resource</Filter>
+    </Image>
+  </ItemGroup>
+</Project>
