@@ -75,7 +75,7 @@ var NAVTREEINDEX =
 "EntryLabel_8h.html",
 "classSBBHostApp.html#a19f2adbb1651184e82dbc16cd86f023b",
 "config_8h.html#a0e495a8bbbf4b191cd01e36872e9d20d",
-"structutils_1_1hhmmss__t.html#a14ba8d2b3eba86c23f24c7a598f98744"
+"spectra_8h_source.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

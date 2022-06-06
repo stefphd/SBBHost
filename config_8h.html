@@ -108,7 +108,8 @@ $(document).ready(function(){initNavTree('config_8h.html',''); initResizable(); 
 
 <p>A configuration file for the source code.  
 <a href="#details">More...</a></p>
-
+<div class="textblock"><code>#include &quot;<a class="el" href="dirs_8h_source.html">dirs.h</a>&quot;</code><br />
+</div>
 <p><a href="config_8h_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
@@ -149,7 +150,7 @@ Macros</h2></td></tr>
 <tr class="memitem:a0a3958d32e68282fccb9d9dfbc505238"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="config_8h.html#a0a3958d32e68282fccb9d9dfbc505238">CONTROL_VAL</a>&#160;&#160;&#160;+0, 0</td></tr>
 <tr class="memdesc:a0a3958d32e68282fccb9d9dfbc505238"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default control values (if unable to load them from the configuration file).  <a href="config_8h.html#a0a3958d32e68282fccb9d9dfbc505238">More...</a><br /></td></tr>
 <tr class="separator:a0a3958d32e68282fccb9d9dfbc505238"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a42bf63540ee0039a3a23db1b5ec3202b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="config_8h.html#a42bf63540ee0039a3a23db1b5ec3202b">CONFIG_FILE</a>&#160;&#160;&#160;&quot;/etc/sbbhost-config.ini&quot;</td></tr>
+<tr class="memitem:a42bf63540ee0039a3a23db1b5ec3202b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="config_8h.html#a42bf63540ee0039a3a23db1b5ec3202b">CONFIG_FILE</a>&#160;&#160;&#160;<a class="el" href="dirs_8h.html#a96d6c9b6be2ebc912142368aee2e2ca2">CONFIG_FILE_LINUX</a></td></tr>
 <tr class="memdesc:a42bf63540ee0039a3a23db1b5ec3202b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Name of the configuration file.  <a href="config_8h.html#a42bf63540ee0039a3a23db1b5ec3202b">More...</a><br /></td></tr>
 <tr class="separator:a42bf63540ee0039a3a23db1b5ec3202b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aebdc7d8ca8e25ed8efc90bb88ef7ef5b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="config_8h.html#aebdc7d8ca8e25ed8efc90bb88ef7ef5b">PACKET_SIZE</a>&#160;&#160;&#160;64</td></tr>
@@ -257,7 +258,7 @@ Macros</h2></td></tr>
 <tr class="memitem:af7767252946daed504bc6561a76a5019"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="config_8h.html#af7767252946daed504bc6561a76a5019">HOSTCTRLWIN_NAME</a>&#160;&#160;&#160;&quot;Host control&quot;</td></tr>
 <tr class="memdesc:af7767252946daed504bc6561a76a5019"><td class="mdescLeft">&#160;</td><td class="mdescRight">Host-control window name.  <a href="config_8h.html#af7767252946daed504bc6561a76a5019">More...</a><br /></td></tr>
 <tr class="separator:af7767252946daed504bc6561a76a5019"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af11a698f3a4cc78ce9a1e11172b75365"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="config_8h.html#af11a698f3a4cc78ce9a1e11172b75365">TOOLBAR_XML</a>&#160;&#160;&#160;&quot;/usr/share/sbbhost/sbbhost-toolbar.xml&quot;</td></tr>
+<tr class="memitem:af11a698f3a4cc78ce9a1e11172b75365"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="config_8h.html#af11a698f3a4cc78ce9a1e11172b75365">TOOLBAR_XML</a>&#160;&#160;&#160;<a class="el" href="dirs_8h.html#a4dab38d593db3465d24550e7cba63fa3">TOOLBAR_XML_LINUX</a></td></tr>
 <tr class="memdesc:af11a698f3a4cc78ce9a1e11172b75365"><td class="mdescLeft">&#160;</td><td class="mdescRight">Toolbar XML file name.  <a href="config_8h.html#af11a698f3a4cc78ce9a1e11172b75365">More...</a><br /></td></tr>
 <tr class="separator:af11a698f3a4cc78ce9a1e11172b75365"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae1081f3c6308edb8591932edc8cf7972"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="config_8h.html#ae1081f3c6308edb8591932edc8cf7972">SAVE_FILE_LABEL</a>&#160;&#160;&#160;&quot;Please select a *.sbb/*.dat/*.mat file to save to&quot;</td></tr>
@@ -539,7 +540,7 @@ Macros</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define CONFIG_FILE&#160;&#160;&#160;&quot;/etc/sbbhost-config.ini&quot;</td>
+          <td class="memname">#define CONFIG_FILE&#160;&#160;&#160;<a class="el" href="dirs_8h.html#a96d6c9b6be2ebc912142368aee2e2ca2">CONFIG_FILE_LINUX</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -2213,7 +2214,7 @@ Macros</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define TOOLBAR_XML&#160;&#160;&#160;&quot;/usr/share/sbbhost/sbbhost-toolbar.xml&quot;</td>
+          <td class="memname">#define TOOLBAR_XML&#160;&#160;&#160;<a class="el" href="dirs_8h.html#a4dab38d593db3465d24550e7cba63fa3">TOOLBAR_XML_LINUX</a></td>
         </tr>
       </table>
 </div><div class="memdoc">

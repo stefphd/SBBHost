@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['logdata_2eh_0',['LogData.h',['../LogData_8h.html',1,'']]]
+  ['inireader_2eh_0',['IniReader.h',['../IniReader_8h.html',1,'']]]
 ];

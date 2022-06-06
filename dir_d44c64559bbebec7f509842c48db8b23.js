@@ -1,6 +1,7 @@
 var dir_d44c64559bbebec7f509842c48db8b23 =
 [
     [ "config.h", "config_8h.html", "config_8h" ],
+    [ "dirs.h", "dirs_8h.html", "dirs_8h" ],
     [ "EntryLabel.h", "EntryLabel_8h.html", "EntryLabel_8h" ],
     [ "File.h", "File_8h.html", "File_8h" ],
     [ "HostControl.h", "HostControl_8h.html", "HostControl_8h" ],

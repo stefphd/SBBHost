@@ -114,6 +114,8 @@ Files</h1>
 <li><code>SBBHost.sln</code>, <code>SBBHost.vcxproj</code>, <code>SBBHost.vcxproj.filters</code>,<code>SBBHost.vcxproj.user</code> ,<code>SBBHost.rc</code> ,<code>resource.h</code>: project files necessary for <em>Visual Studio</em> (in Windows only)</li>
 <li><code>Makefile</code>: makefile necessary for compilation and installation in Linux</li>
 <li><code>Doxyfile</code>: configuration file for documentation generation from source code using <em>doxygen</em></li>
+<li><code>configure</code>: configure script (to use before building or installation)</li>
+<li><code>installation_path.txt</code>: installation path (updated by <code>configure</code>). Do not delete this file!</li>
 </ul>
 <p >Code folders:</p>
 <ul>
@@ -161,17 +163,19 @@ Prerequisites</h1>
 Installation (user)</h1>
 <ul>
 <li>ArchLinux: installation can be performed using the AUR with pacman.</li>
-<li><p class="startli">For other distributions the installation steps involve:</p>
-<div class="fragment"><div class="line">make build</div>
+<li><p class="startli">For other distributions the installation is manual and involves:</p>
+<div class="fragment"><div class="line">.\configure</div>
+<div class="line">make build</div>
 <div class="line">make install</div>
 </div><!-- fragment --><p class="startli">Use <code>make uninstall</code> for unistalling. Installation requires root permission. This actually adds the following files to the root</p><ul>
-<li><code>/usr/bin/sbbhost</code></li>
-<li><code>/etc/sbbhost-config.ini</code></li>
-<li><code>/usr/share/sbbhost/sbbhost-toolbar.xml</code></li>
-<li><code>/usr/share/doc/sbbhost/README.md</code></li>
-<li><code>/usr/share/applications/sbbhost.desktop</code></li>
-<li><code>/usr/share/pixmaps/sbbhost-icon.svg</code></li>
+<li><code>/usr/local/bin/sbbhost</code></li>
+<li><code>/usr/local/share/sbbhost-config.ini</code></li>
+<li><code>/usr/local/share/sbbhost/sbbhost-toolbar.xml</code></li>
+<li><code>/usr/local/share/doc/sbbhost/README.md</code></li>
+<li><code>/usr/local/share/applications/sbbhost.desktop</code></li>
+<li><code>/usr/local/share/pixmaps/sbbhost-icon.svg</code></li>
 </ul>
+<p class="startli">You may perform local installation (i.e. not system-wide) using <code>.\configure --prefix $HOME/.local</code>.</p>
 </li>
 <li><p class="startli">Windows x64: just use <code>./installer/win64/SBBHost Installer.msi</code> to install the application in Windows using a setup wizard. </p><dl class="section attention"><dt>Attention</dt><dd>It is highly racommended to not change the installation directory. However, if you want to change the installation directory during the setup wizard, you must change the variable <code>gsettings_dir</code> in the file <code>path_to_installation/sbbhost-config.ini</code> with</dd></dl>
 <div class="fragment"><div class="line">gsettings_dir = &#39;path_to_installation\share&#39;;</div>
@@ -189,7 +193,7 @@ Configuration file</h1>
 <li>Modify the control list and their upper, lower limits and default values</li>
 <li>Modify the default size of windows and dialogs, as well as the appearance of the graph</li>
 </ul>
-<p >However, modifications should be done carefully by expert users. In Linux, the configuration file is in <code>/etc</code>.</p>
+<p >However, modifications should be done carefully by expert users. In Linux, the configuration file is in <code>/usr/share</code> (for ArchLinux) or <code>/usr/local/share</code>.</p>
 <h1><a class="anchor" id="autotoc_md6"></a>
 Documentation (for development)</h1>
 <p >Documentation for the source code (but not for the used libraries in <code>./lib</code>) can be generated from the source using <em>doxygen</em> (see <a href="https://www.doxygen.nl/download.html">https://www.doxygen.nl/download.html</a> for download) with</p>
@@ -224,14 +228,16 @@ Installation of libraries (for development)</h2>
 <h1><a class="anchor" id="autotoc_md8"></a>
 Building (for develpement)</h1>
 <ul>
-<li><p class="startli">Linux: building makes use of a makefile. Depending on what you would like to do, there are different options</p><ul>
+<li><p class="startli">Linux: building makes use of a makefile. Before building the executable for standalone usage (i.e. without installation), it is necessary to run the configure with</p>
+<div class="fragment"><div class="line">./configure --prefix=.</div>
+</div><!-- fragment --><p class="startli">Depending on what you would like to do, there are different options</p><ul>
 <li>Build the code: <code>make build</code> in the terminal (does not rebuild if files do not change)</li>
 <li>Clean object files: <code>make clean</code></li>
 <li>Clean built files (including binaries): <code>make cleaner</code></li>
 <li>Rebuild: <code>make remake</code> (regardless if files have changed or not)</li>
 <li>Build the code and generate the documentation: just use <code>make</code> or <code>make all</code></li>
 </ul>
-<p class="startli">To build the debug version, just use <code>make build USERCFLAGS=-DDEBUG</code> (be sure to clean the binaries before). The debug version allows standalone usage, i.e. without installation. If installed, you may also use <em>Visual Studio Code</em> using <code>ctrl+shift+B</code> to build and generate the documentation (this corresponds to <code>make all</code>).</p>
+<p class="startli">If installed, you may also use <em>Visual Studio Code</em> using <code>ctrl+shift+B</code> to build and generate the documentation (this corresponds to <code>make all</code>).</p>
 </li>
 <li>Windows: just use <em>Visual Studio</em> in x64-Realase mode. Make sure to use the <em>C++17 (ISO/IEC 14882)</em> compiler. The installer is built using <em>Visual Studio</em> too.</li>
 </ul>

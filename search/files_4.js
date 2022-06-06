@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['inireader_2eh_0',['IniReader.h',['../IniReader_8h.html',1,'']]]
+  ['hostcontrol_2eh_0',['HostControl.h',['../HostControl_8h.html',1,'']]],
+  ['hostport_2eh_1',['HostPort.h',['../HostPort_8h.html',1,'']]]
 ];
