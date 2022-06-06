@@ -5,8 +5,10 @@
 /logs
 /docs/html/*
 /docs/latex
+/bin/win64/*
 /bin/linux/*
 /installer/linux/*
+/installer/win64/*
 *.sbb
 *.csv
 *.mat

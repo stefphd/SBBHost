@@ -7,7 +7,7 @@
 #include "SBBHostApp.h"
 
 #ifdef OS_WIN 
-//#pragma comment(linker, "/SUBSYSTEM:windows /ENTRY:mainCRTStartup")  //do not show command line when running in Windows
+#pragma comment(linker, "/SUBSYSTEM:windows /ENTRY:mainCRTStartup")  //do not show command line when running in Windows
 #endif
 
 /*! \brief Main function of the application.
