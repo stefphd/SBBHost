@@ -170,7 +170,7 @@ which generates the pdf file `./doc/latex/refman.pdf`. Note that this requires h
 * Linux: building makes use of a makefile. Before building the executable for standalone usage (i.e. without installation), it is necessary to run the configure with
 
   ```
-  ./configure --prefix=.
+  ./configure --prefix .
   ```
 
   Depending on what you would like to do, there are different options
