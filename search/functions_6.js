@@ -33,6 +33,7 @@ var searchData=
   ['getstring_30',['getString',['../classIniReader.html#a3be80073f300bad0b4d23ce1b006427f',1,'IniReader']]],
   ['getstringarray_31',['getStringArray',['../classIniReader.html#ad8e3d157e2fc06448eb9208d7ca381f2',1,'IniReader']]],
   ['getterminator_32',['getTerminator',['../classHostPort.html#a20c474188ad08720c73d683c4b4ae275',1,'HostPort']]],
-  ['getvalue_33',['getValue',['../classPacket.html#a1d0d0b37502c00d10796fe83db7783b8',1,'Packet']]],
-  ['getyear_34',['getYear',['../classTime.html#a18a220f9e0bd06fd9092d1bed5750649',1,'Time']]]
+  ['gettimeout_33',['getTimeout',['../classSerial.html#adbbcf0c8a630a149ca6397c161e08ae2',1,'Serial']]],
+  ['getvalue_34',['getValue',['../classPacket.html#a1d0d0b37502c00d10796fe83db7783b8',1,'Packet']]],
+  ['getyear_35',['getYear',['../classTime.html#a18a220f9e0bd06fd9092d1bed5750649',1,'Time']]]
 ];

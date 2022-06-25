@@ -73,8 +73,8 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "EntryLabel_8h.html",
-"classSBBHostApp.html#a19f2adbb1651184e82dbc16cd86f023b",
-"config_8h.html#a0e495a8bbbf4b191cd01e36872e9d20d",
+"classSBBHostApp.html#a10abd4a5b44d47d73bf5c557c86a0431",
+"config_8h.html#a0a3958d32e68282fccb9d9dfbc505238",
 "spectra_8h_source.html"
 ];
 

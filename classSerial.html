@@ -103,6 +103,7 @@ $(document).ready(function(){initNavTree('classSerial.html',''); initResizable()
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pub-static-methods">Static Public Member Functions</a> &#124;
+<a href="#pub-static-attribs">Static Public Attributes</a> &#124;
 <a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="classSerial-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">Serial Class Reference</div></div>
@@ -149,6 +150,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a0d00497414389602dc0cb94d6ec0291d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSerial.html#a0d00497414389602dc0cb94d6ec0291d">setTimeout</a> (unsigned int timeout)</td></tr>
 <tr class="memdesc:a0d00497414389602dc0cb94d6ec0291d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the timeout.  <a href="classSerial.html#a0d00497414389602dc0cb94d6ec0291d">More...</a><br /></td></tr>
 <tr class="separator:a0d00497414389602dc0cb94d6ec0291d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adbbcf0c8a630a149ca6397c161e08ae2"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSerial.html#adbbcf0c8a630a149ca6397c161e08ae2">getTimeout</a> ()</td></tr>
+<tr class="memdesc:adbbcf0c8a630a149ca6397c161e08ae2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the timeout.  <a href="classSerial.html#adbbcf0c8a630a149ca6397c161e08ae2">More...</a><br /></td></tr>
+<tr class="separator:adbbcf0c8a630a149ca6397c161e08ae2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad97c059e3534966c1d48cc03db5f4330"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSerial.html#ad97c059e3534966c1d48cc03db5f4330">operator bool</a> ()</td></tr>
 <tr class="memdesc:ad97c059e3534966c1d48cc03db5f4330"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if serial is open.  <a href="classSerial.html#ad97c059e3534966c1d48cc03db5f4330">More...</a><br /></td></tr>
 <tr class="separator:ad97c059e3534966c1d48cc03db5f4330"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -158,6 +162,12 @@ Static Public Member Functions</h2></td></tr>
 <tr class="memitem:a2326cbf71292dd3c3725cfd52d44a4f1"><td class="memItemLeft" align="right" valign="top">static std::vector&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSerial.html#a2326cbf71292dd3c3725cfd52d44a4f1">get_availableSerialPorts</a> (unsigned int maxPortNumber)</td></tr>
 <tr class="memdesc:a2326cbf71292dd3c3725cfd52d44a4f1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the available serial ports.  <a href="classSerial.html#a2326cbf71292dd3c3725cfd52d44a4f1">More...</a><br /></td></tr>
 <tr class="separator:a2326cbf71292dd3c3725cfd52d44a4f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-attribs" name="pub-static-attribs"></a>
+Static Public Attributes</h2></td></tr>
+<tr class="memitem:a679c8adb041fd1f4e232ce6e6173200c"><td class="memItemLeft" align="right" valign="top">static constexpr unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSerial.html#a679c8adb041fd1f4e232ce6e6173200c">TIMEOUT</a> = 10</td></tr>
+<tr class="memdesc:a679c8adb041fd1f4e232ce6e6173200c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default timeout.  <a href="classSerial.html#a679c8adb041fd1f4e232ce6e6173200c">More...</a><br /></td></tr>
+<tr class="separator:a679c8adb041fd1f4e232ce6e6173200c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
@@ -170,13 +180,13 @@ Private Attributes</h2></td></tr>
 <tr class="memitem:aa8bf13e4f6e57f15c9678283d8ba9f09"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSerial.html#aa8bf13e4f6e57f15c9678283d8ba9f09">_isInit</a> = false</td></tr>
 <tr class="memdesc:aa8bf13e4f6e57f15c9678283d8ba9f09"><td class="mdescLeft">&#160;</td><td class="mdescRight">true if serial has been initialized  <a href="classSerial.html#aa8bf13e4f6e57f15c9678283d8ba9f09">More...</a><br /></td></tr>
 <tr class="separator:aa8bf13e4f6e57f15c9678283d8ba9f09"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a688399715cec7f33adf1c1cfa7e35c1f"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSerial.html#a688399715cec7f33adf1c1cfa7e35c1f">_timeout</a> = 10</td></tr>
+<tr class="memitem:a688399715cec7f33adf1c1cfa7e35c1f"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSerial.html#a688399715cec7f33adf1c1cfa7e35c1f">_timeout</a> = <a class="el" href="classSerial.html#a679c8adb041fd1f4e232ce6e6173200c">TIMEOUT</a></td></tr>
 <tr class="memdesc:a688399715cec7f33adf1c1cfa7e35c1f"><td class="mdescLeft">&#160;</td><td class="mdescRight">timeout of the serial port  <a href="classSerial.html#a688399715cec7f33adf1c1cfa7e35c1f">More...</a><br /></td></tr>
 <tr class="separator:a688399715cec7f33adf1c1cfa7e35c1f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p >A class for serial communication. </p>
-<p >Class for managing a general-purpose serial communication in Windows (using COM port) and Linux (using ttyACM). This is just a C++ wrapper for the HANDLE type in Windows, and the open, write, read, etc functions in Linux. </p><dl class="section author"><dt>Author</dt><dd>Stefano Lovato </dd></dl>
+<p >Class for managing a general-purpose serial communication in Windows (using COM port) and Linux (using /dev/ttyACM). This is just a C++ wrapper for the HANDLE type in Windows, and the open, write, read, etc functions in Linux. </p><dl class="section author"><dt>Author</dt><dd>Stefano Lovato </dd></dl>
 <dl class="section date"><dt>Date</dt><dd>2022 </dd></dl>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a3667c3137f2df94716b5193f9fb736ab" name="a3667c3137f2df94716b5193f9fb736ab"></a>
@@ -375,6 +385,26 @@ Private Attributes</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>A std::vector&lt;int&gt; containing the available serial ports. </dd></dl>
+
+</div>
+</div>
+<a id="adbbcf0c8a630a149ca6397c161e08ae2" name="adbbcf0c8a630a149ca6397c161e08ae2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adbbcf0c8a630a149ca6397c161e08ae2">&#9670;&nbsp;</a></span>getTimeout()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned int Serial::getTimeout </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get the timeout. </p>
+<p >Function to get the timeout the serial communication. </p><dl class="section return"><dt>Returns</dt><dd>The timeout to use (in ms). </dd></dl>
 
 </div>
 </div>
@@ -638,7 +668,7 @@ Private Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">unsigned int Serial::_timeout = 10</td>
+          <td class="memname">unsigned int Serial::_timeout = <a class="el" href="classSerial.html#a679c8adb041fd1f4e232ce6e6173200c">TIMEOUT</a></td>
         </tr>
       </table>
   </td>
@@ -649,6 +679,30 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>timeout of the serial port </p>
+
+</div>
+</div>
+<a id="a679c8adb041fd1f4e232ce6e6173200c" name="a679c8adb041fd1f4e232ce6e6173200c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a679c8adb041fd1f4e232ce6e6173200c">&#9670;&nbsp;</a></span>TIMEOUT</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr unsigned int Serial::TIMEOUT = 10</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Default timeout. </p>
 
 </div>
 </div>

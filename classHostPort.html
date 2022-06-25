@@ -102,8 +102,10 @@ $(document).ready(function(){initNavTree('classHostPort.html',''); initResizable
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pub-static-attribs">Static Public Attributes</a> &#124;
 <a href="#pri-methods">Private Member Functions</a> &#124;
 <a href="#pri-attribs">Private Attributes</a> &#124;
+<a href="#pri-static-attribs">Static Private Attributes</a> &#124;
 <a href="classHostPort-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">HostPort Class Reference</div></div>
 </div><!--header-->
@@ -174,6 +176,18 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a2ba752145e4ccb586100568015c01dfa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if host port is open.  <a href="classHostPort.html#a2ba752145e4ccb586100568015c01dfa">More...</a><br /></td></tr>
 <tr class="separator:a2ba752145e4ccb586100568015c01dfa"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-attribs" name="pub-static-attribs"></a>
+Static Public Attributes</h2></td></tr>
+<tr class="memitem:a69bbedd9649091442246673ba2da7495"><td class="memItemLeft" align="right" valign="top">static constexpr unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHostPort.html#a69bbedd9649091442246673ba2da7495">HEADER</a> = 0xFF812345</td></tr>
+<tr class="memdesc:a69bbedd9649091442246673ba2da7495"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default header.  <a href="classHostPort.html#a69bbedd9649091442246673ba2da7495">More...</a><br /></td></tr>
+<tr class="separator:a69bbedd9649091442246673ba2da7495"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7cdedf60f7b57869f58244bf609629d7"><td class="memItemLeft" align="right" valign="top">static constexpr unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHostPort.html#a7cdedf60f7b57869f58244bf609629d7">TERMINATOR</a> = 0xFF8CABDE</td></tr>
+<tr class="memdesc:a7cdedf60f7b57869f58244bf609629d7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default terminator.  <a href="classHostPort.html#a7cdedf60f7b57869f58244bf609629d7">More...</a><br /></td></tr>
+<tr class="separator:a7cdedf60f7b57869f58244bf609629d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0787d664c4c61e091da3ffc8484f19de"><td class="memItemLeft" align="right" valign="top">static constexpr unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHostPort.html#a0787d664c4c61e091da3ffc8484f19de">TIMEOUT</a> = 100</td></tr>
+<tr class="memdesc:a0787d664c4c61e091da3ffc8484f19de"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default timeout.  <a href="classHostPort.html#a0787d664c4c61e091da3ffc8484f19de">More...</a><br /></td></tr>
+<tr class="separator:a0787d664c4c61e091da3ffc8484f19de"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-methods" name="pri-methods"></a>
 Private Member Functions</h2></td></tr>
 <tr class="memitem:af733cc895e6eec2826195845cea39487"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHostPort.html#af733cc895e6eec2826195845cea39487">init</a> (unsigned int port, unsigned int baud, unsigned int timeout)</td></tr>
@@ -197,8 +211,8 @@ Private Attributes</h2></td></tr>
 <tr class="memitem:a312962ff2c2adb2bee0a8dd2a1ebd96e"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHostPort.html#a312962ff2c2adb2bee0a8dd2a1ebd96e">_header</a></td></tr>
 <tr class="memdesc:a312962ff2c2adb2bee0a8dd2a1ebd96e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Header bytes.  <a href="classHostPort.html#a312962ff2c2adb2bee0a8dd2a1ebd96e">More...</a><br /></td></tr>
 <tr class="separator:a312962ff2c2adb2bee0a8dd2a1ebd96e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac75e84e44514a5bd2ec431b6089c719c"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHostPort.html#ac75e84e44514a5bd2ec431b6089c719c">_timeout</a> = 100</td></tr>
-<tr class="memdesc:ac75e84e44514a5bd2ec431b6089c719c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Timeout. Default is 100ms.  <a href="classHostPort.html#ac75e84e44514a5bd2ec431b6089c719c">More...</a><br /></td></tr>
+<tr class="memitem:ac75e84e44514a5bd2ec431b6089c719c"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHostPort.html#ac75e84e44514a5bd2ec431b6089c719c">_timeout</a></td></tr>
+<tr class="memdesc:ac75e84e44514a5bd2ec431b6089c719c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Timeout.  <a href="classHostPort.html#ac75e84e44514a5bd2ec431b6089c719c">More...</a><br /></td></tr>
 <tr class="separator:ac75e84e44514a5bd2ec431b6089c719c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a03ac49a1b846a09132a391306b6f6d80"><td class="memItemLeft" align="right" valign="top">unsigned char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHostPort.html#a03ac49a1b846a09132a391306b6f6d80">_tx_buf</a> [1024]</td></tr>
 <tr class="memdesc:a03ac49a1b846a09132a391306b6f6d80"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tx buffer.  <a href="classHostPort.html#a03ac49a1b846a09132a391306b6f6d80">More...</a><br /></td></tr>
@@ -206,6 +220,12 @@ Private Attributes</h2></td></tr>
 <tr class="memitem:a0d6f6bee9fc10371d39e1a640136bce4"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHostPort.html#a0d6f6bee9fc10371d39e1a640136bce4">_isFirstRead</a> = false</td></tr>
 <tr class="memdesc:a0d6f6bee9fc10371d39e1a640136bce4"><td class="mdescLeft">&#160;</td><td class="mdescRight">True if firt packer read.  <a href="classHostPort.html#a0d6f6bee9fc10371d39e1a640136bce4">More...</a><br /></td></tr>
 <tr class="separator:a0d6f6bee9fc10371d39e1a640136bce4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-static-attribs" name="pri-static-attribs"></a>
+Static Private Attributes</h2></td></tr>
+<tr class="memitem:a209abfd2f8c5fc2c2d350e5db506e705"><td class="memItemLeft" align="right" valign="top">static constexpr unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHostPort.html#a209abfd2f8c5fc2c2d350e5db506e705">MASK</a> = 0xFF</td></tr>
+<tr class="memdesc:a209abfd2f8c5fc2c2d350e5db506e705"><td class="mdescLeft">&#160;</td><td class="mdescRight">Mask for parsing.  <a href="classHostPort.html#a209abfd2f8c5fc2c2d350e5db506e705">More...</a><br /></td></tr>
+<tr class="separator:a209abfd2f8c5fc2c2d350e5db506e705"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p >A class for host communication via serial port. </p>
@@ -917,7 +937,7 @@ Private Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">unsigned int HostPort::_timeout = 100</td>
+          <td class="memname">unsigned int HostPort::_timeout</td>
         </tr>
       </table>
   </td>
@@ -927,7 +947,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Timeout. Default is 100ms. </p>
+<p>Timeout. </p>
 
 </div>
 </div>
@@ -955,6 +975,54 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
+<a id="a69bbedd9649091442246673ba2da7495" name="a69bbedd9649091442246673ba2da7495"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a69bbedd9649091442246673ba2da7495">&#9670;&nbsp;</a></span>HEADER</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr unsigned int HostPort::HEADER = 0xFF812345</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Default header. </p>
+
+</div>
+</div>
+<a id="a209abfd2f8c5fc2c2d350e5db506e705" name="a209abfd2f8c5fc2c2d350e5db506e705"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a209abfd2f8c5fc2c2d350e5db506e705">&#9670;&nbsp;</a></span>MASK</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr unsigned int HostPort::MASK = 0xFF</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">constexpr</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Mask for parsing. </p>
+
+</div>
+</div>
 <a id="a18d6200fa721c56e544336f984abd525" name="a18d6200fa721c56e544336f984abd525"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a18d6200fa721c56e544336f984abd525">&#9670;&nbsp;</a></span>serial</h2>
 
@@ -976,6 +1044,54 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p><a class="el" href="classSerial.html" title="A class for serial communication.">Serial</a> object. </p>
+
+</div>
+</div>
+<a id="a7cdedf60f7b57869f58244bf609629d7" name="a7cdedf60f7b57869f58244bf609629d7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7cdedf60f7b57869f58244bf609629d7">&#9670;&nbsp;</a></span>TERMINATOR</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr unsigned int HostPort::TERMINATOR = 0xFF8CABDE</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Default terminator. </p>
+
+</div>
+</div>
+<a id="a0787d664c4c61e091da3ffc8484f19de" name="a0787d664c4c61e091da3ffc8484f19de"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0787d664c4c61e091da3ffc8484f19de">&#9670;&nbsp;</a></span>TIMEOUT</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr unsigned int HostPort::TIMEOUT = 100</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Default timeout. </p>
 
 </div>
 </div>

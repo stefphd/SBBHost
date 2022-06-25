@@ -27,5 +27,9 @@ var classHostPort =
     [ "_terminator", "classHostPort.html#ae6046595bb3fffeb5a825d113d2818aa", null ],
     [ "_timeout", "classHostPort.html#ac75e84e44514a5bd2ec431b6089c719c", null ],
     [ "_tx_buf", "classHostPort.html#a03ac49a1b846a09132a391306b6f6d80", null ],
-    [ "serial", "classHostPort.html#a18d6200fa721c56e544336f984abd525", null ]
+    [ "HEADER", "classHostPort.html#a69bbedd9649091442246673ba2da7495", null ],
+    [ "MASK", "classHostPort.html#a209abfd2f8c5fc2c2d350e5db506e705", null ],
+    [ "serial", "classHostPort.html#a18d6200fa721c56e544336f984abd525", null ],
+    [ "TERMINATOR", "classHostPort.html#a7cdedf60f7b57869f58244bf609629d7", null ],
+    [ "TIMEOUT", "classHostPort.html#a0787d664c4c61e091da3ffc8484f19de", null ]
 ];
