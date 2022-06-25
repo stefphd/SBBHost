@@ -5,11 +5,6 @@
 #include "Serial.h"
 #include <memory> 
 
-//config
-#define HEADER 0xFF812345 //!< Default header
-#define TERMINATOR 0xFF8CABDE //!< Default terminator
-#define MASK 0xFF //mask
-
 /*! \brief A class for host communication via serial port.
     \details Class for host communication via serial port with a specified communication protocol.
     Data packet consists of
@@ -147,11 +142,16 @@ public:
         \return true if the host port is open, false otherwise.
     */
     bool isInit(void); //check if is init
+    
     /*! \brief Check if host port is open.
         \details Boolean operator to check if the host port has been open successfully.
         \return true if the host port is open, false otherwise.
     */
     operator bool() { return isInit(); }
+    
+    static constexpr unsigned int HEADER = 0xFF812345; //!< Default header.
+    static constexpr unsigned int TERMINATOR = 0xFF8CABDE; //!< Default terminator.
+    static constexpr unsigned int TIMEOUT = 100; //!< Default timeout.
 
 private:
     Serial serial; //!< Serial object.
@@ -159,10 +159,11 @@ private:
     unsigned int _baud; //!< Baudrate.
     unsigned int _terminator; //!< Terminator bytes.
     unsigned int _header; //!< Header bytes.
-    unsigned int _timeout = 100; //!< Timeout. Default is 100ms.
+    unsigned int _timeout; //!< Timeout.
     unsigned char _tx_buf[1024]; //!< Tx buffer.
     bool _isFirstRead = false; //!< True if firt packer read.
     bool init(unsigned int port, unsigned int baud, unsigned int timeout); //!< Private initialization function
+    static constexpr unsigned int MASK = 0xFF; //!< Mask for parsing.
 };
 
 #endif

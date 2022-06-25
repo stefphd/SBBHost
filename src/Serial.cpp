@@ -8,7 +8,7 @@ Serial::~Serial() {
 
 std::vector<int> Serial::get_availableSerialPorts(unsigned int maxPorts) {
 	std::vector<int> portsAvailable;
-	for (int i = 0; i <= maxPorts; i++) {
+	for (int i = 0; i <= maxPorts; ++i) {
 		Serial serial;
 		serial.begin(i, 115200); //start serial with a default baudrate
 		if (serial) portsAvailable.push_back(i);
@@ -187,4 +187,8 @@ size_t Serial::read(unsigned char* buf, size_t len) {
 
 void Serial::setTimeout(unsigned int timeout) {
     _timeout = timeout;
+}
+
+unsigned int Serial::getTimeout() {
+    return _timeout;
 }

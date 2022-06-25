@@ -8,6 +8,7 @@
 bool HostPort::begin(unsigned int port, unsigned int baud) {
     _terminator = TERMINATOR;
     _header = HEADER;
+    _timeout = TIMEOUT;
     _port = port;
     _baud = baud;
     if (init(port, baud, _timeout)) {
@@ -20,6 +21,7 @@ bool HostPort::begin(unsigned int port, unsigned int baud) {
 bool HostPort::begin(unsigned int port, unsigned int baud, unsigned int header, unsigned int terminator) {
     _terminator = terminator;
     _header = header;
+    _timeout = TIMEOUT;
     _port = port;
     _baud = baud;
     if (init(port, baud, _timeout)) {
@@ -97,8 +99,7 @@ unsigned int HostPort::getTerminator(void) {
 
 //reset & close fun
 bool HostPort::close(void) {
-    serial.end();
-    return true;
+    return serial.end();
 }
 bool HostPort::restart(void) {
     serial.end();

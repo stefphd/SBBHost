@@ -74,9 +74,6 @@
 
 //serial settings
 #define BAUD 115200 //!< Defalt baudrate of serial communication (if unable to load it from the configuration file).
-#define HEADER 0xFF812345 //!< Default header of the data packet (if unable to load it from the configuration file).
-#define TERMINATOR 0xFF8CABDE //!< Default terminator of the data packet (if unable to load it from the configuration file).
-#define TIMEOUT 100 //!< Default timeout of the serial communication (if unable to load it from the configuration file).
 
 //GUI settings
 #define APP_NAME "SBB Host" //!< App name.

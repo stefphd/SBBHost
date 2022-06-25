@@ -1,4 +1,5 @@
 #include "SBBHostApp.h"
+#include "HostPort.h"
 
 SBBHostApp::SBBHostApp() : Gtk::Application(),
 mainWin(), //noteBook(),
@@ -225,9 +226,9 @@ void SBBHostApp::create_graph() {
 void SBBHostApp::parse_ini() {
 	p_cfg = new IniReader(CONFIG_FILE);
 	if (!p_cfg->getInt("baud", &params.baud)) params.baud = BAUD;
-	if (!p_cfg->getHex("header", &params.header)) params.header = HEADER;
-	if (!p_cfg->getHex("terminator", &params.terminator)) params.terminator = TERMINATOR;
-	if (!p_cfg->getInt("timeout", &params.timeout)) params.timeout = TIMEOUT;
+	if (!p_cfg->getHex("header", &params.header)) params.header = HostPort::HEADER;
+	if (!p_cfg->getHex("terminator", &params.terminator)) params.terminator = HostPort::TERMINATOR;
+	if (!p_cfg->getInt("timeout", &params.timeout)) params.timeout = HostPort::TIMEOUT;
 	if (!p_cfg->getInt("fps", &params.fps)) params.fps = UPDATE_FPS;
 	if (!p_cfg->getInt("darkmode", &params.use_darkmode)) params.use_darkmode = DARKMODE;
 	if (!p_cfg->getInt("max_missing_packets", &params.max_missing_packets)) params.max_missing_packets = MAX_MISSING_PACKETS;
