@@ -35,7 +35,7 @@ var NAVTREE =
         [ "Installation of libraries (for development)", "index.html#autotoc_md7", null ]
       ] ],
       [ "Building (for develpement)", "index.html#autotoc_md8", null ],
-      [ "Workaround with <em>gtkmm</em> in Windows x64", "index.html#autotoc_md9", [
+      [ "Workaround with <em>gtkmm</em> in <em>Visual Studio</em>", "index.html#autotoc_md9", [
         [ "Tips", "index.html#autotoc_md10", null ]
       ] ],
       [ "Known issues", "index.html#autotoc_md11", null ]

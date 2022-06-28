@@ -142,7 +142,9 @@ Files</h1>
 <h1><a class="anchor" id="autotoc_md3"></a>
 Prerequisites</h1>
 <p >Building and installation work on Windows x64 or Linux.</p>
-<p >For only installation in Windows x64 no prerequisites are necessary: all binary files are provided with the installer. For Linux installation it is necessary to install</p><ul>
+<p >For only installation in Windows x64 no prerequisites are necessary: all binary files are provided with the installer.</p>
+<p >For Linux installation it is necessary to install</p>
+<ul>
 <li><p class="startli"><em>make</em>: this usually can be simple done by using in the terminal</p>
 <div class="fragment"><div class="line">sudo pacman -Sy make</div>
 </div><!-- fragment --><dl class="section note"><dt>Note</dt><dd>The code above works with Arch Linux distributions, similar commands may be used in other Linux distributions (e.g. <code>apt install make</code> in Debian/Ubuntu).</dd></dl>
@@ -152,13 +154,13 @@ Prerequisites</h1>
 </ul>
 <p >For building the code and the installer, the following prerequisites are necessary:</p>
 <ul>
+<li><em>Visual Studio</em> (&gt;=2017) for Windows, or alternatively <a href="https://www.mingw-w64.org/">Mingw-w64</a> (e.g. with <a href="[https://www.msys2.org/](https://www.msys2.org/)">MSYS2</a>)</li>
 <li><em>gtkmm4</em> libraries, including all its dependencies</li>
-<li><em>fftw3</em> libraries for Linux only, while for Windows libraries are already given in <code>./lib</code></li>
-<li>Visual Studio* (&gt;=2017) for Windows only</li>
-<li><em>g++</em> with <em>make</em> for Linux only</li>
+<li><em>fftw3</em> libraries for Linux and Mingw-w64, while libraries are already given in <code>./lib</code> for Windows using <em>Visual Studio</em></li>
+<li><em>g++</em> with <em>make</em> for Linux and Mingw-w64</li>
 <li><em>doxygen</em> for documentation generations</li>
 </ul>
-<p >For building in Linux it is racommended to have also <em>Visual Studio Code</em> with <em>C/C+ (ms-vscode)</em> installed. This is not mandatory for compilation but it helps for code completation and make the compilation simpler.</p>
+<p >For building in Linux or with Mingw-w64 it is racommended to have also <em>Visual Studio Code</em> with <em>C/C+ (ms-vscode)</em> installed. This is not mandatory for compilation but it helps for code completation and make the compilation simpler.</p>
 <h1><a class="anchor" id="autotoc_md4"></a>
 Installation (user)</h1>
 <ul>
@@ -179,7 +181,7 @@ Installation (user)</h1>
 </li>
 <li><p class="startli">Windows x64: just use <code>./installer/win64/SBBHost Installer.msi</code> to install the application in Windows using a setup wizard. </p><dl class="section attention"><dt>Attention</dt><dd>It is highly racommended to not change the installation directory. However, if you want to change the installation directory during the setup wizard, you must change the variable <code>gsettings_dir</code> in the file <code>path_to_installation/sbbhost-config.ini</code> with</dd></dl>
 <div class="fragment"><div class="line">gsettings_dir = &#39;path_to_installation\share&#39;;</div>
-</div><!-- fragment --><dl class="section note"><dt>Note</dt><dd>For Windows, building is not mandatory for installation, since pre-compiled binaries are provided inside the installer folder.</dd></dl>
+</div><!-- fragment --><dl class="section note"><dt>Note</dt><dd>For Windows, building is not mandatory for installation, since pre-compiled binaries are provided.</dd></dl>
 </li>
 </ul>
 <h1><a class="anchor" id="autotoc_md5"></a>
@@ -206,7 +208,6 @@ Documentation (for development)</h1>
 <div class="fragment"><div class="line">cd ./docs/latex</div>
 <div class="line">make</div>
 </div><!-- fragment --><p >which generates the pdf file <code>./doc/latex/refman.pdf</code>. Note that this requires having latex installed.</p>
-<dl class="section note"><dt>Note</dt><dd>Documentation generation has been tested on Linux only, but it should work also in Windows.</dd></dl>
 <h2><a class="anchor" id="autotoc_md7"></a>
 Installation of libraries (for development)</h2>
 <p ><em>gtkmm4</em> libraries (including all its dependencies) can be installed with:</p>
@@ -215,7 +216,7 @@ Installation of libraries (for development)</h2>
 <div class="fragment"><div class="line">sudo pacman -Sy gtkmm-4.0</div>
 </div><!-- fragment --><dl class="section note"><dt>Note</dt><dd>The code above works with Arch Linux distributions, similar commands may be used in other Linux distributions.</dd></dl>
 </li>
-<li>Windows: use <em>vcpkg</em> (see <a href="https://github.com/microsoft/vcpkg">https://github.com/microsoft/vcpkg</a>) for installation. Other actions may be necessary to make <em>Visual Studio</em> working properly. See <em>Workaround with gtkmm in Windows x64</em> for details.</li>
+<li>Windows: use <em>vcpkg</em> (see <a href="https://github.com/microsoft/vcpkg">https://github.com/microsoft/vcpkg</a>) for installation with <em>Visual Studio</em>. Other actions may be necessary to make <em>Visual Studio</em> working properly. See <em>Workaround with gtkmm in Visual Studio</em> for details.</li>
 </ul>
 <p ><em>fftw3</em> library can be installed with:</p>
 <ul>
@@ -223,12 +224,13 @@ Installation of libraries (for development)</h2>
 <div class="fragment"><div class="line">sudo pacman -Sy fftw</div>
 </div><!-- fragment --><dl class="section note"><dt>Note</dt><dd>The code above works with Arch Linux distributions, similar commands may be used in other Linux distributions.</dd></dl>
 </li>
-<li>Windows: no installation is required, since pre-compiled binaries are provided</li>
+<li>Windows: no installation is required, since pre-compiled binaries are provided.</li>
 </ul>
+<p >Alternatively, for Windows you may also use <a href="https://www.mingw-w64.org/">Mingw-w64</a> with <a href="https://www.msys2.org/">MSYS2</a> instead of <em>Visual Studio</em>. This requires having the <code>mingw-w64-x86_64-gtkmm-4.0</code> and <code>mingw-w64-x86_64-fftw</code> packages installed.</p>
 <h1><a class="anchor" id="autotoc_md8"></a>
 Building (for develpement)</h1>
 <ul>
-<li><p class="startli">Linux: building makes use of a makefile. Before building the executable for standalone usage (i.e. without installation), it is necessary to run the configure with</p>
+<li><p class="startli">Linux and Mingw-w64: building makes use of a makefile. Before building the executable for standalone usage (i.e. without installation), it is necessary to run the configure with</p>
 <div class="fragment"><div class="line">./configure --prefix .</div>
 </div><!-- fragment --><p class="startli">Depending on what you would like to do, there are different options</p><ul>
 <li>Build the code: <code>make build</code> in the terminal (does not rebuild if files do not change)</li>
@@ -239,10 +241,10 @@ Building (for develpement)</h1>
 </ul>
 <p class="startli">If installed, you may also use <em>Visual Studio Code</em> using <code>ctrl+shift+B</code> to build and generate the documentation (this corresponds to <code>make all</code>).</p>
 </li>
-<li>Windows: just use <em>Visual Studio</em> in x64-Realase mode. Make sure to use the <em>C++17 (ISO/IEC 14882)</em> compiler. The installer is built using <em>Visual Studio</em> too.</li>
+<li>Windows with <em>Visual Studio</em>: just use <em>Visual Studio</em> in x64-Realase mode. Make sure to use the <em>C++17 (ISO/IEC 14882)</em> compiler. The installer is built using <em>Visual Studio</em> too.</li>
 </ul>
 <h1><a class="anchor" id="autotoc_md9"></a>
-Workaround with &lt;em&gt;gtkmm&lt;/em&gt; in Windows x64</h1>
+Workaround with &lt;em&gt;gtkmm&lt;/em&gt; in &lt;em&gt;Visual Studio&lt;/em&gt;</h1>
 <p >The <em>gtkmm-4.0</em> libraries have been initially meant to be used in Linux systems, therefore it is not trivial to use them in Windows, especially with <em>Visual Studio</em>. The workaround is to use <em>vcpkg</em>, which is a tool for installing packages in Windows.</p>
 <p >Accordingly to the README file in <a href="https://github.com/microsoft/vcpkg">https://github.com/microsoft/vcpkg</a>, installation is performed with:</p>
 <ul>
@@ -306,7 +308,8 @@ Known issues</h1>
 <ul>
 <li>Help me to find issues</li>
 <li><p class="startli">2+2=5</p>
-<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000001">Todo:</a></b></dt><dd><p class="startdd">add more gestures to move and zoom in plots: e.g. press roll to move, and roll to zoom </p>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000001">Todo:</a></b></dt><dd>Change makefile to make it compatible with Mingw-w64. Copying dlls when building.</dd></dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000002">Todo:</a></b></dt><dd><p class="startdd">add more gestures to move and zoom in plots: e.g. press roll to move, and roll to zoom </p>
 <p class="interdd">drag and drop in Windows </p>
 <p class="interdd">Implement help but for linux and installation </p>
 <p class="interdd">Implement direct open of a *.sbb file (argv and argc)???? </p>
