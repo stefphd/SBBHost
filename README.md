@@ -43,59 +43,64 @@ Note that some of the above folders are created during building only.
 
 Building and installation work on Windows x64 or Linux.
 
-For only installation in Windows x64 no prerequisites are necessary: all binary files are provided with the installer. For Linux installation it is necessary to install
-* *make*: this usually can be simple done by using in the terminal
+For only installation in Windows x64 no prerequisites are necessary: all binary files are provided with the installer. 
 
+For Linux installation it is necessary to install
+
+* *make*: this usually can be simple done by using in the terminal
+  
   ```bash
   sudo pacman -Sy make
   ```
-
+  
   \note The code above works with Arch Linux distributions, similar commands may be used in other Linux distributions (e.g. `apt install make` in Debian/Ubuntu).
 
 * *gtkmm4* libraries, including all its dependencies
+
 * *fftw3* libraries
-See *Installation of libraries* for details on the installation of libraries.
+  See *Installation of libraries* for details on the installation of libraries.
 
 For building the code and the installer, the following prerequisites are necessary:
 
+* *Visual Studio* (>=2017) for Windows, or alternatively [Mingw-w64](https://www.mingw-w64.org/) (e.g. with [MSYS2]([https://www.msys2.org/](https://www.msys2.org/)))
 * *gtkmm4* libraries, including all its dependencies
-* *fftw3* libraries for Linux only, while for Windows libraries are already given in `./lib`
-* Visual Studio* (>=2017) for Windows only
-* *g++* with *make* for Linux only
+* *fftw3* libraries for Linux and Mingw-w64, while libraries are already given in `./lib` for Windows using *Visual Studio*
+* *g++* with *make* for Linux and Mingw-w64
 * *doxygen* for documentation generations
 
-For building in Linux it is racommended to have also *Visual Studio Code* with *C/C+ (ms-vscode)* installed. This is not mandatory for compilation but it helps for code completation and make the compilation simpler.
+For building in Linux or with Mingw-w64 it is racommended to have also *Visual Studio Code* with *C/C+ (ms-vscode)* installed. This is not mandatory for compilation but it helps for code completation and make the compilation simpler.
 
 ## Installation (user)
 
 * ArchLinux: installation can be performed using the AUR with pacman. 
-* For other distributions the installation is manual and involves:
 
+* For other distributions the installation is manual and involves:
+  
   ```
   .\configure
   make build
   make install
   ```
-
+  
   Use `make uninstall` for unistalling. Installation requires root permission. This actually adds the following files to the root
-
+  
   * `/usr/local/bin/sbbhost`
   * `/usr/local/share/sbbhost-config.ini`
   * `/usr/local/share/sbbhost/sbbhost-toolbar.xml`
   * `/usr/local/share/doc/sbbhost/README.md`
   * `/usr/local/share/applications/sbbhost.desktop`
   * `/usr/local/share/pixmaps/sbbhost-icon.svg`
-
+  
   You may perform local installation (i.e. not system-wide) using `.\configure --prefix $HOME/.local`.
 
 * Windows x64: just use `./installer/win64/SBBHost Installer.msi` to install the application in Windows using a setup wizard.
   \attention It is highly racommended to not change the installation directory. However, if you want to change the installation directory during the setup wizard, you must change the variable `gsettings_dir` in the file `path_to_installation/sbbhost-config.ini` with
-
+  
   ```ini
   gsettings_dir = 'path_to_installation\share';
   ```
-
-  \note For Windows, building is not mandatory for installation, since pre-compiled binaries are provided inside the installer folder.
+  
+  \note For Windows, building is not mandatory for installation, since pre-compiled binaries are provided.
 
 ## Configuration file
 
@@ -139,88 +144,96 @@ make
 
 which generates the pdf file `./doc/latex/refman.pdf`. Note that this requires having latex installed.
 
-\note Documentation generation has been tested on Linux only, but it should work also in Windows.
-
 ### Installation of libraries (for development)
 
 *gtkmm4* libraries (including all its dependencies) can be installed with:
 
 * Linux:
-
+  
   ```bash
   sudo pacman -Sy gtkmm-4.0
   ```
-
+  
   \note The code above works with Arch Linux distributions, similar commands may be used in other Linux distributions.
-* Windows: use *vcpkg* (see [https://github.com/microsoft/vcpkg](https://github.com/microsoft/vcpkg)) for installation. Other actions may be necessary to make *Visual Studio* working properly. See *Workaround with gtkmm in Windows x64* for details.
+
+* Windows: use *vcpkg* (see [https://github.com/microsoft/vcpkg](https://github.com/microsoft/vcpkg)) for installation with *Visual Studio*. Other actions may be necessary to make *Visual Studio* working properly. See *Workaround with gtkmm in Visual Studio* for details. 
 
 *fftw3* library can be installed with:
 
 * Linux:
-
+  
   ```bash
   sudo pacman -Sy fftw
   ```
-
+  
   \note The code above works with Arch Linux distributions, similar commands may be used in other Linux distributions.
-* Windows: no installation is required, since pre-compiled binaries are provided
+
+* Windows: no installation is required, since pre-compiled binaries are provided.
+
+Alternatively, for Windows you may also use [Mingw-w64](https://www.mingw-w64.org/) with [MSYS2](https://www.msys2.org/) instead of *Visual Studio*. This requires having the `mingw-w64-x86_64-gtkmm-4.0` and `mingw-w64-x86_64-fftw` packages installed.
 
 ## Building (for develpement)
 
-* Linux: building makes use of a makefile. Before building the executable for standalone usage (i.e. without installation), it is necessary to run the configure with
-
+* Linux and Mingw-w64: building makes use of a makefile. Before building the executable for standalone usage (i.e. without installation), it is necessary to run the configure with
+  
   ```
   ./configure --prefix .
   ```
-
+  
   Depending on what you would like to do, there are different options
-
+  
   * Build the code: `make build` in the terminal (does not rebuild if files do not change)
   * Clean object files: `make clean`
   * Clean built files (including binaries): `make cleaner`
   * Rebuild: `make remake` (regardless if files have changed or not)
   * Build the code and generate the documentation: just use `make` or `make all`
-
+  
   If installed, you may also use *Visual Studio Code* using `ctrl+shift+B` to build and generate the documentation (this corresponds to `make all`).
 
-* Windows: just use *Visual Studio* in x64-Realase mode. Make sure to use the *C++17 (ISO/IEC 14882)* compiler. The installer is built using *Visual Studio* too.
+* Windows with *Visual Studio*: just use *Visual Studio* in x64-Realase mode. Make sure to use the *C++17 (ISO/IEC 14882)* compiler. The installer is built using *Visual Studio* too.
 
-## Workaround with *gtkmm* in Windows x64
+## Workaround with *gtkmm* in *Visual Studio*
 
 The *gtkmm-4.0* libraries have been initially meant to be used in Linux systems, therefore it is not trivial to use them in Windows, especially with *Visual Studio*. The workaround is to use *vcpkg*, which is a tool for installing packages in Windows.
 
 Accordingly to the README file in [https://github.com/microsoft/vcpkg](https://github.com/microsoft/vcpkg), installation is performed with:
 
 * Install the prerequisites, i.e. *Git* (see [https://git-scm.com/downloads](https://git-scm.com/downloads)), and *Visual Studio* (>=2015 declared, >=2017 for *gtkmm4*). Git is only used to clone the repository at [https://github.com/microsoft/vcpkg](https://github.com/microsoft/vcpkg) in the PC: you can also download the repository directly.
-* Create a path where to install *vcpkg*. Mandatory path is `C:\src\vcpkg`, e.g. using
 
+* Create a path where to install *vcpkg*. Mandatory path is `C:\src\vcpkg`, e.g. using
+  
   ```shell
   mkdir C:\src\vcpkg
   ```
-* Go to `C:\src`, e.g. using
 
+* Go to `C:\src`, e.g. using
+  
   ```shell
   cd C:\src
   ```
-* Clone the repository using *Git*
 
+* Clone the repository using *Git*
+  
   ```shell
   git clone https://github.com/microsoft/vcpkg
   ```
-* Bootstrap *vcpkg* using
 
+* Bootstrap *vcpkg* using
+  
   ```shell
   .\vcpkg\bootstrap-vcpkg.bat
   ```
-* Install the *gtkmm4* libraries (x64 version)
 
+* Install the *gtkmm4* libraries (x64 version)
+  
   ```shell
   .\vcpkg\vcpkg install gtkmm --triplet=x64-windows
   ```
-
+  
   This includes download and building of all the necessary dependencies. Installation can takes some time.
-* Install *integrate* to use *vcpkg* with *Visual Studio* (with administrator elevation) using
 
+* Install *integrate* to use *vcpkg* with *Visual Studio* (with administrator elevation) using
+  
   ```shell
      .\vcpkg\vcpkg integrate install
   ```
@@ -235,38 +248,41 @@ You can test if *Visual Studio* works by compiling the HelloWorld example in [ht
 If issues are found, these are probably due to an incorrect include directory created by *vcpkg* for the *Visual Studio* compiler. The workaround is to install *pkg-config*, which is a tool for generating the include directories for C/C++ libraries:
 
 * Install *pkgconf* (alias for *pkg-config* in *vcpkg*) using
-
+  
   ```shell
   .\vcpkg\vcpkg install pkgconf --triplet=x64-windows
   ```
-* Go to `C:\src\vcpkg\installed\x64-windows\tools\pkgconf`
 
+* Go to `C:\src\vcpkg\installed\x64-windows\tools\pkgconf`
+  
   ```shell
   cd `C:\src\vcpkg\installed\x64-windows\tools\pkgconf`
   ```
-* Run *pkg-config* with *gtkmm4* using
 
+* Run *pkg-config* with *gtkmm4* using
+  
   ```shell
   pkgconf --cflags-only-I gtkmm-4.0 --with-path=C:\src\vcpkg\installed\x64-windows\lib\pkgconfig
   ```
-
+  
   This prints a list of include diretories (e.g. `-IC:/src/vcpkg/installed/**`), which is the flag to pass to the C/C++ compiler for including the necessary directories.
-* You may also print a nicer list of include directories using in the ***Windows PowerShell*** 
 
+* You may also print a nicer list of include directories using in the ***Windows PowerShell*** 
+  
   ```shell
   $(./pkgconf --cflags-only-I gtkmm-4.0 --with-path=C:\src\vcpkg\installed\x64-windows\lib\pkgconfig) -replace "-I", "`n"
   ```
-
+  
     \attention Make sure to use the ***Windows PowerShell***, not the *Command Prompt*.
 
 * In *Visual Studio* put these directories in *Additional Include Directory* for the C/C++ compiler. You may also add the following additional compiler flag
-
+  
   ```shell
   `C:\src\vcpkg\installed\x64-windows\tools\pkgconf\pkgconf --cflags-only-I gtkmm-4.0 --with-path=C:\src\vcpkg\installed\x64-windows\lib\pkgconfig`
   ```
-
+  
   or alternatively the output of
-
+  
   ```shell
   pkgconf --cflags-only-I gtkmm-4.0 --with-path=C:\src\vcpkg\installed\x64-windows\lib\pkgconfig
   ```
@@ -280,6 +296,8 @@ If issues are found, these are probably due to an incorrect include directory cr
 
 * Help me to find issues
 * 2+2=5
+
+\todo Change makefile to make it compatible with Mingw-w64. Copying dlls when building.
 
 \todo add more gestures to move and zoom in plots: e.g. press roll to move, and roll to zoom
 \todo drag and drop in Windows
