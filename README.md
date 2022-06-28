@@ -297,7 +297,7 @@ If issues are found, these are probably due to an incorrect include directory cr
 * Help me to find issues
 * 2+2=5
 
-\todo Change makefile to make it compatible with Mingw-w64. Copying dlls when building.
+\todo Change makefile to make it compatible with Mingw-w64. Copying dlls when building. TODO is to add -mwindows in cflags and change TARGETDIR if OS=WINDOWS.
 
 \todo add more gestures to move and zoom in plots: e.g. press roll to move, and roll to zoom
 \todo drag and drop in Windows
