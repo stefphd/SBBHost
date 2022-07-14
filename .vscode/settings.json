@@ -74,6 +74,7 @@
         "any": "cpp",
         "hash_map": "cpp",
         "regex": "cpp",
-        "future": "cpp"
+        "future": "cpp",
+        "*.ipp": "cpp"
     }
 }

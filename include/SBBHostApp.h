@@ -95,6 +95,7 @@ protected:
 	Glib::ustring def_dir; //!< Default path where to save the log files.
 	SettingsDialog settingsDialog; //!< SettingsDialog object for the setting dialog.
 	Gtk::Switch darkModeSwitch; //!< Gtk::Switch object for the switch to enable/disable the dark mode.
+	Gtk::Switch streamModeSwitch; //!< Gtk::Switch object to switch the stream mode (serial/socket).
 	Gtk::ScrolledWindow scrolledWinStream; //!< Gtk::ScrolledWindow object containing a StreamTreeView object. 
 	Gtk::ScrolledWindow scrolledWinPlot; //!< Gtk::ScrolledWindow object containing a PlotTreeView object. 
 	StreamTreeView streamTreeView; //!< StreamTreeView object for the tree view in the stream tab.
@@ -102,7 +103,6 @@ protected:
 	Glib::Timer timer; //!< Glib::Timer object to count the elased time.
 	HostControl hostControl; //!< HostControl object for the host control.
 	ComboChoiceEntryLabel plotTypeComboEntry; //!< ComboChoiceEntryLabel object to choose the plot type in the plot tab.
-
 
 	//pointer to Gtk objects (initialized to nullptr to ensure being empty) - objects cannot be directly used for them (?)
 	Glib::RefPtr<Gio::Menu> p_winmenu = nullptr; //!< Pointer to Gio::Menu object for the menu
@@ -157,6 +157,11 @@ protected:
 		\details Function for signal handler called when switching the darkmode button, in order to enable or disable the dark mode.
 	*/
 	void on_darkModeSwitch_switched();
+
+	/*! \brief Signal handler called on streamMode button switched.
+		\details Function for signal handler called when switching the streamode button, in order to enable or disable the dark mode.
+	*/
+	void on_streamModeSwitch_switched();
 
 	/*! \brief Signal handler called on set folder menu button
 		\details Function for signal handler called when presseing the 'Set Folder' menu button. It opens a Gtk::FileChooserDialog 

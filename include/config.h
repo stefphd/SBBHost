@@ -75,6 +75,10 @@
 //serial settings
 #define BAUD 115200 //!< Defalt baudrate of serial communication (if unable to load it from the configuration file).
 
+//socket settings
+#define SOCKET_IP "192.168.0.1" //!< Default IP.
+#define SOCKET_PORT 1234 //!< Default port.
+
 //GUI settings
 #define APP_NAME "SBB Host" //!< App name.
 #define RUN_BUTLABEL "Run" //!< Run button label - not used.

@@ -27,9 +27,15 @@ public:
 	*/
     ~Params();
 
+	static constexpr int SERIAL = 0; //!< Serial connection constant.
+	static constexpr int SOCKET = 1; //!< Socket connection constant.
+
     //functional vars
+	int conn_type = SERIAL; //!< Connection type. Default is SERIAL.
     int port; //!< Current serial port used. Default is NULL_PORT.
 	int baud; //!< Current baudrate used.
+	int socket_port; //!< Socket port. Default is 9876.
+	std::string socket_ip; //!< Socket IP address. Default is "192.168.1.0"
 	unsigned int header; //!< Header used for the host communication.
 	unsigned int terminator; //!< Terminator used for the host communication.
 	int timeout; //!< Timeout used for the host communication.

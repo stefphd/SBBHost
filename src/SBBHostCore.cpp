@@ -16,24 +16,32 @@ void SBBHostCore::set_params(Params *params) {
 }
 
 int SBBHostCore::connect(bool logdata, std::string log_path) {
-	if (p_params->port == NULL_PORT) { //port is empty, try connection if only one serial port found
-		std::vector<int> portsAvailable = Serial::get_availableSerialPorts(MAX_PORT - 1);
-		if (!portsAvailable.size()) { return EXIT_NOSERIALPORT; } //no serial port found, return
-		else if (portsAvailable.size() > 1) { return EXIT_MULTIPLEPORT; } //multiple serial port found, return
-		p_params->port = portsAvailable[0]; //assign the first serial port (only one is found)
+	if (p_params->conn_type == Params::SERIAL)  {
+		if (p_params->port == NULL_PORT) { //port is empty, try connection if only one serial port found
+			std::vector<int> portsAvailable = Serial::get_availableSerialPorts(MAX_PORT - 1);
+			if (!portsAvailable.size()) { return EXIT_NOSERIALPORT; } //no serial port found, return
+			else if (portsAvailable.size() > 1) { return EXIT_MULTIPLEPORT; } //multiple serial port found, return
+			p_params->port = portsAvailable[0]; //assign the first serial port (only one is found)
+		}
+
+		hostPort.begin(p_params->port, p_params->baud, p_params->header, p_params->terminator, p_params->timeout); //begin host port
+		if (!hostPort) { return EXIT_UNABLECONNECT; }
 	}
-
-	hostPort.begin(p_params->port, p_params->baud, p_params->header, p_params->terminator, p_params->timeout); //begin host port
-	if (!hostPort) { return EXIT_UNABLECONNECT; }
-
+	else if (p_params->conn_type == Params::SOCKET) {
+		hostPortSocket.begin(p_params->socket_ip.c_str(), p_params->socket_port, p_params->header, p_params->terminator, p_params->timeout); //begin host port socket	
+		if (!hostPortSocket) { return EXIT_UNABLECONNECT; }
+	} 
+	else {
+		return EXIT_UNEXPECTED;
+	}
 	dolog = logdata;
 	if (dolog) beginlog(log_path); //begin log
-
 	return EXIT_CONNECTIONOK;  //all is ok
 }
  
 void SBBHostCore::disconnect() {
 	hostPort.close();
+	hostPortSocket.close();
 }
 
 void SBBHostCore::reset_stream() {
@@ -44,12 +52,25 @@ void SBBHostCore::reset_stream() {
 }
 
 int SBBHostCore::stream(bool writeFlag) {
-	if (!hostPort.read((unsigned char*)&rx_packet.value, p_params->num_of_signals*sizeof(float))) { //read serial
-		numOfMissingPackets++; //increase num of missing packets
-		if (numOfMissingPackets > p_params->max_missing_packets) { return EXIT_LOSTCONNECTION; } //if max num of missing packets reached return EXIT_LOSTCONNECTION
-		return EXIT_MISSINGPACKET; //otherwise return EXIT_MISSINGPACKET
+	if (p_params->conn_type == Params::SERIAL)  {
+		if (!hostPort.read((unsigned char*)&rx_packet.value, p_params->num_of_signals*sizeof(float))) { //read serial
+			numOfMissingPackets++; //increase num of missing packets
+			if (numOfMissingPackets > p_params->max_missing_packets) { return EXIT_LOSTCONNECTION; } //if max num of missing packets reached return EXIT_LOSTCONNECTION
+			return EXIT_MISSINGPACKET; //otherwise return EXIT_MISSINGPACKET
+		}
+		if (writeFlag) hostPort.write((unsigned char*)&tx_packet.value, p_params->num_of_controls * sizeof(float)); //write only if writeFlag=true and read success
 	}
-	if (writeFlag) hostPort.write((unsigned char*)&tx_packet.value, p_params->num_of_controls * sizeof(float)); //write only if writeFlag=true and read success
+	else if (p_params->conn_type == Params::SOCKET) {
+		if (!hostPortSocket.read((unsigned char*)&rx_packet.value, p_params->num_of_signals*sizeof(float))) { //read serial
+			numOfMissingPackets++; //increase num of missing packets
+			if (numOfMissingPackets > p_params->max_missing_packets) { return EXIT_LOSTCONNECTION; } //if max num of missing packets reached return EXIT_LOSTCONNECTION
+			return EXIT_MISSINGPACKET; //otherwise return EXIT_MISSINGPACKET
+		}
+		if (writeFlag) hostPortSocket.write((unsigned char*)&tx_packet.value, p_params->num_of_controls * sizeof(float)); //write only if writeFlag=true and read success
+	}
+	else {
+		return EXIT_UNEXPECTED;
+	}
 	if (dolog) {
 		if (logData.back()->push_back(rx_packet.value) == 0) { return EXIT_MAXLOGGEDDATA; }
 	}

@@ -27,7 +27,7 @@ OBJEXT      := o
 #Flags, Libraries and Includes
 USERCFLAGS	:= 
 CFLAGS      := `pkg-config gtkmm-4.0 --cflags --libs` -lfftw3 -g $(USERCFLAGS)
-LIB			:= -I./lib/cairoplotter -I./lib/tinymatwriter #-I/usr/include/eigen3
+LIB			:= -I./lib/cairoplotter -I./lib/tinymatwriter -I./lib/sockpp #-I/usr/include/eigen3
 INC         := -I$(INCDIR) -I/usr/local/include $(LIB)
 INCDEP      := -I$(INCDIR) $(LIB)
 

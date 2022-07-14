@@ -42,6 +42,8 @@ protected:
 	Gtk::Grid  plotGrid; //!< Gtk::Grid object for the plot setting page.
 	ComboEntryLabel port; //!< ComboEntryLabel object for the choice of the serial port.
 	SpinEntryLabel baud; //!< SpinEntryLabel object for the baudrate.
+	SpinEntryLabel socket_port; //!< SpinEntryLabel object for the socket port.
+	TextEntryLabel socket_ip; //!< TextEntryLabel object for the socket ip.
 	SpinEntryLabel timeout; //!< SpinEntryLabel object for the timeout.
 	TextEntryLabel header; //!< TextEntryLabel object for the header.
 	TextEntryLabel terminator; //!< TextEntryLabel object for the terminator.

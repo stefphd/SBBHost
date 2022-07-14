@@ -14,7 +14,7 @@ streamTreeFrame(), plotTreeFrame(), streamTimeLabel(), plotGraphOverlay(),
 streamGraphFrame("Stream graph"),
 buttonRun(RUN_BUTLABEL, true), buttonLog(LOG_BUTLABEL, true),
 aboutDialog(), settingsDialog(), hostControl(),
-darkModeSwitch(),
+darkModeSwitch(), streamModeSwitch(),
 scrolledWinStream(), scrolledWinPlot(),
 streamTreeView(&mainWin), plotTreeView(&mainWin, &core),
 timer(),
@@ -91,6 +91,7 @@ void SBBHostApp::on_activate() {
 	buttonLog.signal_toggled().connect(sigc::mem_fun(*this, &SBBHostApp::on_buttonLog_toggled));
 	mainWin.signal_close_request().connect(sigc::mem_fun<bool>(*this, &SBBHostApp::on_win_close), true);
 	darkModeSwitch.property_active().signal_changed().connect(sigc::mem_fun(*this, &SBBHostApp::on_darkModeSwitch_switched));
+	streamModeSwitch.property_active().signal_changed().connect(sigc::mem_fun(*this, &SBBHostApp::on_streamModeSwitch_switched));
 	plotTypeComboEntry.get_comboBoxText()->signal_changed().connect(sigc::mem_fun(*this, &SBBHostApp::on_plotType_changed));
 
 	//set window size (default)
@@ -125,6 +126,7 @@ void SBBHostApp::on_activate() {
 	streamBox1.append(streamBox2);
 	streamBox2.append(buttonRun);
 	streamBox2.append(buttonLog);
+	streamBox2.append(streamModeSwitch);
 	streamBox1.append(streamTreeFrame);
 	streamBox1.append(streamTimeLabel);
 	fftBox.append(p_magfftGraph->get_graph_grid());
@@ -184,9 +186,13 @@ void SBBHostApp::on_activate() {
 	streamTimeLabel.set_margin(MARGIN);
 	darkModeSwitch.set_margin_end(MARGIN), darkModeSwitch.set_margin_start(MARGIN);
 	darkModeSwitch.set_margin_top(MARGIN/2), darkModeSwitch.set_margin_bottom(MARGIN/2);
+
+	streamModeSwitch.set_margin_top(MARGIN), streamModeSwitch.set_margin_bottom(MARGIN);
+
 	buttonRun.set_icon_name(RUN_BUTICON);
 	buttonRun.set_size_request(buttonLog.get_size(Gtk::Orientation::HORIZONTAL));
 	darkModeSwitch.set_active(params.use_darkmode > 0);
+	streamModeSwitch.set_active(false);
 	scrolledWinStream.set_policy(Gtk::PolicyType::AUTOMATIC, Gtk::PolicyType::AUTOMATIC);
 	scrolledWinStream.set_vexpand();
 	scrolledWinStream.set_size_request(100);
@@ -225,6 +231,7 @@ void SBBHostApp::create_graph() {
 
 void SBBHostApp::parse_ini() {
 	p_cfg = new IniReader(CONFIG_FILE);
+	if (!p_cfg->getInt("socket_port", &params.socket_port)) params.port = SOCKET_PORT;
 	if (!p_cfg->getInt("baud", &params.baud)) params.baud = BAUD;
 	if (!p_cfg->getHex("header", &params.header)) params.header = HostPort::HEADER;
 	if (!p_cfg->getHex("terminator", &params.terminator)) params.terminator = HostPort::TERMINATOR;
@@ -248,6 +255,7 @@ void SBBHostApp::parse_ini() {
 	if (!p_cfg->getDoubleArray("control_max", &params.control_max)) params.control_max = { CONTROL_MAX };
 	if (!p_cfg->getDoubleArray("control_val", &params.control_val)) params.control_val = { CONTROL_VAL };
 	if (!p_cfg->getString("gsettings_dir", &params.gsettings_dir)) params.gsettings_dir = GSETTINGS_SCHEMA_DIR_VAL;
+	if (!p_cfg->getString("socket_ip", &params.socket_ip)) params.socket_ip = SOCKET_IP;
 	if (!p_cfg->getDouble("label_scale", &params.label_scale)) params.label_scale = LABEL_SCALE;
 	if (!p_cfg->getDouble("tick_scale", &params.tick_scale)) params.tick_scale = TICK_SCALE;
 	if (!p_cfg->getDouble("line_width", &params.line_width)) params.line_width = LINE_WIDTH;
@@ -258,6 +266,7 @@ void SBBHostApp::parse_ini() {
 	p_cfg->~IniReader();
 
 	//checks
+	if (params.socket_port <= 0) params.window_samples = SOCKET_PORT;
 	if (params.window_samples <= 0) params.window_samples = WINDOW_SAMPLES;
 	if (params.forward_samples <= 0) params.forward_samples = FORWARD_SAMPES;
 	if (params.label_scale <= 0) params.label_scale = LABEL_SCALE;
@@ -391,6 +400,7 @@ void SBBHostApp::set_tooltips() {
 	buttonLog.set_tooltip_text("Enable signal logging.");
 	streamTimeLabel.set_tooltip_text("Elapsed time of current signal streaming.");
 	darkModeSwitch.set_tooltip_text("Enable the darkmode.");
+	streamModeSwitch.set_tooltip_text("Serial/Socket communication");
 	//p_streamGraph->set_tooltip_text("Stream graph.");
 	streamTreeView.set_tooltip_text("Select the signal to plot.");
 	plotTreeView.set_tooltip_text("Select the logged signal to plot.");
@@ -892,6 +902,13 @@ void SBBHostApp::on_darkModeSwitch_switched() {
 	p_plotGraph->set_theme("Default");
 }
 
+void SBBHostApp::on_streamModeSwitch_switched() {
+	if (streamModeSwitch.get_active()) 
+		params.conn_type = Params::SOCKET;
+	else 
+		params.conn_type = Params::SERIAL;
+}
+
 bool SBBHostApp::on_win_close() { //return false to confirm win close
 	if (force_close) { return false; } //force the app to be closed when force_close set by on_quit_confirmation
 
@@ -988,7 +1005,10 @@ void SBBHostApp::warning(int type) {
 		utils::beep(WARNING_BEEP);
 		p_messageDialog->set_message("Unable to connect");
 		char str[64];
-		sprintf_s(str, 64, "Connection to port %d failed", core.p_params->port);
+		if (params.conn_type == Params::SERIAL)
+			sprintf_s(str, 64, "Connection to port %d failed", core.p_params->port);
+		else
+			sprintf_s(str, 64, "Connection to port %d with IP %s failed", core.p_params->socket_port, core.p_params->socket_ip.c_str());
 		p_messageDialog->set_secondary_text(str);
 		break;
 	case EXIT_LOSTCONNECTION:
@@ -1077,7 +1097,10 @@ void SBBHostApp::info(int type) {
 		utils::beep(INFO_BEEP);
 		p_messageDialog->set_message("Connection established");
 		char str[64];
-		sprintf_s(str, 64, "Connected to port %d", core.p_params->port);
+		if (params.conn_type == Params::SERIAL)
+			sprintf_s(str, 64, "Connected to port %d", core.p_params->port);
+		else
+			sprintf_s(str, 64, "Connected to port %d with IP %s failed", core.p_params->socket_port, core.p_params->socket_ip.c_str());
 		p_messageDialog->set_secondary_text(str);
 		break;
 	}
