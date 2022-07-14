@@ -28,6 +28,9 @@
     <Filter Include="lib\fftw">
       <UniqueIdentifier>{3867b4f6-fb99-432d-be2d-6b7e6f87ad02}</UniqueIdentifier>
     </Filter>
+    <Filter Include="lib\sockpp">
+      <UniqueIdentifier>{9a59c46f-6637-41e0-93e4-cad811fb869e}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="include\config.h">
@@ -105,6 +108,90 @@
     <ClInclude Include="include\HostControl.h">
       <Filter>include</Filter>
     </ClInclude>
+    <ClInclude Include="include\HostPortSocket.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="lib\sockpp\acceptor.h">
+      <Filter>lib\sockpp</Filter>
+    </ClInclude>
+    <ClInclude Include="lib\sockpp\can_address.h">
+      <Filter>lib\sockpp</Filter>
+    </ClInclude>
+    <ClInclude Include="lib\sockpp\can_frame.h">
+      <Filter>lib\sockpp</Filter>
+    </ClInclude>
+    <ClInclude Include="lib\sockpp\can_socket.h">
+      <Filter>lib\sockpp</Filter>
+    </ClInclude>
+    <ClInclude Include="lib\sockpp\connector.h">
+      <Filter>lib\sockpp</Filter>
+    </ClInclude>
+    <ClInclude Include="lib\sockpp\datagram_socket.h">
+      <Filter>lib\sockpp</Filter>
+    </ClInclude>
+    <ClInclude Include="lib\sockpp\exception.h">
+      <Filter>lib\sockpp</Filter>
+    </ClInclude>
+    <ClInclude Include="lib\sockpp\inet_address.h">
+      <Filter>lib\sockpp</Filter>
+    </ClInclude>
+    <ClInclude Include="lib\sockpp\inet6_address.h">
+      <Filter>lib\sockpp</Filter>
+    </ClInclude>
+    <ClInclude Include="lib\sockpp\platform.h">
+      <Filter>lib\sockpp</Filter>
+    </ClInclude>
+    <ClInclude Include="lib\sockpp\sock_address.h">
+      <Filter>lib\sockpp</Filter>
+    </ClInclude>
+    <ClInclude Include="lib\sockpp\socket.h">
+      <Filter>lib\sockpp</Filter>
+    </ClInclude>
+    <ClInclude Include="lib\sockpp\stream_socket.h">
+      <Filter>lib\sockpp</Filter>
+    </ClInclude>
+    <ClInclude Include="lib\sockpp\tcp_acceptor.h">
+      <Filter>lib\sockpp</Filter>
+    </ClInclude>
+    <ClInclude Include="lib\sockpp\tcp_connector.h">
+      <Filter>lib\sockpp</Filter>
+    </ClInclude>
+    <ClInclude Include="lib\sockpp\tcp_socket.h">
+      <Filter>lib\sockpp</Filter>
+    </ClInclude>
+    <ClInclude Include="lib\sockpp\tcp6_acceptor.h">
+      <Filter>lib\sockpp</Filter>
+    </ClInclude>
+    <ClInclude Include="lib\sockpp\tcp6_connector.h">
+      <Filter>lib\sockpp</Filter>
+    </ClInclude>
+    <ClInclude Include="lib\sockpp\tcp6_socket.h">
+      <Filter>lib\sockpp</Filter>
+    </ClInclude>
+    <ClInclude Include="lib\sockpp\udp_socket.h">
+      <Filter>lib\sockpp</Filter>
+    </ClInclude>
+    <ClInclude Include="lib\sockpp\udp6_socket.h">
+      <Filter>lib\sockpp</Filter>
+    </ClInclude>
+    <ClInclude Include="lib\sockpp\unix_acceptor.h">
+      <Filter>lib\sockpp</Filter>
+    </ClInclude>
+    <ClInclude Include="lib\sockpp\unix_address.h">
+      <Filter>lib\sockpp</Filter>
+    </ClInclude>
+    <ClInclude Include="lib\sockpp\unix_connector.h">
+      <Filter>lib\sockpp</Filter>
+    </ClInclude>
+    <ClInclude Include="lib\sockpp\unix_dgram_socket.h">
+      <Filter>lib\sockpp</Filter>
+    </ClInclude>
+    <ClInclude Include="lib\sockpp\unix_stream_socket.h">
+      <Filter>lib\sockpp</Filter>
+    </ClInclude>
+    <ClInclude Include="lib\sockpp\version.h">
+      <Filter>lib\sockpp</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="lib\cairoplotter\plotter.cpp">
@@ -178,6 +265,33 @@
     </ClCompile>
     <ClCompile Include="src\HostControl.cpp">
       <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\HostPortSocket.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="lib\sockpp\acceptor.cpp">
+      <Filter>lib\sockpp</Filter>
+    </ClCompile>
+    <ClCompile Include="lib\sockpp\connector.cpp">
+      <Filter>lib\sockpp</Filter>
+    </ClCompile>
+    <ClCompile Include="lib\sockpp\datagram_socket.cpp">
+      <Filter>lib\sockpp</Filter>
+    </ClCompile>
+    <ClCompile Include="lib\sockpp\exception.cpp">
+      <Filter>lib\sockpp</Filter>
+    </ClCompile>
+    <ClCompile Include="lib\sockpp\inet_address.cpp">
+      <Filter>lib\sockpp</Filter>
+    </ClCompile>
+    <ClCompile Include="lib\sockpp\inet6_address.cpp">
+      <Filter>lib\sockpp</Filter>
+    </ClCompile>
+    <ClCompile Include="lib\sockpp\socket.cpp">
+      <Filter>lib\sockpp</Filter>
+    </ClCompile>
+    <ClCompile Include="lib\sockpp\stream_socket.cpp">
+      <Filter>lib\sockpp</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

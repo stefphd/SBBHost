@@ -25,6 +25,7 @@
     <ClInclude Include="include\HostControl.h" />
     <ClInclude Include="include\HostControlDialog.h" />
     <ClInclude Include="include\HostPort.h" />
+    <ClInclude Include="include\HostPortSocket.h" />
     <ClInclude Include="include\IniReader.h" />
     <ClInclude Include="include\LogData.h" />
     <ClInclude Include="include\Packet.h" />
@@ -41,6 +42,33 @@
     <ClInclude Include="include\SBBUtils.h" />
     <ClInclude Include="lib\cairoplotter\plotter.hpp" />
     <ClInclude Include="lib\fftw\include\fftw3.h" />
+    <ClInclude Include="lib\sockpp\acceptor.h" />
+    <ClInclude Include="lib\sockpp\can_address.h" />
+    <ClInclude Include="lib\sockpp\can_frame.h" />
+    <ClInclude Include="lib\sockpp\can_socket.h" />
+    <ClInclude Include="lib\sockpp\connector.h" />
+    <ClInclude Include="lib\sockpp\datagram_socket.h" />
+    <ClInclude Include="lib\sockpp\exception.h" />
+    <ClInclude Include="lib\sockpp\inet6_address.h" />
+    <ClInclude Include="lib\sockpp\inet_address.h" />
+    <ClInclude Include="lib\sockpp\platform.h" />
+    <ClInclude Include="lib\sockpp\socket.h" />
+    <ClInclude Include="lib\sockpp\sock_address.h" />
+    <ClInclude Include="lib\sockpp\stream_socket.h" />
+    <ClInclude Include="lib\sockpp\tcp6_acceptor.h" />
+    <ClInclude Include="lib\sockpp\tcp6_connector.h" />
+    <ClInclude Include="lib\sockpp\tcp6_socket.h" />
+    <ClInclude Include="lib\sockpp\tcp_acceptor.h" />
+    <ClInclude Include="lib\sockpp\tcp_connector.h" />
+    <ClInclude Include="lib\sockpp\tcp_socket.h" />
+    <ClInclude Include="lib\sockpp\udp6_socket.h" />
+    <ClInclude Include="lib\sockpp\udp_socket.h" />
+    <ClInclude Include="lib\sockpp\unix_acceptor.h" />
+    <ClInclude Include="lib\sockpp\unix_address.h" />
+    <ClInclude Include="lib\sockpp\unix_connector.h" />
+    <ClInclude Include="lib\sockpp\unix_dgram_socket.h" />
+    <ClInclude Include="lib\sockpp\unix_stream_socket.h" />
+    <ClInclude Include="lib\sockpp\version.h" />
     <ClInclude Include="lib\tinymatwriter\tinymatwriter.h" />
     <ClInclude Include="lib\tinymatwriter\tinymatwriter_export.h" />
     <ClInclude Include="resource.h" />
@@ -54,11 +82,20 @@
     <ClCompile Include="lib\cairoplotter\plotterseries.cpp" />
     <ClCompile Include="lib\cairoplotter\plotterthemes.cpp" />
     <ClCompile Include="lib\cairoplotter\plotterwidgets.cpp" />
+    <ClCompile Include="lib\sockpp\acceptor.cpp" />
+    <ClCompile Include="lib\sockpp\connector.cpp" />
+    <ClCompile Include="lib\sockpp\datagram_socket.cpp" />
+    <ClCompile Include="lib\sockpp\exception.cpp" />
+    <ClCompile Include="lib\sockpp\inet6_address.cpp" />
+    <ClCompile Include="lib\sockpp\inet_address.cpp" />
+    <ClCompile Include="lib\sockpp\socket.cpp" />
+    <ClCompile Include="lib\sockpp\stream_socket.cpp" />
     <ClCompile Include="lib\tinymatwriter\tinymatwriter.cpp" />
     <ClCompile Include="src\EntryLabel.cpp" />
     <ClCompile Include="src\File.cpp" />
     <ClCompile Include="src\HostControl.cpp" />
     <ClCompile Include="src\HostPort.cpp" />
+    <ClCompile Include="src\HostPortSocket.cpp" />
     <ClCompile Include="src\IniReader.cpp" />
     <ClCompile Include="src\main.cpp" />
     <ClCompile Include="src\Params.cpp" />
@@ -252,7 +289,7 @@ copy "$(SolutionDir)resource\sbbhost-toolbar.xml" "$(SolutionDir)\bin\win64\sbbh
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions);_CRT_SECURE_NO_WARNINGS</PreprocessorDefinitions>
+      <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions);_CRT_SECURE_NO_WARNINGS;_WINSOCK_DEPRECATED_NO_WARNINGS</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpp17</LanguageStandard>
       <UndefinePreprocessorDefinitions>%(UndefinePreprocessorDefinitions)</UndefinePreprocessorDefinitions>
@@ -264,7 +301,7 @@ copy "$(SolutionDir)resource\sbbhost-toolbar.xml" "$(SolutionDir)\bin\win64\sbbh
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalLibraryDirectories>$(ProjectDir)lib\fftw\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>libfftw3-3.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>libfftw3-3.lib;ws2_32.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <ResourceCompile>
       <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
