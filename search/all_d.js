@@ -21,7 +21,7 @@ var searchData=
   ['on_5fmenu_5fhelp_5fhelp_18',['on_menu_help_help',['../classSBBHostApp.html#a63ca044b56ab889732cf9414f8686689',1,'SBBHostApp']]],
   ['on_5fmenu_5fsave_19',['on_menu_save',['../classPlotTreeView.html#a34a3a2f192a276fdee2aa7805170fe75',1,'PlotTreeView']]],
   ['on_5fmenu_5fset_5fcolor_20',['on_menu_set_color',['../classPlotTreeView.html#ab184ada9bdc940b82bb9c911b56c17dd',1,'PlotTreeView::on_menu_set_color()'],['../classStreamTreeView.html#a084fcdf9b93a295804d54c3497cf34ac',1,'StreamTreeView::on_menu_set_color()']]],
-  ['on_5fmenu_5fset_5flinetype_21',['on_menu_set_linetype',['../classPlotTreeView.html#ae3571f69d03253693d15fbc4f04ed396',1,'PlotTreeView::on_menu_set_linetype()'],['../classStreamTreeView.html#a37fdd5ba53cb775c4c7bde5561389cc2',1,'StreamTreeView::on_menu_set_linetype()']]],
+  ['on_5fmenu_5fset_5flinetype_21',['on_menu_set_linetype',['../classStreamTreeView.html#a37fdd5ba53cb775c4c7bde5561389cc2',1,'StreamTreeView::on_menu_set_linetype()'],['../classPlotTreeView.html#ae3571f69d03253693d15fbc4f04ed396',1,'PlotTreeView::on_menu_set_linetype()']]],
   ['on_5fmenu_5fsettings_22',['on_menu_settings',['../classSBBHostApp.html#a04705fba027afa7944d930979bac98ff',1,'SBBHostApp']]],
   ['on_5fmenu_5fstream_5fconnect_23',['on_menu_stream_connect',['../classSBBHostApp.html#a08c8397f693cee8a3bb0aab17d053a29',1,'SBBHostApp']]],
   ['on_5fmenu_5fstream_5flog_24',['on_menu_stream_log',['../classSBBHostApp.html#a88e83afb7e623b12c8de6645496b9fce',1,'SBBHostApp']]],
@@ -35,8 +35,9 @@ var searchData=
   ['on_5fsetting_5fdialog_32',['on_setting_dialog',['../classSBBHostApp.html#af09200b3febede586b56e17eb18ae317',1,'SBBHostApp']]],
   ['on_5fstartup_33',['on_startup',['../classSBBHostApp.html#aefae8df4022294876f34cf7aca514532',1,'SBBHostApp']]],
   ['on_5fstream_5ftree_5fselected_34',['on_stream_tree_selected',['../classStreamTreeView.html#a6bc54a252cc85f5970bcc391079ab87d',1,'StreamTreeView']]],
-  ['on_5fwin_5fclose_35',['on_win_close',['../classSBBHostApp.html#a89fff85838ddb985e53af447ac17227c',1,'SBBHostApp']]],
-  ['open_36',['open',['../classFile.html#a354804a7650f9c2d363212003e2d9f17',1,'File::open()'],['../classSBBHostApp.html#a3a63600e1ce4299585b7dbc028126e19',1,'SBBHostApp::open()'],['../classSBBHostCore.html#a6072c75a72052dc06ca7645b3366a3cb',1,'SBBHostCore::open()']]],
-  ['open_5ffile_5flabel_37',['OPEN_FILE_LABEL',['../config_8h.html#a5caf439eacafbc42cd4e203052a7dedd',1,'config.h']]],
-  ['operator_20bool_38',['operator bool',['../classFile.html#af171fbf441c899cf71d88b8b0b83d38b',1,'File::operator bool()'],['../classHostPort.html#a2ba752145e4ccb586100568015c01dfa',1,'HostPort::operator bool()'],['../classSerial.html#ad97c059e3534966c1d48cc03db5f4330',1,'Serial::operator bool()']]]
+  ['on_5fstreammodeswitch_5fswitched_35',['on_streamModeSwitch_switched',['../classSBBHostApp.html#aedaeec6961fff4a5adb0667522112c66',1,'SBBHostApp']]],
+  ['on_5fwin_5fclose_36',['on_win_close',['../classSBBHostApp.html#a89fff85838ddb985e53af447ac17227c',1,'SBBHostApp']]],
+  ['open_37',['open',['../classFile.html#a354804a7650f9c2d363212003e2d9f17',1,'File::open()'],['../classSBBHostApp.html#a3a63600e1ce4299585b7dbc028126e19',1,'SBBHostApp::open()'],['../classSBBHostCore.html#a6072c75a72052dc06ca7645b3366a3cb',1,'SBBHostCore::open()']]],
+  ['open_5ffile_5flabel_38',['OPEN_FILE_LABEL',['../config_8h.html#a5caf439eacafbc42cd4e203052a7dedd',1,'config.h']]],
+  ['operator_20bool_39',['operator bool',['../classFile.html#af171fbf441c899cf71d88b8b0b83d38b',1,'File::operator bool()'],['../classHostPort.html#a2ba752145e4ccb586100568015c01dfa',1,'HostPort::operator bool()'],['../classHostPortSocket.html#ade1a16cb4671292de05f9eaa33fc62bc',1,'HostPortSocket::operator bool()'],['../classSerial.html#ad97c059e3534966c1d48cc03db5f4330',1,'Serial::operator bool()']]]
 ];

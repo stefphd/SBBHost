@@ -103,6 +103,7 @@ $(document).ready(function(){initNavTree('classParams.html',''); initResizable()
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pub-attribs">Public Attributes</a> &#124;
+<a href="#pub-static-attribs">Static Public Attributes</a> &#124;
 <a href="classParams-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">Params Class Reference</div></div>
 </div><!--header-->
@@ -124,12 +125,21 @@ Public Member Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
+<tr class="memitem:a9132bd15381a2d4eb875a9b778410c30"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classParams.html#a9132bd15381a2d4eb875a9b778410c30">conn_type</a> = <a class="el" href="classParams.html#a3028180e5e53cb595e0507fa88b2bbf7">SERIAL</a></td></tr>
+<tr class="memdesc:a9132bd15381a2d4eb875a9b778410c30"><td class="mdescLeft">&#160;</td><td class="mdescRight">Connection type. Default is SERIAL.  <a href="classParams.html#a9132bd15381a2d4eb875a9b778410c30">More...</a><br /></td></tr>
+<tr class="separator:a9132bd15381a2d4eb875a9b778410c30"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af2b6bf05246b2e046b8c107d441beac9"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classParams.html#af2b6bf05246b2e046b8c107d441beac9">port</a></td></tr>
 <tr class="memdesc:af2b6bf05246b2e046b8c107d441beac9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Current serial port used. Default is NULL_PORT.  <a href="classParams.html#af2b6bf05246b2e046b8c107d441beac9">More...</a><br /></td></tr>
 <tr class="separator:af2b6bf05246b2e046b8c107d441beac9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a112eed627461dc99be5bb8a29765024a"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classParams.html#a112eed627461dc99be5bb8a29765024a">baud</a></td></tr>
 <tr class="memdesc:a112eed627461dc99be5bb8a29765024a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Current baudrate used.  <a href="classParams.html#a112eed627461dc99be5bb8a29765024a">More...</a><br /></td></tr>
 <tr class="separator:a112eed627461dc99be5bb8a29765024a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab708813c13223d248395b8dbaf7d9088"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classParams.html#ab708813c13223d248395b8dbaf7d9088">socket_port</a></td></tr>
+<tr class="memdesc:ab708813c13223d248395b8dbaf7d9088"><td class="mdescLeft">&#160;</td><td class="mdescRight">Socket port. Default is 9876.  <a href="classParams.html#ab708813c13223d248395b8dbaf7d9088">More...</a><br /></td></tr>
+<tr class="separator:ab708813c13223d248395b8dbaf7d9088"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abc77b1f86aec54b6ba5f29d35989c7b5"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classParams.html#abc77b1f86aec54b6ba5f29d35989c7b5">socket_ip</a></td></tr>
+<tr class="memdesc:abc77b1f86aec54b6ba5f29d35989c7b5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Socket IP address. Default is "192.168.1.0".  <a href="classParams.html#abc77b1f86aec54b6ba5f29d35989c7b5">More...</a><br /></td></tr>
+<tr class="separator:abc77b1f86aec54b6ba5f29d35989c7b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0586b5a7cca9c4d81252777f10f5e095"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classParams.html#a0586b5a7cca9c4d81252777f10f5e095">header</a></td></tr>
 <tr class="memdesc:a0586b5a7cca9c4d81252777f10f5e095"><td class="mdescLeft">&#160;</td><td class="mdescRight">Header used for the host communication.  <a href="classParams.html#a0586b5a7cca9c4d81252777f10f5e095">More...</a><br /></td></tr>
 <tr class="separator:a0586b5a7cca9c4d81252777f10f5e095"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -222,6 +232,15 @@ Public Attributes</h2></td></tr>
 <tr class="memitem:a188cac75dc8d51aa8ce872348990ead2"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classParams.html#a188cac75dc8d51aa8ce872348990ead2">graph_offsety</a></td></tr>
 <tr class="memdesc:a188cac75dc8d51aa8ce872348990ead2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Graph y offset.  <a href="classParams.html#a188cac75dc8d51aa8ce872348990ead2">More...</a><br /></td></tr>
 <tr class="separator:a188cac75dc8d51aa8ce872348990ead2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-attribs" name="pub-static-attribs"></a>
+Static Public Attributes</h2></td></tr>
+<tr class="memitem:a3028180e5e53cb595e0507fa88b2bbf7"><td class="memItemLeft" align="right" valign="top">static constexpr int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classParams.html#a3028180e5e53cb595e0507fa88b2bbf7">SERIAL</a> = 0</td></tr>
+<tr class="memdesc:a3028180e5e53cb595e0507fa88b2bbf7"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classSerial.html" title="A class for serial communication.">Serial</a> connection constant.  <a href="classParams.html#a3028180e5e53cb595e0507fa88b2bbf7">More...</a><br /></td></tr>
+<tr class="separator:a3028180e5e53cb595e0507fa88b2bbf7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1c86a0f9a5688cfccee13c5ea16806a2"><td class="memItemLeft" align="right" valign="top">static constexpr int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classParams.html#a1c86a0f9a5688cfccee13c5ea16806a2">SOCKET</a> = 1</td></tr>
+<tr class="memdesc:a1c86a0f9a5688cfccee13c5ea16806a2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Socket connection constant.  <a href="classParams.html#a1c86a0f9a5688cfccee13c5ea16806a2">More...</a><br /></td></tr>
+<tr class="separator:a1c86a0f9a5688cfccee13c5ea16806a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p >A class for the application setting parameters. </p>
@@ -289,6 +308,22 @@ Public Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Current baudrate used. </p>
+
+</div>
+</div>
+<a id="a9132bd15381a2d4eb875a9b778410c30" name="a9132bd15381a2d4eb875a9b778410c30"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9132bd15381a2d4eb875a9b778410c30">&#9670;&nbsp;</a></span>conn_type</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Params::conn_type = <a class="el" href="classParams.html#a3028180e5e53cb595e0507fa88b2bbf7">SERIAL</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Connection type. Default is SERIAL. </p>
 
 </div>
 </div>
@@ -660,6 +695,30 @@ Public Attributes</h2></td></tr>
 
 </div>
 </div>
+<a id="a3028180e5e53cb595e0507fa88b2bbf7" name="a3028180e5e53cb595e0507fa88b2bbf7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3028180e5e53cb595e0507fa88b2bbf7">&#9670;&nbsp;</a></span>SERIAL</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr int Params::SERIAL = 0</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><a class="el" href="classSerial.html" title="A class for serial communication.">Serial</a> connection constant. </p>
+
+</div>
+</div>
 <a id="a48160f3e70e7ef97afde20cde9ad43ab" name="a48160f3e70e7ef97afde20cde9ad43ab"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a48160f3e70e7ef97afde20cde9ad43ab">&#9670;&nbsp;</a></span>settingsDialog_height</h2>
 
@@ -705,6 +764,62 @@ Public Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Name of signals. </p>
+
+</div>
+</div>
+<a id="a1c86a0f9a5688cfccee13c5ea16806a2" name="a1c86a0f9a5688cfccee13c5ea16806a2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1c86a0f9a5688cfccee13c5ea16806a2">&#9670;&nbsp;</a></span>SOCKET</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr int Params::SOCKET = 1</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Socket connection constant. </p>
+
+</div>
+</div>
+<a id="abc77b1f86aec54b6ba5f29d35989c7b5" name="abc77b1f86aec54b6ba5f29d35989c7b5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abc77b1f86aec54b6ba5f29d35989c7b5">&#9670;&nbsp;</a></span>socket_ip</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string Params::socket_ip</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Socket IP address. Default is "192.168.1.0". </p>
+
+</div>
+</div>
+<a id="ab708813c13223d248395b8dbaf7d9088" name="ab708813c13223d248395b8dbaf7d9088"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab708813c13223d248395b8dbaf7d9088">&#9670;&nbsp;</a></span>socket_port</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Params::socket_port</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Socket port. Default is 9876. </p>
 
 </div>
 </div>

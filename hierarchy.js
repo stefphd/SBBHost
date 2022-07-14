@@ -22,6 +22,7 @@ var hierarchy =
     ] ],
     [ "utils::hhmmss_t", "structutils_1_1hhmmss__t.html", null ],
     [ "HostPort", "classHostPort.html", null ],
+    [ "HostPortSocket", "classHostPortSocket.html", null ],
     [ "IniReader", "classIniReader.html", null ],
     [ "LogData< T >", "classLogData.html", null ],
     [ "Packet< T, Size >", "classPacket.html", null ],

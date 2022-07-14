@@ -14,6 +14,8 @@ var classSettingsDialog =
     [ "plotGrid", "classSettingsDialog.html#a4354bb646592969867f6a24d7ae8c888", null ],
     [ "port", "classSettingsDialog.html#a05ba637b84e87764d83c84e7b7b509d6", null ],
     [ "prevsamples", "classSettingsDialog.html#a9950d464ddaafd857b90e32ee85baa78", null ],
+    [ "socket_ip", "classSettingsDialog.html#abf357d300a98612caff8658bd02ee545", null ],
+    [ "socket_port", "classSettingsDialog.html#a8ab7b7d49b29645df77f5b3603c7c7a0", null ],
     [ "stream_decim", "classSettingsDialog.html#a90ece1f9a7c6bbc3bea93d8ad65efbdc", null ],
     [ "streamGrid", "classSettingsDialog.html#a5987efa4319bad3dfcbe5ca1a0e2b4e7", null ],
     [ "terminator", "classSettingsDialog.html#aa0f88a05d27e53b9de0b6589ff1b9a37", null ],

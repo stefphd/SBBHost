@@ -158,6 +158,9 @@ Protected Member Functions</h2></td></tr>
 <tr class="memitem:a0ead43c2df3b79efbfcc73013c879da4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSBBHostApp.html#a0ead43c2df3b79efbfcc73013c879da4">on_darkModeSwitch_switched</a> ()</td></tr>
 <tr class="memdesc:a0ead43c2df3b79efbfcc73013c879da4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Signal handler called on darkmode button switched.  <a href="classSBBHostApp.html#a0ead43c2df3b79efbfcc73013c879da4">More...</a><br /></td></tr>
 <tr class="separator:a0ead43c2df3b79efbfcc73013c879da4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aedaeec6961fff4a5adb0667522112c66"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSBBHostApp.html#aedaeec6961fff4a5adb0667522112c66">on_streamModeSwitch_switched</a> ()</td></tr>
+<tr class="memdesc:aedaeec6961fff4a5adb0667522112c66"><td class="mdescLeft">&#160;</td><td class="mdescRight">Signal handler called on streamMode button switched.  <a href="classSBBHostApp.html#aedaeec6961fff4a5adb0667522112c66">More...</a><br /></td></tr>
+<tr class="separator:aedaeec6961fff4a5adb0667522112c66"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a30840f5effe078d9d405593bfcf44673"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSBBHostApp.html#a30840f5effe078d9d405593bfcf44673">on_menu_file_setfolder</a> ()</td></tr>
 <tr class="memdesc:a30840f5effe078d9d405593bfcf44673"><td class="mdescLeft">&#160;</td><td class="mdescRight">Signal handler called on set folder menu button.  <a href="classSBBHostApp.html#a30840f5effe078d9d405593bfcf44673">More...</a><br /></td></tr>
 <tr class="separator:a30840f5effe078d9d405593bfcf44673"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -308,6 +311,9 @@ Protected Attributes</h2></td></tr>
 <tr class="memitem:a5bdc5cd1e536fcaec743d2daa98187a0"><td class="memItemLeft" align="right" valign="top">Gtk::Switch&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSBBHostApp.html#a5bdc5cd1e536fcaec743d2daa98187a0">darkModeSwitch</a></td></tr>
 <tr class="memdesc:a5bdc5cd1e536fcaec743d2daa98187a0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gtk::Switch object for the switch to enable/disable the dark mode.  <a href="classSBBHostApp.html#a5bdc5cd1e536fcaec743d2daa98187a0">More...</a><br /></td></tr>
 <tr class="separator:a5bdc5cd1e536fcaec743d2daa98187a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aae540f57f45e9b9d435857a84c6cf747"><td class="memItemLeft" align="right" valign="top">Gtk::Switch&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSBBHostApp.html#aae540f57f45e9b9d435857a84c6cf747">streamModeSwitch</a></td></tr>
+<tr class="memdesc:aae540f57f45e9b9d435857a84c6cf747"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gtk::Switch object to switch the stream mode (serial/socket).  <a href="classSBBHostApp.html#aae540f57f45e9b9d435857a84c6cf747">More...</a><br /></td></tr>
+<tr class="separator:aae540f57f45e9b9d435857a84c6cf747"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1e93b286668cbf5fa660c44fa7e42f24"><td class="memItemLeft" align="right" valign="top">Gtk::ScrolledWindow&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSBBHostApp.html#a1e93b286668cbf5fa660c44fa7e42f24">scrolledWinStream</a></td></tr>
 <tr class="memdesc:a1e93b286668cbf5fa660c44fa7e42f24"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gtk::ScrolledWindow object containing a <a class="el" href="classStreamTreeView.html" title="A class for the stream tree view.">StreamTreeView</a> object.  <a href="classSBBHostApp.html#a1e93b286668cbf5fa660c44fa7e42f24">More...</a><br /></td></tr>
 <tr class="separator:a1e93b286668cbf5fa660c44fa7e42f24"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -1385,6 +1391,34 @@ Private Attributes</h2></td></tr>
 
 <p>Signal handler called on sturtup. </p>
 <p >Function for signal handler called on startup. It performs basic initializations for the application. It overrides the virtual member in Gtk::Application. </p>
+
+</div>
+</div>
+<a id="aedaeec6961fff4a5adb0667522112c66" name="aedaeec6961fff4a5adb0667522112c66"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aedaeec6961fff4a5adb0667522112c66">&#9670;&nbsp;</a></span>on_streamModeSwitch_switched()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void SBBHostApp::on_streamModeSwitch_switched </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Signal handler called on streamMode button switched. </p>
+<p >Function for signal handler called when switching the streamode button, in order to enable or disable the dark mode. </p>
 
 </div>
 </div>
@@ -2809,6 +2843,30 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Value of the stream-graph timer. </p>
+
+</div>
+</div>
+<a id="aae540f57f45e9b9d435857a84c6cf747" name="aae540f57f45e9b9d435857a84c6cf747"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aae540f57f45e9b9d435857a84c6cf747">&#9670;&nbsp;</a></span>streamModeSwitch</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Gtk::Switch SBBHostApp::streamModeSwitch</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gtk::Switch object to switch the stream mode (serial/socket). </p>
 
 </div>
 </div>

@@ -92,6 +92,8 @@ var config_8h =
     [ "SETTINGWIN_NAME", "config_8h.html#a4d61e1e35a4b8727cec2148a6b7e61bf", null ],
     [ "SETTINGWIN_WIDTH", "config_8h.html#af8ca3cdf46ceeea9fd2929608278f9e6", null ],
     [ "SIGNALS_NAMES", "config_8h.html#ab26cf9cafeb718f52c5429bd5f4f64de", null ],
+    [ "SOCKET_IP", "config_8h.html#a9fc8d4fb2e3a816c3e4d91e45b4cdf64", null ],
+    [ "SOCKET_PORT", "config_8h.html#a120b3c12a694462fcedc15e429a53bd6", null ],
     [ "STOP_BUTICON", "config_8h.html#a8a26d421d5a8b74ed9c03a6d81eb17b8", null ],
     [ "STOP_BUTLABEL", "config_8h.html#aa540b84c707c22dbbed3bf9356254588", null ],
     [ "STREAM_GRAPH_DECIM", "config_8h.html#a6bbf899bd80846ae188e22ffc0ffd1b2", null ],
