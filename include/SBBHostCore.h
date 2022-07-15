@@ -9,7 +9,7 @@
 #include <stdlib.h>
 #include "config.h"
 #include "Params.h"
-#include "HostPortSocket.h"
+#include "HostPortTCP.h"
 #include "HostPort.h"
 #include "Packet.h"
 #include "LogData.h" 
@@ -73,7 +73,7 @@ public: //almost all members are public b/c SBBHostApp should have (almost) the 
 
 	//objects
 	HostPort hostPort; //!< HostPort object.
-	HostPortSocket hostPortSocket; //!< HostPortSocket object.
+	HostPortTCP hostPortSocket; //!< HostPortTCP object.
 	Packet<float, PACKET_SIZE> rx_packet; //!< Rx Packet object.
 	Packet<float, PACKET_SIZE> tx_packet; //!< Tx Packet object
 	Time time; //!< Time object.

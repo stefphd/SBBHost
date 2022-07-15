@@ -108,7 +108,7 @@
     <ClInclude Include="include\HostControl.h">
       <Filter>include</Filter>
     </ClInclude>
-    <ClInclude Include="include\HostPortSocket.h">
+    <ClInclude Include="include\HostPortTCP.h">
       <Filter>include</Filter>
     </ClInclude>
     <ClInclude Include="lib\sockpp\acceptor.h">
@@ -266,7 +266,7 @@
     <ClCompile Include="src\HostControl.cpp">
       <Filter>src</Filter>
     </ClCompile>
-    <ClCompile Include="src\HostPortSocket.cpp">
+    <ClCompile Include="src\HostPortTCP.cpp">
       <Filter>src</Filter>
     </ClCompile>
     <ClCompile Include="lib\sockpp\acceptor.cpp">

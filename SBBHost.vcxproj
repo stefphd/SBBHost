@@ -25,7 +25,7 @@
     <ClInclude Include="include\HostControl.h" />
     <ClInclude Include="include\HostControlDialog.h" />
     <ClInclude Include="include\HostPort.h" />
-    <ClInclude Include="include\HostPortSocket.h" />
+    <ClInclude Include="include\HostPortTCP.h" />
     <ClInclude Include="include\IniReader.h" />
     <ClInclude Include="include\LogData.h" />
     <ClInclude Include="include\Packet.h" />
@@ -95,7 +95,7 @@
     <ClCompile Include="src\File.cpp" />
     <ClCompile Include="src\HostControl.cpp" />
     <ClCompile Include="src\HostPort.cpp" />
-    <ClCompile Include="src\HostPortSocket.cpp" />
+    <ClCompile Include="src\HostPortTCP.cpp" />
     <ClCompile Include="src\IniReader.cpp" />
     <ClCompile Include="src\main.cpp" />
     <ClCompile Include="src\Params.cpp" />
