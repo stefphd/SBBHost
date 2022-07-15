@@ -9,7 +9,7 @@ var searchData=
   ['mainwin_5fwidth_6',['mainWin_width',['../classParams.html#a94caac2fce050f4833d16174f765b1b3',1,'Params']]],
   ['mainwin_5fwidth_7',['MAINWIN_WIDTH',['../config_8h.html#a2caf52fceb53cf020e4e8fe3ecdf7510',1,'config.h']]],
   ['margin_8',['MARGIN',['../config_8h.html#ab05a798afd72aac947f417e1dab73c87',1,'config.h']]],
-  ['mask_9',['MASK',['../classHostPortSocket.html#ab731118c0246a8b8c655bb905c62c73a',1,'HostPortSocket::MASK()'],['../classHostPort.html#a209abfd2f8c5fc2c2d350e5db506e705',1,'HostPort::MASK()']]],
+  ['mask_9',['MASK',['../classHostPortTCP.html#add93d8a03d323625af39c03af582072a',1,'HostPortTCP::MASK()'],['../classHostPort.html#a209abfd2f8c5fc2c2d350e5db506e705',1,'HostPort::MASK()']]],
   ['max_5flogged_5fsamples_10',['MAX_LOGGED_SAMPLES',['../config_8h.html#a926ad1ced106070e1e79a4cb414344bf',1,'config.h']]],
   ['max_5fmissing_5fpackets_11',['MAX_MISSING_PACKETS',['../config_8h.html#abbaad26ad7b4a876914cb4b6551b2f48',1,'config.h']]],
   ['max_5fmissing_5fpackets_12',['max_missing_packets',['../classParams.html#a147d623f178d729a0de8179a40eec636',1,'Params']]],

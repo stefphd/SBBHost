@@ -38,5 +38,5 @@ var searchData=
   ['on_5fstreammodeswitch_5fswitched_35',['on_streamModeSwitch_switched',['../classSBBHostApp.html#aedaeec6961fff4a5adb0667522112c66',1,'SBBHostApp']]],
   ['on_5fwin_5fclose_36',['on_win_close',['../classSBBHostApp.html#a89fff85838ddb985e53af447ac17227c',1,'SBBHostApp']]],
   ['open_37',['open',['../classFile.html#a354804a7650f9c2d363212003e2d9f17',1,'File::open()'],['../classSBBHostApp.html#a3a63600e1ce4299585b7dbc028126e19',1,'SBBHostApp::open()'],['../classSBBHostCore.html#a6072c75a72052dc06ca7645b3366a3cb',1,'SBBHostCore::open()']]],
-  ['operator_20bool_38',['operator bool',['../classFile.html#af171fbf441c899cf71d88b8b0b83d38b',1,'File::operator bool()'],['../classHostPort.html#a2ba752145e4ccb586100568015c01dfa',1,'HostPort::operator bool()'],['../classHostPortSocket.html#ade1a16cb4671292de05f9eaa33fc62bc',1,'HostPortSocket::operator bool()'],['../classSerial.html#ad97c059e3534966c1d48cc03db5f4330',1,'Serial::operator bool()']]]
+  ['operator_20bool_38',['operator bool',['../classFile.html#af171fbf441c899cf71d88b8b0b83d38b',1,'File::operator bool()'],['../classHostPort.html#a2ba752145e4ccb586100568015c01dfa',1,'HostPort::operator bool()'],['../classHostPortTCP.html#a8935801d7db981e631ef5431def7ca6c',1,'HostPortTCP::operator bool()'],['../classSerial.html#ad97c059e3534966c1d48cc03db5f4330',1,'Serial::operator bool()']]]
 ];

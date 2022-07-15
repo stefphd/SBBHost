@@ -1,7 +1,7 @@
 var searchData=
 [
   ['h_0',['h',['../structutils_1_1hhmmss__t.html#a7b7b8eedd9246e2266160b7813251f35',1,'utils::hhmmss_t']]],
-  ['header_1',['HEADER',['../classHostPort.html#a69bbedd9649091442246673ba2da7495',1,'HostPort::HEADER()'],['../classHostPortSocket.html#ab6e602f5f4cc8b53556ec777328c62ab',1,'HostPortSocket::HEADER()']]],
+  ['header_1',['HEADER',['../classHostPort.html#a69bbedd9649091442246673ba2da7495',1,'HostPort::HEADER()'],['../classHostPortTCP.html#a1ee68da49156c2a36e822c43d909234c',1,'HostPortTCP::HEADER()']]],
   ['header_2',['header',['../classParams.html#a0586b5a7cca9c4d81252777f10f5e095',1,'Params::header()'],['../classSettingsDialog.html#a19f1e13e629d2d04ec5c65f38193aea6',1,'SettingsDialog::header()']]],
   ['headerbar_3',['headerbar',['../classSBBHostApp.html#aec00d8491b8ece0fc2a8bb4041f80be0',1,'SBBHostApp']]],
   ['headerbarlabel_4',['headerbarlabel',['../classSBBHostApp.html#aba539567d8f5f6530cae4cc0d5503bcd',1,'SBBHostApp']]],
@@ -16,7 +16,7 @@ var searchData=
   ['hostport_13',['hostPort',['../classSBBHostCore.html#a4f8e26feb97ad06bf6ad60d17be20bd7',1,'SBBHostCore']]],
   ['hostport_14',['HostPort',['../classHostPort.html#abb70e8d977dee0743709fb2a14106e18',1,'HostPort::HostPort()'],['../classHostPort.html',1,'HostPort']]],
   ['hostport_2eh_15',['HostPort.h',['../HostPort_8h.html',1,'']]],
-  ['hostportsocket_16',['HostPortSocket',['../classHostPortSocket.html',1,'HostPortSocket'],['../classHostPortSocket.html#a22914d94b99ab3183aac43bf3d37825d',1,'HostPortSocket::HostPortSocket()']]],
-  ['hostportsocket_17',['hostPortSocket',['../classSBBHostCore.html#ad414a883e34d3538c418aee58dee8680',1,'SBBHostCore']]],
-  ['hostportsocket_2eh_18',['HostPortSocket.h',['../HostPortSocket_8h.html',1,'']]]
+  ['hostportsocket_16',['hostPortSocket',['../classSBBHostCore.html#a1fa8e4c0ae5cc290f485585071ac612d',1,'SBBHostCore']]],
+  ['hostporttcp_17',['HostPortTCP',['../classHostPortTCP.html',1,'HostPortTCP'],['../classHostPortTCP.html#a3fd4a30eac122e1bb0e449cf332e0c38',1,'HostPortTCP::HostPortTCP()']]],
+  ['hostporttcp_2eh_18',['HostPortTCP.h',['../HostPortTCP_8h.html',1,'']]]
 ];

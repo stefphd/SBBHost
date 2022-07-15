@@ -19,7 +19,7 @@ var searchData=
   ['filename_5fformat_5fstring_16',['FILENAME_FORMAT_STRING',['../config_8h.html#a8695a7a2c2b89a3c34e95da6c97d037c',1,'config.h']]],
   ['filename_5fmaxsize_17',['FILENAME_MAXSIZE',['../config_8h.html#acf1986d9291d2530b2bb7629d39c4655',1,'config.h']]],
   ['find_18',['find',['../classSBBHostCore.html#ad361d786da1a54a53be673e79bdf8ed9',1,'SBBHostCore']]],
-  ['flush_19',['flush',['../classHostPortSocket.html#a7d13fab133c04985a5dca54dc5610b4f',1,'HostPortSocket::flush()'],['../classSerial.html#a63b7abf172cad25bfc998b3b1f98310f',1,'Serial::flush()']]],
+  ['flush_19',['flush',['../classHostPortTCP.html#a2cec251d4eea540bb1e6a441a6f8cad2',1,'HostPortTCP::flush()'],['../classSerial.html#a63b7abf172cad25bfc998b3b1f98310f',1,'Serial::flush()']]],
   ['force_5fclose_20',['force_close',['../classSBBHostApp.html#a4a156b0fc79894a7dc25cfefee8823b0',1,'SBBHostApp']]],
   ['forward_5fsampes_21',['FORWARD_SAMPES',['../config_8h.html#a2371ff2c9a050dfc110698814447a5d3',1,'config.h']]],
   ['forward_5fsamples_22',['forward_samples',['../classParams.html#a5ced175e8beb268e09f8e8a792675b8b',1,'Params']]],

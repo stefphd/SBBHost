@@ -4,7 +4,7 @@ var searchData=
   ['mainwin_1',['mainWin',['../classSBBHostApp.html#a4f1643f2fc42beb1fa3a7a7a00e1afb4',1,'SBBHostApp']]],
   ['mainwin_5fheight_2',['mainWin_height',['../classParams.html#aeaf22b5f712a0f841b5725a4608d9ecf',1,'Params']]],
   ['mainwin_5fwidth_3',['mainWin_width',['../classParams.html#a94caac2fce050f4833d16174f765b1b3',1,'Params']]],
-  ['mask_4',['MASK',['../classHostPort.html#a209abfd2f8c5fc2c2d350e5db506e705',1,'HostPort::MASK()'],['../classHostPortSocket.html#ab731118c0246a8b8c655bb905c62c73a',1,'HostPortSocket::MASK()']]],
+  ['mask_4',['MASK',['../classHostPort.html#a209abfd2f8c5fc2c2d350e5db506e705',1,'HostPort::MASK()'],['../classHostPortTCP.html#add93d8a03d323625af39c03af582072a',1,'HostPortTCP::MASK()']]],
   ['max_5fmissing_5fpackets_5',['max_missing_packets',['../classParams.html#a147d623f178d729a0de8179a40eec636',1,'Params']]],
   ['max_5fnum_5fsamples_6',['max_num_samples',['../classLogData.html#ac6bbf3544354d578e71bb13ced071eb2',1,'LogData']]],
   ['maxentry_7',['maxEntry',['../classSlider.html#a3d0dd0fbed9eab3b2578d8b9cacb4f72',1,'Slider']]],

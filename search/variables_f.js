@@ -18,7 +18,7 @@ var searchData=
   ['socket_15',['SOCKET',['../classParams.html#a1c86a0f9a5688cfccee13c5ea16806a2',1,'Params']]],
   ['socket_5fip_16',['socket_ip',['../classParams.html#abc77b1f86aec54b6ba5f29d35989c7b5',1,'Params::socket_ip()'],['../classSettingsDialog.html#abf357d300a98612caff8658bd02ee545',1,'SettingsDialog::socket_ip()']]],
   ['socket_5fport_17',['socket_port',['../classSettingsDialog.html#a8ab7b7d49b29645df77f5b3603c7c7a0',1,'SettingsDialog::socket_port()'],['../classParams.html#ab708813c13223d248395b8dbaf7d9088',1,'Params::socket_port()']]],
-  ['sockinit_18',['sockInit',['../classHostPortSocket.html#ae3200723b62813ec93b453e9ee84330c',1,'HostPortSocket']]],
+  ['sockinit_18',['sockInit',['../classHostPortTCP.html#ab5eb37c3191128fcd5d3456dc0836e87',1,'HostPortTCP']]],
   ['stack_19',['stack',['../classSBBHostApp.html#afe099b62b8a54ebfcd778fedf704aa43',1,'SBBHostApp']]],
   ['str_20',['str',['../classComboChoiceEntryLabel.html#a0b251c271637973bf8725651dfbe36a8',1,'ComboChoiceEntryLabel']]],
   ['str_5flen_21',['STR_LEN',['../classTime.html#a622ca758e5048573ba5a3ab9b8c46db9',1,'Time']]],

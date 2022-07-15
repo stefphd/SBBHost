@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['client_0',['client',['../classHostPortSocket.html#a07cdcc122d7f4986b4bfd90303db987a',1,'HostPortSocket']]],
+  ['client_0',['client',['../classHostPortTCP.html#aada774e13743b5dcbc8f88c6d6569f16',1,'HostPortTCP']]],
   ['col_5faverage_1',['col_average',['../classTreeColumns.html#a0af7c4fa56018d53367312716ce90ef7',1,'TreeColumns']]],
   ['col_5fcolor_2',['col_color',['../classTreeColumns.html#afb6c390c5645403683f11f14d47b6ad1',1,'TreeColumns']]],
   ['col_5flinetype_3',['col_linetype',['../classTreeColumns.html#a5f8fc2b4ceb0c96c376cbe0e71402934',1,'TreeColumns']]],
