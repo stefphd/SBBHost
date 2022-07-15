@@ -400,7 +400,7 @@ void SBBHostApp::set_tooltips() {
 	buttonLog.set_tooltip_text("Enable signal logging.");
 	streamTimeLabel.set_tooltip_text("Elapsed time of current signal streaming.");
 	darkModeSwitch.set_tooltip_text("Enable the darkmode.");
-	streamModeSwitch.set_tooltip_text("Serial/Socket communication");
+	streamModeSwitch.set_tooltip_text("USB/Serial or TCP/IP communication");
 	//p_streamGraph->set_tooltip_text("Stream graph.");
 	streamTreeView.set_tooltip_text("Select the signal to plot.");
 	plotTreeView.set_tooltip_text("Select the logged signal to plot.");
