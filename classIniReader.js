@@ -8,6 +8,7 @@ var classIniReader =
     [ "getInt", "classIniReader.html#a5508c16d15dc51f78c065e8b5500bbf3", null ],
     [ "getString", "classIniReader.html#a3be80073f300bad0b4d23ce1b006427f", null ],
     [ "getStringArray", "classIniReader.html#ad8e3d157e2fc06448eb9208d7ca381f2", null ],
+    [ "isOpen", "classIniReader.html#a0b3e88db404e4134209cb2f844a4803c", null ],
     [ "_name", "classIniReader.html#a6168c5adff6020028e384a05ff9db73e", null ],
     [ "p_file", "classIniReader.html#a8dcab5819ef30e9aaffc6339e89c4edf", null ]
 ];

@@ -9,6 +9,7 @@ var annotated_dup =
     [ "HostControl", "classHostControl.html", "classHostControl" ],
     [ "HostPort", "classHostPort.html", "classHostPort" ],
     [ "HostPortTCP", "classHostPortTCP.html", "classHostPortTCP" ],
+    [ "HostPortUDP", "classHostPortUDP.html", "classHostPortUDP" ],
     [ "IniReader", "classIniReader.html", "classIniReader" ],
     [ "LogData", "classLogData.html", "classLogData" ],
     [ "Packet", "classPacket.html", "classPacket" ],

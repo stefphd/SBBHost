@@ -7,6 +7,7 @@ var dir_d44c64559bbebec7f509842c48db8b23 =
     [ "HostControl.h", "HostControl_8h.html", "HostControl_8h" ],
     [ "HostPort.h", "HostPort_8h.html", "HostPort_8h" ],
     [ "HostPortTCP.h", "HostPortTCP_8h.html", "HostPortTCP_8h" ],
+    [ "HostPortUDP.h", "HostPortUDP_8h.html", "HostPortUDP_8h" ],
     [ "IniReader.h", "IniReader_8h.html", "IniReader_8h" ],
     [ "LogData.h", "LogData_8h.html", "LogData_8h" ],
     [ "Packet.h", "Packet_8h.html", "Packet_8h" ],

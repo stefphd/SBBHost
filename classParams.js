@@ -31,13 +31,14 @@ var classParams =
     [ "settingsDialog_height", "classParams.html#a48160f3e70e7ef97afde20cde9ad43ab", null ],
     [ "settingsDialog_width", "classParams.html#a1c69e4eede2449572c62124bd27166de", null ],
     [ "signals", "classParams.html#a5c999b789514b9e9b5a82b90a30de359", null ],
-    [ "SOCKET", "classParams.html#a1c86a0f9a5688cfccee13c5ea16806a2", null ],
     [ "socket_ip", "classParams.html#abc77b1f86aec54b6ba5f29d35989c7b5", null ],
     [ "socket_port", "classParams.html#ab708813c13223d248395b8dbaf7d9088", null ],
     [ "stream_graph_decim", "classParams.html#ad1460ddda5a58ccf46c86c1626d369bb", null ],
+    [ "TCP", "classParams.html#aae4f3724cfb5a1c58590f3367e61ae72", null ],
     [ "terminator", "classParams.html#aebaa6fc15c09b4b89c76f9760be1ed59", null ],
     [ "tick_scale", "classParams.html#ad11cd113afa945b60807f4b080ff61d7", null ],
     [ "timeout", "classParams.html#a0d499b6e067132d7b90c718f5d160cad", null ],
+    [ "UDP", "classParams.html#a30f3441f8bd08dcc0825d9b4d090ea61", null ],
     [ "use_darkmode", "classParams.html#a831be4d351f2f68335bc78072f5941ff", null ],
     [ "window_samples", "classParams.html#a96176eb045b20cf6f4b7925914d893ab", null ]
 ];

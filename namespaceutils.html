@@ -118,6 +118,21 @@ Classes</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
+<tr class="memitem:a96833aed08edaca6d98f06d3513fa41e"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceutils.html#a96833aed08edaca6d98f06d3513fa41e">filecp</a> (const char FileSource[], const char FileDestination[])</td></tr>
+<tr class="memdesc:a96833aed08edaca6d98f06d3513fa41e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copy a file.  <a href="namespaceutils.html#a96833aed08edaca6d98f06d3513fa41e">More...</a><br /></td></tr>
+<tr class="separator:a96833aed08edaca6d98f06d3513fa41e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8e74671a2109b461764ea913d86ba043"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceutils.html#a8e74671a2109b461764ea913d86ba043">getIP_and_subnetmask</a> (uint32_t *ip=nullptr, uint32_t *mask=nullptr, std::string *ip_str=nullptr, std::string *mask_str=nullptr)</td></tr>
+<tr class="memdesc:a8e74671a2109b461764ea913d86ba043"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the local IP and subnet mask.  <a href="namespaceutils.html#a8e74671a2109b461764ea913d86ba043">More...</a><br /></td></tr>
+<tr class="separator:a8e74671a2109b461764ea913d86ba043"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a074012a27b11efc258faa8e3f125c931"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceutils.html#a074012a27b11efc258faa8e3f125c931">get_remoteIP</a> (uint32_t ip, uint32_t mask, std::string *str=nullptr)</td></tr>
+<tr class="memdesc:a074012a27b11efc258faa8e3f125c931"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the remote IP.  <a href="namespaceutils.html#a074012a27b11efc258faa8e3f125c931">More...</a><br /></td></tr>
+<tr class="separator:a074012a27b11efc258faa8e3f125c931"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1c19d993b535eeb2430a9671d8ce8627"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceutils.html#a1c19d993b535eeb2430a9671d8ce8627">get_broadcastIP</a> (uint32_t ip, uint32_t mask, std::string *str=nullptr)</td></tr>
+<tr class="memdesc:a1c19d993b535eeb2430a9671d8ce8627"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the broadcast IP.  <a href="namespaceutils.html#a1c19d993b535eeb2430a9671d8ce8627">More...</a><br /></td></tr>
+<tr class="separator:a1c19d993b535eeb2430a9671d8ce8627"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1a8194914b4c6c2b64661554aae2692e"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceutils.html#a1a8194914b4c6c2b64661554aae2692e">ip_str2num</a> (std::string ip_str)</td></tr>
+<tr class="memdesc:a1a8194914b4c6c2b64661554aae2692e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert IP from string to uint32.  <a href="namespaceutils.html#a1a8194914b4c6c2b64661554aae2692e">More...</a><br /></td></tr>
+<tr class="separator:a1a8194914b4c6c2b64661554aae2692e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a34ffd201af9ce727c4ad8acde989bce1"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceutils.html#a34ffd201af9ce727c4ad8acde989bce1">hex2str</a> (unsigned int v)</td></tr>
 <tr class="memdesc:a34ffd201af9ce727c4ad8acde989bce1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert HEX from unsigned int to string.  <a href="namespaceutils.html#a34ffd201af9ce727c4ad8acde989bce1">More...</a><br /></td></tr>
 <tr class="separator:a34ffd201af9ce727c4ad8acde989bce1"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -195,6 +210,89 @@ Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="a96833aed08edaca6d98f06d3513fa41e" name="a96833aed08edaca6d98f06d3513fa41e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a96833aed08edaca6d98f06d3513fa41e">&#9670;&nbsp;</a></span>filecp()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int utils::filecp </td>
+          <td>(</td>
+          <td class="paramtype">const char&#160;</td>
+          <td class="paramname"><em>FileSource</em>[], </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char&#160;</td>
+          <td class="paramname"><em>FileDestination</em>[]&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Copy a file. </p>
+<p >Robust function to copy file from source to destination. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">FileSource</td><td>Char array with the source file path. </td></tr>
+    <tr><td class="paramname">FileDestination</td><td>Char array with the destination file path. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>0 if success, -1 and -2 if cannot open source or destination file. </dd></dl>
+
+</div>
+</div>
+<a id="a1c19d993b535eeb2430a9671d8ce8627" name="a1c19d993b535eeb2430a9671d8ce8627"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1c19d993b535eeb2430a9671d8ce8627">&#9670;&nbsp;</a></span>get_broadcastIP()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t utils::get_broadcastIP </td>
+          <td>(</td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>ip</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>mask</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::string *&#160;</td>
+          <td class="paramname"><em>str</em> = <code>nullptr</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get the broadcast IP. </p>
+<p >Function to get the broadcast IP from the local IP and subnet mask. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ip</td><td>Local IP. </td></tr>
+    <tr><td class="paramname">mask</td><td>Subnet mask. </td></tr>
+    <tr><td class="paramname">str</td><td>Pointer where save the broadcast IP in string format (XXX.XXX.XXX.XXX). </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The broadcast IP. </dd></dl>
+
+</div>
+</div>
 <a id="aee1b0370388d7e18634924f2600d3c00" name="aee1b0370388d7e18634924f2600d3c00"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aee1b0370388d7e18634924f2600d3c00">&#9670;&nbsp;</a></span>get_home_path()</h2>
 
@@ -212,6 +310,103 @@ Functions</h2></td></tr>
 
 <p>Get the HOME path. </p>
 <p >Function to get a home path (i.e. HOME in Linux, Documents in Windows). If Documents is not found in Windows, C:\ is used. <a class="el" href="classFile.html" title="A class for file reading and writing.">File</a> separator used is consistent with the operative system. </p><dl class="section return"><dt>Returns</dt><dd>A string denoting the home path. </dd></dl>
+
+</div>
+</div>
+<a id="a074012a27b11efc258faa8e3f125c931" name="a074012a27b11efc258faa8e3f125c931"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a074012a27b11efc258faa8e3f125c931">&#9670;&nbsp;</a></span>get_remoteIP()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t utils::get_remoteIP </td>
+          <td>(</td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>ip</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>mask</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::string *&#160;</td>
+          <td class="paramname"><em>str</em> = <code>nullptr</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get the remote IP. </p>
+<p >Function to get the remote IP from the local IP and subnet mask. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ip</td><td>Local IP. </td></tr>
+    <tr><td class="paramname">mask</td><td>Subnet mask. </td></tr>
+    <tr><td class="paramname">str</td><td>Pointer where save the remote IP in string format (XXX.XXX.XXX.XXX). </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The remote IP. </dd></dl>
+
+</div>
+</div>
+<a id="a8e74671a2109b461764ea913d86ba043" name="a8e74671a2109b461764ea913d86ba043"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8e74671a2109b461764ea913d86ba043">&#9670;&nbsp;</a></span>getIP_and_subnetmask()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int utils::getIP_and_subnetmask </td>
+          <td>(</td>
+          <td class="paramtype">uint32_t *&#160;</td>
+          <td class="paramname"><em>ip</em> = <code>nullptr</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t *&#160;</td>
+          <td class="paramname"><em>mask</em> = <code>nullptr</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::string *&#160;</td>
+          <td class="paramname"><em>ip_str</em> = <code>nullptr</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::string *&#160;</td>
+          <td class="paramname"><em>mask_str</em> = <code>nullptr</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get the local IP and subnet mask. </p>
+<p >Function to get the local IP address and subnet mask. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ip</td><td>Pointer where saving the local IP. </td></tr>
+    <tr><td class="paramname">mask</td><td>Pointer where saving the subnet mask. </td></tr>
+    <tr><td class="paramname">ip_str</td><td>Pointer where saving the local IP in string format (XXX.XXX.XXX.XXX). </td></tr>
+    <tr><td class="paramname">mask_str</td><td>Pointer where saving the subnet mask in string format (XXX.XXX.XXX.XXX). </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>0 if success, 1 otherwise </dd></dl>
 
 </div>
 </div>
@@ -239,6 +434,33 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The HEX value as a string. </dd></dl>
+
+</div>
+</div>
+<a id="a1a8194914b4c6c2b64661554aae2692e" name="a1a8194914b4c6c2b64661554aae2692e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1a8194914b4c6c2b64661554aae2692e">&#9670;&nbsp;</a></span>ip_str2num()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t utils::ip_str2num </td>
+          <td>(</td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>ip_str</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Convert IP from string to uint32. </p>
+<p >Function to convert IP from string to uint32. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ip_str</td><td>The IP. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The IP. </dd></dl>
 
 </div>
 </div>

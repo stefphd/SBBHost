@@ -103,6 +103,7 @@ $(document).ready(function(){initNavTree('classSettingsDialog.html',''); initRes
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pro-attribs">Protected Attributes</a> &#124;
+<a href="#pri-methods">Private Member Functions</a> &#124;
 <a href="classSettingsDialog-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">SettingsDialog Class Reference</div></div>
 </div><!--header-->
@@ -130,6 +131,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a4e4e104e32fc80b42afb876185a34786"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSettingsDialog.html#a4e4e104e32fc80b42afb876185a34786">set_params</a> (<a class="el" href="classParams.html">Params</a> *p_params)</td></tr>
 <tr class="memdesc:a4e4e104e32fc80b42afb876185a34786"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the parameters.  <a href="classSettingsDialog.html#a4e4e104e32fc80b42afb876185a34786">More...</a><br /></td></tr>
 <tr class="separator:a4e4e104e32fc80b42afb876185a34786"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5fcfac9e71248723262f1dd2919b6128"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSettingsDialog.html#a5fcfac9e71248723262f1dd2919b6128">get_selected_ip</a> ()</td></tr>
+<tr class="memdesc:a5fcfac9e71248723262f1dd2919b6128"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the selected ip.  <a href="classSettingsDialog.html#a5fcfac9e71248723262f1dd2919b6128">More...</a><br /></td></tr>
+<tr class="separator:a5fcfac9e71248723262f1dd2919b6128"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-attribs" name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
@@ -142,6 +146,9 @@ Protected Attributes</h2></td></tr>
 <tr class="memitem:a4354bb646592969867f6a24d7ae8c888"><td class="memItemLeft" align="right" valign="top">Gtk::Grid&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSettingsDialog.html#a4354bb646592969867f6a24d7ae8c888">plotGrid</a></td></tr>
 <tr class="memdesc:a4354bb646592969867f6a24d7ae8c888"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gtk::Grid object for the plot setting page.  <a href="classSettingsDialog.html#a4354bb646592969867f6a24d7ae8c888">More...</a><br /></td></tr>
 <tr class="separator:a4354bb646592969867f6a24d7ae8c888"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6431da6d3b767ddbb699def55c35af4c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classComboChoiceEntryLabel.html">ComboChoiceEntryLabel</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSettingsDialog.html#a6431da6d3b767ddbb699def55c35af4c">conntype</a></td></tr>
+<tr class="memdesc:a6431da6d3b767ddbb699def55c35af4c"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classComboChoiceEntryLabel.html" title="A class with a Gtk::ComboBoxText and Gtk::Label. Slightly different from ComboEntryLabel.">ComboChoiceEntryLabel</a> object for the choiche of the connection type.  <a href="classSettingsDialog.html#a6431da6d3b767ddbb699def55c35af4c">More...</a><br /></td></tr>
+<tr class="separator:a6431da6d3b767ddbb699def55c35af4c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a05ba637b84e87764d83c84e7b7b509d6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classComboEntryLabel.html">ComboEntryLabel</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSettingsDialog.html#a05ba637b84e87764d83c84e7b7b509d6">port</a></td></tr>
 <tr class="memdesc:a05ba637b84e87764d83c84e7b7b509d6"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classComboEntryLabel.html" title="A class with a Gtk::ComboBoxText and Gtk::Label.">ComboEntryLabel</a> object for the choice of the serial port.  <a href="classSettingsDialog.html#a05ba637b84e87764d83c84e7b7b509d6">More...</a><br /></td></tr>
 <tr class="separator:a05ba637b84e87764d83c84e7b7b509d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -187,6 +194,11 @@ Protected Attributes</h2></td></tr>
 <tr class="memitem:a2768eba5ef395196b164589cdb1404ca"><td class="memItemLeft" align="right" valign="top">Gtk::Button *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSettingsDialog.html#a2768eba5ef395196b164589cdb1404ca">p_buttonApply</a></td></tr>
 <tr class="memdesc:a2768eba5ef395196b164589cdb1404ca"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pointer to the Apply Gtk::Button.  <a href="classSettingsDialog.html#a2768eba5ef395196b164589cdb1404ca">More...</a><br /></td></tr>
 <tr class="separator:a2768eba5ef395196b164589cdb1404ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-methods" name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr class="memitem:aceb0d739157eea5008eca72131653948"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSettingsDialog.html#aceb0d739157eea5008eca72131653948">on_conn_type_changed</a> ()</td></tr>
+<tr class="separator:aceb0d739157eea5008eca72131653948"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p >A class for the setting dialog. </p>
@@ -215,6 +227,51 @@ Protected Attributes</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a id="a5fcfac9e71248723262f1dd2919b6128" name="a5fcfac9e71248723262f1dd2919b6128"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5fcfac9e71248723262f1dd2919b6128">&#9670;&nbsp;</a></span>get_selected_ip()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string SettingsDialog::get_selected_ip </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get the selected ip. </p>
+<p >Function to get the selected ip. </p><dl class="section return"><dt>Returns</dt><dd>The IP address. </dd></dl>
+
+</div>
+</div>
+<a id="aceb0d739157eea5008eca72131653948" name="aceb0d739157eea5008eca72131653948"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aceb0d739157eea5008eca72131653948">&#9670;&nbsp;</a></span>on_conn_type_changed()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void SettingsDialog::on_conn_type_changed </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="a4e4e104e32fc80b42afb876185a34786" name="a4e4e104e32fc80b42afb876185a34786"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a4e4e104e32fc80b42afb876185a34786">&#9670;&nbsp;</a></span>set_params()</h2>
 
@@ -301,6 +358,30 @@ Protected Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p><a class="el" href="classSpinEntryLabel.html" title="A class with a Gtk::SpinButton and Gtk::Label.">SpinEntryLabel</a> object for the baudrate. </p>
+
+</div>
+</div>
+<a id="a6431da6d3b767ddbb699def55c35af4c" name="a6431da6d3b767ddbb699def55c35af4c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6431da6d3b767ddbb699def55c35af4c">&#9670;&nbsp;</a></span>conntype</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classComboChoiceEntryLabel.html">ComboChoiceEntryLabel</a> SettingsDialog::conntype</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><a class="el" href="classComboChoiceEntryLabel.html" title="A class with a Gtk::ComboBoxText and Gtk::Label. Slightly different from ComboEntryLabel.">ComboChoiceEntryLabel</a> object for the choiche of the connection type. </p>
 
 </div>
 </div>

@@ -1,9 +1,12 @@
 var classSettingsDialog =
 [
     [ "SettingsDialog", "classSettingsDialog.html#ae74d388934100018a0c0dc20076511d1", null ],
+    [ "get_selected_ip", "classSettingsDialog.html#a5fcfac9e71248723262f1dd2919b6128", null ],
+    [ "on_conn_type_changed", "classSettingsDialog.html#aceb0d739157eea5008eca72131653948", null ],
     [ "set_params", "classSettingsDialog.html#a4e4e104e32fc80b42afb876185a34786", null ],
     [ "show", "classSettingsDialog.html#af539ab307cec9ebb8578754a9ee48f24", null ],
     [ "baud", "classSettingsDialog.html#a3d82e6b64640833ee63f2f4b62a52011", null ],
+    [ "conntype", "classSettingsDialog.html#a6431da6d3b767ddbb699def55c35af4c", null ],
     [ "fps", "classSettingsDialog.html#acace43db564e7f60343fea5f9a036f25", null ],
     [ "header", "classSettingsDialog.html#a19f1e13e629d2d04ec5c65f38193aea6", null ],
     [ "maxmissings", "classSettingsDialog.html#a3647273739bfb09a4df3533c40c786b0", null ],
