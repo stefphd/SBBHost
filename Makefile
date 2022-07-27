@@ -114,7 +114,7 @@ cleaner: clean
 	@$(RM) -rf $(TARGETDIR)
 
 #Run the program
-run: all
+run: $(TARGET)
 	cd $(TARGETDIR); ./$(TARGET);
 
 #Pull in dependency info for *existing* .o files
