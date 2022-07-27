@@ -9,6 +9,7 @@
 #include <stdlib.h>
 #include "config.h"
 #include "Params.h"
+#include "HostPortUDP.h"
 #include "HostPortTCP.h"
 #include "HostPort.h"
 #include "Packet.h"
@@ -16,6 +17,7 @@
 #include "Timepp.h"
 #include "File.h"
 #include "tinymatwriter.h"
+#include "SBBUtils.h"
 
 #if defined(WIN32) || defined(_WIN32) || defined(__WIN32) || defined(__WIN32__) || defined(WIN64) || defined(_WIN64) || defined(__WIN64) || defined(__WIN64__)
 #ifndef OS_WIN
@@ -73,7 +75,8 @@ public: //almost all members are public b/c SBBHostApp should have (almost) the 
 
 	//objects
 	HostPort hostPort; //!< HostPort object.
-	HostPortTCP hostPortSocket; //!< HostPortTCP object.
+	HostPortTCP hostPortTCP; //!< HostPortTCP object.
+	HostPortUDP hostPortUDP; //!< HostPortUDP object.
 	Packet<float, PACKET_SIZE> rx_packet; //!< Rx Packet object.
 	Packet<float, PACKET_SIZE> tx_packet; //!< Tx Packet object
 	Time time; //!< Time object.

@@ -1,11 +1,11 @@
 /*
- * HostPortTCP class to handle serial communication - source
+ * HostPortUDP class to handle serial communication - source
  */
 
-#include "HostPortTCP.h"
+#include "HostPortUDP.h"
 
 //Begins
-bool HostPortTCP::begin(const std::string& ipaddr, unsigned short port) {
+bool HostPortUDP::begin(const std::string& ipaddr, unsigned short port) {
     _terminator = TERMINATOR;
     _header = HEADER;
     _timeout = TIMEOUT;
@@ -18,7 +18,7 @@ bool HostPortTCP::begin(const std::string& ipaddr, unsigned short port) {
     return false;
 }
 
-bool HostPortTCP::begin(const std::string& ipaddr, unsigned short port, unsigned int header, unsigned int terminator) {
+bool HostPortUDP::begin(const std::string& ipaddr, unsigned short port, unsigned int header, unsigned int terminator) {
     _terminator = terminator;
     _header = header;
     _timeout = TIMEOUT;
@@ -31,7 +31,7 @@ bool HostPortTCP::begin(const std::string& ipaddr, unsigned short port, unsigned
     return false;
 }
 
-bool HostPortTCP::begin(const std::string& ipaddr, unsigned short port, unsigned int header, unsigned int terminator, unsigned int timeout) {
+bool HostPortUDP::begin(const std::string& ipaddr, unsigned short port, unsigned int header, unsigned int terminator, unsigned int timeout) {
     _terminator = terminator;
     _header = header;
     _port = port;
@@ -44,79 +44,79 @@ bool HostPortTCP::begin(const std::string& ipaddr, unsigned short port, unsigned
     return false;
 }
 
-HostPortTCP::~HostPortTCP() {
+HostPortUDP::~HostPortUDP() {
     client.close();
 }
 
-HostPortTCP::HostPortTCP() {
+HostPortUDP::HostPortUDP() {
     //empty
 }
 
 //set/get funs
-bool HostPortTCP::isInit(void) {
+bool HostPortUDP::isInit(void) {
     return (bool)client;
 }
-bool HostPortTCP::setPort(unsigned short port) {
+bool HostPortUDP::setPort(unsigned short port) {
     //if (!serial) {
         _port = port;
         return true;
     //}
     //return false;
 }
-bool HostPortTCP::setIP(const std::string& ipaddr) {
+bool HostPortUDP::setIP(const std::string& ipaddr) {
    // if (!serial) {
         _ip = ipaddr;
         return true;
     //}
     //return false;
 }
-bool HostPortTCP::setHeader(unsigned int header) {
+bool HostPortUDP::setHeader(unsigned int header) {
     //if (!serial) {
         _header = header;
         return true;
     //}
     //return false;
 }
-bool HostPortTCP::setTerminator(unsigned int terminator) {
+bool HostPortUDP::setTerminator(unsigned int terminator) {
     //if (!serial) {
         _terminator = terminator;
         return true;
     //}
     //return false;
 }
-bool HostPortTCP::setTimeout(unsigned int timeout) {
+bool HostPortUDP::setTimeout(unsigned int timeout) {
     //if (!serial) {
         _timeout = timeout;
         return true;
     //}
     //return false;
 }
-unsigned short HostPortTCP::getPort(void) {
+unsigned short HostPortUDP::getPort(void) {
     return _port;
 }
-std::string HostPortTCP::getIP(void) {
+std::string HostPortUDP::getIP(void) {
     return _ip;
 }
-unsigned int HostPortTCP::getHeader(void) {
+unsigned int HostPortUDP::getHeader(void) {
     return _header;
 }
-unsigned int HostPortTCP::getTerminator(void) {
+unsigned int HostPortUDP::getTerminator(void) {
     return _terminator;
 }
-unsigned int HostPortTCP::getTimeout(void) {
+unsigned int HostPortUDP::getTimeout(void) {
     return _timeout;
 }
 
 //reset & close fun
-bool HostPortTCP::close(void) {
+bool HostPortUDP::close(void) {
     return client.close();
 }
-bool HostPortTCP::restart(void) {
+bool HostPortUDP::restart(void) {
     client.close();
     return init(_ip, _port, _timeout);
 }
 
-bool HostPortTCP::flush(void) {
+bool HostPortUDP::flush(void) {
     if (isInit()) {
         return restart();
     }
@@ -124,7 +124,7 @@ bool HostPortTCP::flush(void) {
 }
 
 //write
-bool HostPortTCP::write(unsigned char* packetPtr, unsigned int size) {
+bool HostPortUDP::write(unsigned char* packetPtr, unsigned int size) {
 
     if (!client) {
         return false;
@@ -154,7 +154,7 @@ bool HostPortTCP::write(unsigned char* packetPtr, unsigned int size) {
     _tx_buf[c++] = (_terminator >> 24) & MASK;
 
     //put start bytes in buf
-    client.write_n(_tx_buf, c);
+    client.send(_tx_buf, c);
 
     //free
     free(_tx_buf);
@@ -164,7 +164,7 @@ bool HostPortTCP::write(unsigned char* packetPtr, unsigned int size) {
 }
 
 //read
-bool HostPortTCP::read(unsigned char* packetPtr, unsigned int size) {
+bool HostPortUDP::read(unsigned char* packetPtr, unsigned int size) {
 
     if (!client) {
         return false;
@@ -175,32 +175,30 @@ bool HostPortTCP::read(unsigned char* packetPtr, unsigned int size) {
     }
 
     unsigned int c = 0;
-    unsigned char b;
+    unsigned char b[MAX_PACKET_SIZE];
+    size_t len = client.recv(b, MAX_PACKET_SIZE);
+
+    //parse the packet
+    if (len < (size + 4 + 4)) {
+        return false;
+    }
     while (1) {
         if (c < 4) { //check header
-            if (client.read_n(&b, 1)>0) {
-                if (b == ((_header >> (8 * c)) & MASK)) {
-                    c++;
-                    continue;
-                }
-            } else { 
-                return false; 
-            }
+            if (b[c] == ((_header >> (8 * c)) & MASK)) {
+                c++;
+                continue;
+            } else { break; }
         } else if (c==4) { //read data
-            if (client.read_n(packetPtr, size) == 0) {
-                return false; 
-            };
+            memcpy(packetPtr,&b[c], size);
             c++;
             continue;
         } else {
-            if (client.read_n(&b, 1) > 0) {
-                if (b == ((_terminator >> (8 * (c - 5))) & MASK)) {
-                    c++;
-                    if (c == 9) { //all ok
-                        return true;
-                    }
-                    continue;
+            if (b[c-1+size] == ((_terminator >> (8 * (c - 5))) & MASK)) {
+                c++;
+                if (c == 9) { //all ok
+                    return true;
                 }
+                continue;
             } else { 
                 break;
             }
@@ -211,11 +209,11 @@ bool HostPortTCP::read(unsigned char* packetPtr, unsigned int size) {
 }
 
 //init
-bool HostPortTCP::init(const std::string& ipaddr, unsigned short port, unsigned int timeout) { 
-    client.connect({ipaddr, port});
-    if (client) {
-        client.read_timeout(std::chrono::milliseconds(timeout));
-        client.write_timeout(std::chrono::milliseconds(timeout));
+bool HostPortUDP::init(const std::string& ipaddr, unsigned short port, unsigned int timeout) { 
+    if (client.set_option(SOL_SOCKET,SO_BROADCAST,&_enable,sizeof(_enable)) == -1) {
+        return false;
     }
+    client.bind({ipaddr, port});
     return (bool) client;
 }
+

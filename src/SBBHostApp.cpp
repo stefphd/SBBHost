@@ -14,7 +14,7 @@ streamTreeFrame(), plotTreeFrame(), streamTimeLabel(), plotGraphOverlay(),
 streamGraphFrame("Stream graph"),
 buttonRun(RUN_BUTLABEL, true), buttonLog(LOG_BUTLABEL, true),
 aboutDialog(), settingsDialog(), hostControl(),
-darkModeSwitch(), streamModeSwitch(),
+darkModeSwitch(), //streamModeSwitch(),
 scrolledWinStream(), scrolledWinPlot(),
 streamTreeView(&mainWin), plotTreeView(&mainWin, &core),
 timer(),
@@ -91,7 +91,7 @@ void SBBHostApp::on_activate() {
 	buttonLog.signal_toggled().connect(sigc::mem_fun(*this, &SBBHostApp::on_buttonLog_toggled));
 	mainWin.signal_close_request().connect(sigc::mem_fun<bool>(*this, &SBBHostApp::on_win_close), true);
 	darkModeSwitch.property_active().signal_changed().connect(sigc::mem_fun(*this, &SBBHostApp::on_darkModeSwitch_switched));
-	streamModeSwitch.property_active().signal_changed().connect(sigc::mem_fun(*this, &SBBHostApp::on_streamModeSwitch_switched));
+	//streamModeSwitch.property_active().signal_changed().connect(sigc::mem_fun(*this, &SBBHostApp::on_streamModeSwitch_switched));
 	plotTypeComboEntry.get_comboBoxText()->signal_changed().connect(sigc::mem_fun(*this, &SBBHostApp::on_plotType_changed));
 
 	//set window size (default)
@@ -126,7 +126,7 @@ void SBBHostApp::on_activate() {
 	streamBox1.append(streamBox2);
 	streamBox2.append(buttonRun);
 	streamBox2.append(buttonLog);
-	streamBox2.append(streamModeSwitch);
+	//streamBox2.append(streamModeSwitch);
 	streamBox1.append(streamTreeFrame);
 	streamBox1.append(streamTimeLabel);
 	fftBox.append(p_magfftGraph->get_graph_grid());
@@ -186,13 +186,11 @@ void SBBHostApp::on_activate() {
 	streamTimeLabel.set_margin(MARGIN);
 	darkModeSwitch.set_margin_end(MARGIN), darkModeSwitch.set_margin_start(MARGIN);
 	darkModeSwitch.set_margin_top(MARGIN/2), darkModeSwitch.set_margin_bottom(MARGIN/2);
-
-	streamModeSwitch.set_margin_top(MARGIN), streamModeSwitch.set_margin_bottom(MARGIN);
-
+	//streamModeSwitch.set_margin_top(MARGIN), streamModeSwitch.set_margin_bottom(MARGIN);
 	buttonRun.set_icon_name(RUN_BUTICON);
 	buttonRun.set_size_request(buttonLog.get_size(Gtk::Orientation::HORIZONTAL));
 	darkModeSwitch.set_active(params.use_darkmode > 0);
-	streamModeSwitch.set_active(false);
+	//streamModeSwitch.set_active(false);
 	scrolledWinStream.set_policy(Gtk::PolicyType::AUTOMATIC, Gtk::PolicyType::AUTOMATIC);
 	scrolledWinStream.set_vexpand();
 	scrolledWinStream.set_size_request(100);
@@ -230,7 +228,26 @@ void SBBHostApp::create_graph() {
 }
 
 void SBBHostApp::parse_ini() {
-	p_cfg = new IniReader(CONFIG_FILE);
+	//find last configuration file used
+	std::string config_file = DEFCONFIG_FILE;
+	std::string last_cfgfile = utils::get_home_path() + "/" + LASTCONFIG_FILE;
+	File lastcfg_file(last_cfgfile.c_str(), "r");
+	if (lastcfg_file.isOpen()) {
+		char str[4096] =  { 0 };
+		lastcfg_file.gets(str, 4096);
+		//try to open
+		File tryOpenFile(str, "r");
+		if (tryOpenFile.isOpen()) {
+			config_file = str; //OK
+		}
+	} else { //if lastcfg not open, create it and copy default config file to $HOME
+		config_file =  utils::get_home_path() + "/" + CONFIG_FILE;
+		utils::filecp(DEFCONFIG_FILE, config_file.c_str());
+		File new_last_cfg_file(last_cfgfile.c_str(), "w");
+		new_last_cfg_file.print(config_file.c_str());
+	}
+	//load config
+	p_cfg = new IniReader(config_file.c_str());
 	if (!p_cfg->getInt("socket_port", &params.socket_port)) params.port = SOCKET_PORT;
 	if (!p_cfg->getInt("baud", &params.baud)) params.baud = BAUD;
 	if (!p_cfg->getHex("header", &params.header)) params.header = HostPort::HEADER;
@@ -266,7 +283,7 @@ void SBBHostApp::parse_ini() {
 	p_cfg->~IniReader();
 
 	//checks
-	if (params.socket_port <= 0) params.window_samples = SOCKET_PORT;
+	if (params.socket_port < 0) params.socket_port = SOCKET_PORT;
 	if (params.window_samples <= 0) params.window_samples = WINDOW_SAMPLES;
 	if (params.forward_samples <= 0) params.forward_samples = FORWARD_SAMPES;
 	if (params.label_scale <= 0) params.label_scale = LABEL_SCALE;
@@ -400,7 +417,7 @@ void SBBHostApp::set_tooltips() {
 	buttonLog.set_tooltip_text("Enable signal logging.");
 	streamTimeLabel.set_tooltip_text("Elapsed time of current signal streaming.");
 	darkModeSwitch.set_tooltip_text("Enable the darkmode.");
-	streamModeSwitch.set_tooltip_text("USB/Serial or TCP/IP communication");
+	//streamModeSwitch.set_tooltip_text("USB/Serial or TCP/IP communication");
 	//p_streamGraph->set_tooltip_text("Stream graph.");
 	streamTreeView.set_tooltip_text("Select the signal to plot.");
 	plotTreeView.set_tooltip_text("Select the logged signal to plot.");
@@ -409,29 +426,66 @@ void SBBHostApp::set_tooltips() {
 
 void SBBHostApp::create_toolbar() {
 
+
+Glib::ustring ui_info =
+    "<interface>"
+    "  <!-- menubar -->"
+    "  <menu id='menu-conntype'>"
+    "      <section>"
+    "        <item>"
+    "          <attribute name='label' translatable='yes'>USB/Serial</attribute>"
+    "          <attribute name='action'>app.conntype</attribute>"
+    "          <attribute name='target' type='i'>0</attribute>"
+    "        </item>"
+    "        <item>"
+    "          <attribute name='label' translatable='yes'>TCP/IP</attribute>"
+    "          <attribute name='action'>app.conntype</attribute>"
+    "          <attribute name='target' type='i'>1</attribute>"
+    "        </item>"
+    "        <item>"
+    "          <attribute name='label' translatable='yes'>UDP/Broad</attribute>"
+    "          <attribute name='action'>app.conntype</attribute>"
+    "          <attribute name='target' type='i'>2</attribute>"
+    "        </item>"
+    "      </section>"
+    "  </menu>"
+    "</interface>";
+
+	p_conn = add_action_radio_integer("conntype", sigc::mem_fun(*this,	&SBBHostApp::on_conntype_radio_button), Params::SERIAL);
+	Glib::RefPtr<Gtk::Builder> m_refBuilder = Gtk::Builder::create();
+	try {
+		m_refBuilder->add_from_string(ui_info);
+	} catch (const Glib::Error& ex) {
+		std::cerr << "Building menus failed: " << ex.what();
+	}
+
+	auto object = m_refBuilder->get_object("menu-conntype");
+  	auto p_connmenu = std::dynamic_pointer_cast<Gio::Menu>(object);
+
 	//create menu
 	p_filemenu = Gio::Menu::create();
 	p_filemenu->append("Save", "app.save");
-	p_filemenu->append("SaveAs", "app.saveas");
+	p_filemenu->append("Save As", "app.saveas");
 	p_filemenu->append("Open", "app.open");
-	p_filemenu->append("Quit", "app.quit");
 	//----//
 	p_editmenu = Gio::Menu::create();
 	p_editmenu->append("Run", "app.menurun");
 	p_editmenu->append("Log", "app.menulog");
 	p_editmenu->append("Connect", "app.connect");
 	p_editmenu->append("Settings", "app.settings");
+	//p_editmenu->append_submenu("Connection type", p_contype);
+	p_editmenu->append("Load Cfg", "app.loadcfg");
 	//----//
 	p_helpmenu = Gio::Menu::create();
 	p_helpmenu->append("About", "app.about");
 	//p_helpmenu->append("Help", "app.help");
-
+	p_helpmenu->append("Quit", "app.quit");
 	p_winmenu = Gio::Menu::create();
 	p_winmenu->append_section(p_filemenu);
 	p_winmenu->append_section(p_editmenu);
+	p_winmenu->append_section(p_connmenu);
 	p_winmenu->append_section(p_helpmenu);
 	menubutton.set_menu_model(p_winmenu);
-
 	//set toolbar callback
 	add_action("save", sigc::mem_fun(*this,		&SBBHostApp::on_menu_file_save));
 	add_action("saveas", sigc::mem_fun(*this,	&SBBHostApp::on_menu_file_saveas));
@@ -443,10 +497,12 @@ void SBBHostApp::create_toolbar() {
 	add_action("settings", sigc::mem_fun(*this,&SBBHostApp::on_menu_settings));
 	//add_action("plotopt", sigc::mem_fun(*this,	&SBBHostApp::on_menu_plot_opt));
 	add_action("about", sigc::mem_fun(*this,	&SBBHostApp::on_menu_help_about));
+	add_action("loadcfg", sigc::mem_fun(*this,	&SBBHostApp::on_menu_loadcfg));
+	
 	//add_action("help", sigc::mem_fun(*this, &SBBHostApp::on_menu_help_help));
 	p_menuRun = add_action_bool("menurun", sigc::mem_fun(*this, &SBBHostApp::on_menu_stream_run), false);
 	p_menuLog = add_action_bool("menulog", sigc::mem_fun(*this, &SBBHostApp::on_menu_stream_log), false);
-
+	
 	//add accelerators
 	set_accel_for_action("app.save", "<Primary>s");
 	set_accel_for_action("app.saveas", "<Primary>a");
@@ -481,6 +537,21 @@ void SBBHostApp::create_toolbar() {
 
 }
 
+void SBBHostApp::on_conntype_radio_button(int i) {
+	p_conn->change_state(i);
+	switch (i) {
+		case 0:
+			params.conn_type = Params::SERIAL;
+			return;
+		case 1:
+			params.conn_type = Params::TCP;
+			return;
+		case 2:
+			params.conn_type = Params::UDP;
+			return;
+	}	
+}
+
 void SBBHostApp::create_dialogs() {
 	//file filter - save sdialog
 	Glib::RefPtr<Gtk::FileFilter> filter_sbb = Gtk::FileFilter::create();
@@ -492,6 +563,9 @@ void SBBHostApp::create_dialogs() {
 	Glib::RefPtr<Gtk::FileFilter> filter_mat = Gtk::FileFilter::create();
 	filter_mat->set_name(FILE_MAT_LABEL);
 	filter_mat->add_pattern("*" + (std::string) FILE_MAT);
+	Glib::RefPtr<Gtk::FileFilter> filter_ini = Gtk::FileFilter::create();
+	filter_ini->set_name(FILE_INI_LABEL);
+	filter_ini->add_pattern("*" + (std::string) FILE_INI);
 
 	//file save dialog
 	p_fileSaveAsDialog = new Gtk::FileChooserDialog(SAVE_FILE_LABEL, Gtk::FileChooser::Action::SAVE);
@@ -515,6 +589,17 @@ void SBBHostApp::create_dialogs() {
 	p_fileOpenDialog->add_button("_Open", Gtk::ResponseType::OK);
 	p_fileOpenDialog->add_filter(filter_sbb);
 	p_fileOpenDialog->signal_response().connect(sigc::mem_fun(*this, &SBBHostApp::on_file_open_dialog));
+
+	//load cfg dialog
+	p_cfgLoadDialog = new Gtk::FileChooserDialog(LOAD_CFG_LABEL, Gtk::FileChooser::Action::OPEN);
+	p_cfgLoadDialog->set_transient_for(mainWin);
+	p_cfgLoadDialog->set_modal(true);
+	p_cfgLoadDialog->set_hide_on_close();
+	p_cfgLoadDialog->set_select_multiple(false);
+	p_cfgLoadDialog->add_button("_Cancel", Gtk::ResponseType::CANCEL);
+	p_cfgLoadDialog->add_button("_Open", Gtk::ResponseType::OK);
+	p_cfgLoadDialog->add_filter(filter_ini);
+	p_cfgLoadDialog->signal_response().connect(sigc::mem_fun(*this, &SBBHostApp::on_cfg_load_dialog));
 
 	//set folder dialog
 	p_setFolderDialog = new Gtk::FileChooserDialog(SETFOLDER_LABEL, Gtk::FileChooser::Action::SELECT_FOLDER);
@@ -560,7 +645,7 @@ void SBBHostApp::clear_stream_graph() {
 }
 
 void SBBHostApp::on_buttonRun_toggled() {
-	if ((exitFlag == EXIT_NOSERIALPORT) | (exitFlag == EXIT_MULTIPLEPORT) | (exitFlag == EXIT_UNABLECONNECT)) {
+	if ((exitFlag == EXIT_NOSERIALPORT) | (exitFlag == EXIT_MULTIPLEPORT) | (exitFlag == EXIT_UNABLECONNECT) | (exitFlag == EXIT_NOCONNECTION) | (exitFlag == EXIT_UNEXPECTED) | (exitFlag == EXIT_INVALIDIP)) {
 		exitFlag = EXIT_DEFAULT;
 		return;
 	}
@@ -568,7 +653,7 @@ void SBBHostApp::on_buttonRun_toggled() {
 	//check but state
 	if (buttonRun.get_active()) { //if is active start streaming
 		exitFlag = core.connect(buttonLog.get_active(), def_dir);
-		if ((exitFlag == EXIT_NOSERIALPORT) | (exitFlag == EXIT_MULTIPLEPORT) | (exitFlag == EXIT_UNABLECONNECT)) { //check serial
+		if ((exitFlag == EXIT_NOSERIALPORT) | (exitFlag == EXIT_MULTIPLEPORT) | (exitFlag == EXIT_UNABLECONNECT) | (exitFlag == EXIT_NOCONNECTION) | (exitFlag == EXIT_UNEXPECTED) | (exitFlag == EXIT_INVALIDIP)) { //check serial
 			warning(exitFlag);
 			buttonRun.set_active(false);
 			return;
@@ -719,7 +804,6 @@ void SBBHostApp::on_menu_file_saveas() {
 		return;
 	}
 }
-
 bool SBBHostApp::on_file_drag_and_drop(const Glib::ValueBase& value, double x, double y) {
 	if (G_VALUE_HOLDS(value.gobj(), Glib::Value<Glib::ustring>::value_type())) {
 		Glib::Value<Glib::ustring> files_dragged_value;
@@ -755,6 +839,16 @@ bool SBBHostApp::on_file_drag_and_drop(const Glib::ValueBase& value, double x, d
 		return false;
 	}
 }
+void SBBHostApp::on_menu_loadcfg() {
+	if (buttonRun.get_active()) { return; }
+
+	//set default folder to save as dialog
+	Glib::RefPtr<Gio::File> folder = Gio::File::create_for_parse_name(def_dir);
+	p_cfgLoadDialog->set_current_folder(folder);
+
+	p_cfgLoadDialog->show();
+}
+
 void SBBHostApp::on_menu_file_open() {
 	if (buttonRun.get_active()) { return; }
 
@@ -764,6 +858,7 @@ void SBBHostApp::on_menu_file_open() {
 
 	p_fileOpenDialog->show();
 }
+
 void SBBHostApp::on_menu_file_quit() {
 	mainWin.close();
 	quit();
@@ -806,21 +901,23 @@ void SBBHostApp::on_menu_help_help() {
 
 void SBBHostApp::on_setting_dialog(int exit) {
 	switch (exit) {
-	case Gtk::ResponseType::OK:
+	case Gtk::ResponseType::OK: {
 		exitFlag = settingsDialog.set_params(&params);
+		//p_conn->change_state(params.conn_type);
 		clear_stream_graph();
-		settingsDialog.close();
-		break;
-	case Gtk::ResponseType::APPLY:
-		exitFlag = settingsDialog.set_params(&params);
-		clear_stream_graph();
-		break;
-	default: //CANCEL or DELETE_EVENT
-		exitFlag = EXIT_DEFAULT;
-		settingsDialog.close();
 		break;
 	}
-	//warning(exitFlag);
+	case Gtk::ResponseType::APPLY: {
+		exitFlag = settingsDialog.set_params(&params);
+		//p_conn->change_state(params.conn_type);
+		clear_stream_graph();
+		break;
+	}
+	default: //CANCEL or DELETE_EVENT
+		break;
+	}
+	warning(exitFlag);
+	if (exit != Gtk::ResponseType::APPLY && exitFlag == EXIT_DEFAULT) settingsDialog.close();
 	exitFlag = EXIT_DEFAULT;
 }
 
@@ -854,12 +951,56 @@ void SBBHostApp::on_file_saveAs_dialog(int exit) {
 	p_fileSaveAsDialog->hide();
 }
 
+
 void SBBHostApp::on_file_setfolder_dialog(int exit) {
 	if (exit == Gtk::ResponseType::OK) {
 		def_dir = p_setFolderDialog->get_current_folder()->get_path();
 		core.set_path_logs(def_dir);
 	}
 	p_setFolderDialog->hide();
+}
+
+void SBBHostApp::on_cfg_load_dialog(int exit) {
+
+	if (exit != Gtk::ResponseType::DELETE_EVENT) def_dir = p_cfgLoadDialog->get_current_folder()->get_path();
+	switch (exit) {
+	case Gtk::ResponseType::OK: {
+		//exitFlag = open(p_cfgLoadDialog->get_file()->get_path());
+		std::string new_cfgfile = p_cfgLoadDialog->get_file()->get_path();
+		std::string config_file =  utils::get_home_path() + "/" + p_cfgLoadDialog->get_file()->get_basename();
+		utils::filecp(new_cfgfile.c_str(), config_file.c_str());
+		std::string last_cfgfile = utils::get_home_path() + "/" + LASTCONFIG_FILE;
+		File last_cfg_file(last_cfgfile.c_str(), "w");
+		last_cfg_file.print(config_file.c_str());
+		//last_cfg_file.close();
+		//info(EXIT_RESTART_APP_ON_CFG);
+		exitFlag = EXIT_DEFAULT;
+		break;
+	}
+	case Gtk::ResponseType::CANCEL:
+		exitFlag = EXIT_DEFAULT;
+		break;
+	case Gtk::ResponseType::DELETE_EVENT:
+		exitFlag = EXIT_DEFAULT;
+		break;
+	default:
+		exitFlag = EXIT_OPENUNKNOWISS;
+		break;
+	}
+	warning(exitFlag);
+	p_cfgLoadDialog->hide();
+	if (exitFlag == EXIT_DEFAULT) {
+		p_messageDialog.reset(new Gtk::MessageDialog(mainWin, "", false, Gtk::MessageType::QUESTION, Gtk::ButtonsType::OK_CANCEL, true));
+		p_messageDialog->set_default_size(params.messageDialog_width, params.messageDialog_height);
+		p_messageDialog->set_resizable(false);
+		p_messageDialog->set_transient_for(mainWin);
+		p_messageDialog->set_hide_on_close(true);
+		p_messageDialog->signal_response().connect(sigc::mem_fun(*this, &SBBHostApp::on_app_restart));
+		p_messageDialog->set_message("Restart the application for the changes to take effect");
+		p_messageDialog->set_secondary_text("Are you sure to restart the application now?");
+		p_messageDialog->show();
+	}
+	exitFlag = EXIT_DEFAULT;
 }
 
 void SBBHostApp::on_file_open_dialog(int exit) {
@@ -903,10 +1044,10 @@ void SBBHostApp::on_darkModeSwitch_switched() {
 }
 
 void SBBHostApp::on_streamModeSwitch_switched() {
-	if (streamModeSwitch.get_active()) 
-		params.conn_type = Params::SOCKET;
+	/*if (streamModeSwitch.get_active()) 
+		params.conn_type = Params::TCP;
 	else 
-		params.conn_type = Params::SERIAL;
+		params.conn_type = Params::SERIAL;*/
 }
 
 bool SBBHostApp::on_win_close() { //return false to confirm win close
@@ -925,6 +1066,14 @@ bool SBBHostApp::on_win_close() { //return false to confirm win close
 	p_messageDialog->set_secondary_text("Are you sure to close the application?");
 	p_messageDialog->show();
 	return true;
+}
+
+void SBBHostApp::on_app_restart(int exit) {
+	if (exit == Gtk::ResponseType::OK) {
+		exitcode = EXIT_RESTART;
+		mainWin.close();
+		quit();
+	} else p_messageDialog->close();
 }
 
 void SBBHostApp::on_quit_confirmation(int exit) {
@@ -1076,6 +1225,45 @@ void SBBHostApp::warning(int type) {
 		p_messageDialog->set_message("Unable to save");
 		p_messageDialog->set_secondary_text("Only one log must be saved at a time");
 		break;
+	case EXIT_NOCONNECTION:
+		utils::beep(WARNING_BEEP);
+		p_messageDialog->set_message("Unable to connect");
+		p_messageDialog->set_secondary_text("No IP address found");
+		break;
+	case EXIT_INVALIDIP: {
+		utils::beep(WARNING_BEEP);
+		uint32_t ip, mask;
+		if (utils::getIP_and_subnetmask(&ip, &mask) == 0) {
+			std::string remip;
+			utils::get_remoteIP(ip, mask, &remip);
+			char str[512];
+			sprintf_s(str, 512, "Specified TCP/IP address (%s) does not match the remote IP address (%s)", params.socket_ip.c_str(), remip.c_str());
+			p_messageDialog->set_message("Invalid IP");
+			p_messageDialog->set_secondary_text(str);
+
+		} else {
+			p_messageDialog->set_message("Unable to connect");
+			p_messageDialog->set_secondary_text("No IP address found");
+		}
+		break;
+	}
+	case EXIT_INVALIDIP_SETTINGS: {
+		utils::beep(WARNING_BEEP);
+		uint32_t ip, mask;
+		if (utils::getIP_and_subnetmask(&ip, &mask) == 0) {
+			std::string remip;
+			utils::get_remoteIP(ip, mask, &remip);
+			char str[512];
+			sprintf_s(str, 512, "Specified TCP/IP address (%s) does not match the remote IP address (%s)", settingsDialog.get_selected_ip().c_str(), remip.c_str());
+			p_messageDialog->set_message("Invalid IP");
+			p_messageDialog->set_secondary_text(str);
+
+		} else {
+			p_messageDialog->set_message("Invalid IP");
+			p_messageDialog->set_secondary_text("No IP address found");
+		}
+		break;
+	}
 	default:
 		return;
 	}
@@ -1102,6 +1290,11 @@ void SBBHostApp::info(int type) {
 		else
 			sprintf_s(str, 64, "Connected to port %d with IP %s failed", core.p_params->socket_port, core.p_params->socket_ip.c_str());
 		p_messageDialog->set_secondary_text(str);
+		break;
+	case EXIT_RESTART_APP_ON_CFG:
+		utils::beep(INFO_BEEP);
+		p_messageDialog->set_message("Restart the application");
+		p_messageDialog->set_secondary_text("Please restart the application for the changes to take effect");
 		break;
 	}
 	p_messageDialog->show();

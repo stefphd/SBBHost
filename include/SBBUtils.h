@@ -24,6 +24,9 @@
 #elif defined(OS_LINUX)
 #define sscanf_s sscanf //in linux use sscanf for sscanf_s
 #define sprintf_s(buf, len, ...) snprintf((buf), (len), __VA_ARGS__)
+#include <arpa/inet.h>
+#include <sys/socket.h>
+#include <ifaddrs.h>
 #endif
 
 #include <time.h>
@@ -32,6 +35,7 @@
 #include <numeric>
 #include <algorithm>
 #include <math.h>
+
 
 /*! \brief A namespace providing a set of standard colors.
     \details Namespace providing a set of RGB colors accordingly to the standard MATLAB color scale.
@@ -62,6 +66,49 @@ namespace Colors {
     \date 2022
 */
 namespace utils {
+
+	/*! \brief Copy a file.
+		\details Robust function to copy file from source to destination.
+		\param FileSource Char array with the source file path.
+		\param FileDestination Char array with the destination file path.
+		\return 0 if success, -1 and -2 if cannot open source or destination file.
+	*/
+	int filecp(const char FileSource [], const char FileDestination []);
+
+	/*! \brief Get the local IP and subnet mask.
+		\details Function to get the local IP address and subnet mask.
+		\param ip Pointer where saving the local IP.
+		\param mask Pointer where saving the subnet mask.
+		\param ip_str Pointer where saving the local IP in string format (XXX.XXX.XXX.XXX).
+		\param mask_str Pointer where saving the subnet mask in string format (XXX.XXX.XXX.XXX).
+		\return 0 if success, 1 otherwise
+	*/
+	int getIP_and_subnetmask(uint32_t* ip = nullptr, uint32_t* mask = nullptr, std::string* ip_str = nullptr, std::string* mask_str = nullptr);
+
+	/*! \brief Get the remote IP.
+		\details Function to get the remote IP from the local IP and subnet mask.
+		\param ip Local IP.
+		\param mask Subnet mask.
+		\param str Pointer where save the remote IP in string format (XXX.XXX.XXX.XXX).
+		\return The remote IP.
+	*/
+	uint32_t get_remoteIP(uint32_t ip, uint32_t mask, std::string* str = nullptr);
+
+	/*! \brief Get the broadcast IP.
+		\details Function to get the broadcast IP from the local IP and subnet mask.
+		\param ip Local IP.
+		\param mask Subnet mask.
+		\param str Pointer where save the broadcast IP in string format (XXX.XXX.XXX.XXX).
+		\return The broadcast IP.
+	*/
+	uint32_t get_broadcastIP(uint32_t ip, uint32_t mask, std::string* str = nullptr);
+
+	/*! \brief Convert IP from string to uint32.
+		\details Function to convert IP from string to uint32.
+		\param ip_str The IP.
+		\return The IP.
+	*/
+	uint32_t ip_str2num(std::string ip_str);
 
 	/*! \brief Convert HEX from unsigned int to string
 		\details Function to convert a HEX value (as an unsigned int) to a string.

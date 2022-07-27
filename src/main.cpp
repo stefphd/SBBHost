@@ -18,6 +18,14 @@
 	\return The exit status of the application.
 */
 int main(int argc, char* argv[]) {
-	Glib::RefPtr<SBBHostApp> app = SBBHostApp::create(); //create object
-	return app->run(argc, argv); //run app
+	while (true) {
+		Glib::RefPtr<SBBHostApp> app = SBBHostApp::create(); //create object
+		int exit = app->run(argc, argv); //run app
+		if (app->exitcode == SBBHostApp::EXIT_RESTART) {
+			continue;
+		} else {
+			return exit;
+		}
+	}
+	return -1;
 }

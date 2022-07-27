@@ -60,6 +60,10 @@ public:
 	*/
 	static Glib::RefPtr<SBBHostApp> create();
 
+	static constexpr int EXIT_RESTART = 1; //!< Exitcode for app restarting.
+	static constexpr int EXIT_QUIT = 0; //!< Exitcode for application quit (default).
+	int exitcode = EXIT_QUIT; //!< Exit code for the application. \details This is non-zero if application exit occurs in certain circumstances.
+
 protected:
 
 	SBBHostCore core; //!< SBBHostCore object for the core management of the application.
@@ -95,7 +99,7 @@ protected:
 	Glib::ustring def_dir; //!< Default path where to save the log files.
 	SettingsDialog settingsDialog; //!< SettingsDialog object for the setting dialog.
 	Gtk::Switch darkModeSwitch; //!< Gtk::Switch object for the switch to enable/disable the dark mode.
-	Gtk::Switch streamModeSwitch; //!< Gtk::Switch object to switch the stream mode (serial/socket).
+	//Gtk::Switch streamModeSwitch; //!< Gtk::Switch object to switch the stream mode (serial/socket).
 	Gtk::ScrolledWindow scrolledWinStream; //!< Gtk::ScrolledWindow object containing a StreamTreeView object. 
 	Gtk::ScrolledWindow scrolledWinPlot; //!< Gtk::ScrolledWindow object containing a PlotTreeView object. 
 	StreamTreeView streamTreeView; //!< StreamTreeView object for the tree view in the stream tab.
@@ -109,11 +113,14 @@ protected:
 	Glib::RefPtr<Gio::Menu> p_filemenu = nullptr; //!< Pointer to Gio::Menu object for the file menu
 	Glib::RefPtr<Gio::Menu> p_editmenu = nullptr; //!< Pointer to Gio::Menu object for the edit menu
 	Glib::RefPtr<Gio::Menu> p_helpmenu = nullptr; //!< Pointer to Gio::Menu object for the help menu
+	Glib::RefPtr<Gio::Menu> p_conntype = nullptr; //!< Pointer to Gio::Menu object for the conn type menu
 	Glib::RefPtr<Gio::SimpleAction> p_menuRun = nullptr; //!< Pointer to Gio::SimpleAction object for the toolbar run button.
 	Glib::RefPtr<Gio::SimpleAction> p_menuLog = nullptr; //!< Pointer to Gio::SimpleAction object for the toolbar log button.
+	Glib::RefPtr<Gio::SimpleAction> p_conn = nullptr;
 	std::unique_ptr<Gtk::MessageDialog> p_messageDialog = nullptr; //!< Pointer to Gtk::MessageDialog object for message dialogs.
 	Gtk::FileChooserDialog* p_fileSaveAsDialog = nullptr; //!< Pointer to Gtk::FileChooserDialog object for the file saveas dialog.
 	Gtk::FileChooserDialog* p_fileOpenDialog = nullptr; //!< Pointer to Gtk::FileChooserDialog object for the file open dialog.
+	Gtk::FileChooserDialog* p_cfgLoadDialog = nullptr; //!< Pointer to Gtk::FileChooserDialog object for the config load dialog.
 	Gtk::FileChooserDialog* p_setFolderDialog = nullptr; //!< Pointer to Gtk::FileChooserDialog object for the setfolder dialog.
 	CGraph::CairoGraph* p_streamGraph = nullptr; //!< Pointer to CGraph::CairoGraph object for the graph in the stream tab.
 	CGraph::CairoGraph* p_plotGraph = nullptr; //!< Pointer to CGraph::CairoGraph object for the sample-domain graph in the plot tab.
@@ -227,9 +234,19 @@ protected:
 
 	/*! \brief Signal handler called on help menu button.
 		\details Function for signal handler called when presseing the help menu button. It opens the documentation.
-		about the application.
 	*/
 	void on_menu_help_help();
+
+	/*! \brief Signal handler called on load config menu button
+		\details Function for signal handle called when pressing the load config menu button. It loads a new config file a save for successive starts (requries restarting).
+	*/
+	void on_menu_loadcfg();
+
+	/*! \brief Ask the user to restart the application.
+		\details Ask the user to restart the application when loading a new configuration file.
+		\param id_response The response ID.
+	*/
+	void on_app_restart(int id_response);
 
 	/*! \brief Signal handler called on setting dialog close.
 		\details Function for signal handler called when closing the SettingsDialog. 
@@ -259,6 +276,13 @@ protected:
 		\param id_response The response ID.
 	*/
 	void on_file_open_dialog(int id_response);
+
+	/*! \brief Signal handler called on config load dialog close.
+		\details Function for signal handler called when closing the load Gtk::FileChooserDialog. 
+		Depending on the reponse, it load the config or not (requires app restart).
+		\param id_response The response ID.
+	*/
+	void on_cfg_load_dialog(int id_response);
 
 	/*! \brief Signal handler called on quit confirmation.
 		\details Function for signal handler called when exiting from the application in order 
@@ -380,6 +404,8 @@ private:
 		\details Function to set the host control widget.
 	*/
 	void set_host_control();
+
+	void on_conntype_radio_button(int i);
 };
 
 #endif

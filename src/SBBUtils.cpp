@@ -1,6 +1,77 @@
 #include "SBBUtils.h"
 
 namespace utils {
+	
+	int filecp(const char FileSource [], const char FileDestination [])
+	{
+		int   c;
+		FILE *stream_R;
+		FILE *stream_W; 
+
+		stream_R = fopen (FileSource, "r");
+		if (stream_R == NULL)
+			return -1;
+		stream_W = fopen (FileDestination, "w");   //create and write to file
+		if (stream_W == NULL)
+		{
+			fclose (stream_R);
+			return -2;
+		}    
+		while ((c = fgetc(stream_R)) != EOF)
+			fputc (c, stream_W);
+		fclose (stream_R);
+		fclose (stream_W);
+
+		return 0;
+	}
+	
+	int getIP_and_subnetmask(uint32_t* ip, uint32_t* mask, std::string* ip_str, std::string* mask_str) {
+		struct ifaddrs *ifap, *ifa;
+		struct sockaddr_in *samask, *saip;
+		char *addr;
+		getifaddrs (&ifap);
+		for (ifa = ifap; ifa; ifa = ifa->ifa_next) {
+			if (ifa->ifa_addr->sa_family==AF_INET) {
+				if (std::string(ifa->ifa_name) == "lo") { continue; } //skip local
+				samask = (struct sockaddr_in *) ifa->ifa_netmask;
+				saip = (struct sockaddr_in *) ifa->ifa_addr;
+				if (ip) *ip = saip->sin_addr.s_addr;
+				if (mask) *mask = samask->sin_addr.s_addr;
+				if (ip_str) *ip_str = inet_ntoa(saip->sin_addr);
+				if (mask_str) *mask_str = inet_ntoa(samask->sin_addr);
+			freeifaddrs(ifap);
+			return 0;
+			}
+		}
+		freeifaddrs(ifap);
+		return 1;
+	}
+
+	uint32_t get_remoteIP(uint32_t ip, uint32_t mask, std::string* str) {
+		uint32_t remoteip = ip & mask;
+		if (str) {
+			sockaddr_in sa; 
+			sa.sin_addr.s_addr = remoteip;
+			*str = inet_ntoa(sa.sin_addr);
+		}
+		return remoteip;
+	}
+
+	uint32_t get_broadcastIP(uint32_t ip, uint32_t mask, std::string* str) {
+		uint32_t broadcastip = ip | ~mask;
+		if (str) {
+			sockaddr_in sa; 
+			sa.sin_addr.s_addr = broadcastip;
+			*str = inet_ntoa(sa.sin_addr);
+		}
+		return broadcastip;
+	}
+
+	uint32_t ip_str2num(std::string ip_str) {
+		in_addr ip;
+		inet_aton(ip_str.c_str(), &ip);
+		return (uint32_t) ip.s_addr;
+	}
 
 	std::string get_home_path() {
 		#ifdef OS_WIN

@@ -116,10 +116,11 @@ public:
 		\return The selected value of the ComboBoxText.
 	*/
 	int get_selected();
+	
 protected:
+	Gtk::ComboBoxText entry; //!< Gtk::ComboBoxText object.
 	Gtk::Box box; //!< Gtk::Box object of the widget.
 	Gtk::Label label; //!< label string variable.
-	Gtk::ComboBoxText entry; //!< Gtk::ComboBoxText object.
 	std::vector<int> entries; //!< Vector to store the values of the ComboBoxText.
 };
 
@@ -137,6 +138,13 @@ public:
 		\param lbl The label.
 	*/
 	ComboChoiceEntryLabel(Glib::ustring lbl);
+
+	/*! \brief Constructor.
+		\details Default constructor with set choices. 
+		\param lbl The label.
+	*/
+	ComboChoiceEntryLabel(std::vector<int> id_vec, std::vector<std::string> str_vec, Glib::ustring lbl);
+
 
 	/*! \brief Set the choices.
 		\details Function to set the choices of the ComboBoxText.
@@ -163,10 +171,11 @@ public:
 		\return The pointer to the Gtk::ComboBoxText.
 	*/
 	Gtk::ComboBoxText* get_comboBoxText();
+	Gtk::ComboBoxText entry; //!< Gtk::ComboBoxText object.
+	
 protected:
 	Gtk::Box box; //!< Gtk::Box object of the widget.
 	Gtk::Label label; //!< label string variable.
-	Gtk::ComboBoxText entry; //!< Gtk::ComboBoxText object.
 	std::vector<int> id; //!< Vector of ID for the item of the ComboBoxText.
 	std::vector<std::string> str; //!< Vector to store the choice name of the ComboBoxText.
 };

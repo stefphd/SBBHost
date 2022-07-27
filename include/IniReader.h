@@ -99,6 +99,12 @@ public:
 	*/
 	bool getDoubleArray(const char* key, std::vector<double>* double_array);
 
+	/*! \brief Check if open correctly.
+		\details Function check if the file is open correctly.
+		\return true if success, false otherwise.
+	*/
+	bool isOpen();
+
 private:
 	File * p_file; //!< Poinnter to the File object.
 	std::string _name; //!< Name of the configuration file.

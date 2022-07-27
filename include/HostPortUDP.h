@@ -1,14 +1,14 @@
 
-#ifndef HOSTPORTTCP_H
-#define HOSTPORTTCP_H
+#ifndef HOSTPORTUDP_H
+#define HOSTPORTUDP_H
 
 #include <memory> 
 #include <string>
-#include "sockpp/tcp_connector.h"
+#include "sockpp/udp_socket.h"
 #include "sockpp/version.h"
 
-/*! \brief A class for host communication via TCP/IP protocol.
-    \details Class for host communication via TCP/IP protocol with a specified communication protocol.
+/*! \brief A class for host communication via UDP protocol.
+    \details Class for host communication via UDP protocol with a specified communication protocol.
     Data packet consists of
     - 4-bytes header
     - data (with specified length)
@@ -17,18 +17,18 @@
     \author Stefano Lovato
     \date 2022
 */
-class HostPortTCP {
+class HostPortUDP {
 public:
 
     /*! \brief Constructor.
 		\details Default constructor. 
 	*/
-    HostPortTCP();
+    HostPortUDP();
 
     /*! \brief Desctructor.
 		\details Default destructor. It automatically destroy the serial object.
 	*/
-    ~HostPortTCP();
+    ~HostPortUDP();
 
     /*! \brief Begin the host port.
 		\details Function to begin the host port communication with default header, terminator, and timeout.
@@ -169,21 +169,23 @@ public:
         \return true if the host port is open, false otherwise.
     */
     operator bool() { return isInit(); }
-
+    
     static constexpr unsigned int HEADER = 0xFF812345; //!< Default header.
     static constexpr unsigned int TERMINATOR = 0xFF8CABDE; //!< Default terminator.
     static constexpr unsigned int TIMEOUT = 1000; //!< Default timeout.
+    static constexpr unsigned int MAX_PACKET_SIZE = 256; //!< Maximum packet size in bytes.
 
 private:
     //static constexpr unsigned int TX_BUF_SIZE = 1024; //!< Size of the output buffer.
     sockpp::socket_initializer sockInit;
     static constexpr unsigned int MASK = 0xFF; //!< Mask for parsing.
-    sockpp::tcp_connector client; //!< Socket object.
+    sockpp::udp_socket client; //!< Socket object.
     unsigned int _port; //!< Socket port.
     std::string _ip; //!< IP address.
     unsigned int _terminator; //!< Terminator bytes.
     unsigned int _header; //!< Header bytes.
     unsigned int _timeout; //!< Timeout.
+    int _enable = 1; //<! Enable value for the socket.
     //unsigned char _tx_buf[TX_BUF_SIZE]; //!< Tx buffer.
     bool _isFirstRead = false; //!< True if firt packer read.
     bool init(const std::string& ipaddr, unsigned short port, unsigned int timeout); //!< Private initialization function

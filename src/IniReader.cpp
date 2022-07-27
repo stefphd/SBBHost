@@ -203,3 +203,12 @@ bool IniReader::getDoubleArray(const char* key, std::vector<double>* double_arra
 	}
 	return true;
 }
+
+bool IniReader::isOpen() {
+	//try to open it
+	if (!p_file->open(_name.c_str(), "r")) {
+		return false;
+	}
+	p_file->close(); //close after open
+	return true;
+}

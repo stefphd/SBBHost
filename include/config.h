@@ -56,11 +56,13 @@
 #define CONTROL_VAL		+0, 0  //!< Default control values (if unable to load them from the configuration file).
 
 //core settings
+#define CONFIG_FILE "sbbhost-config.ini"
 #if defined(OS_WIN)
-#define CONFIG_FILE "sbbhost-config.ini" //!< Name of the configuration file.
-#else
-#define CONFIG_FILE CONFIG_FILE_LINUX //!< Name of the configuration file.
+#define DEFCONFIG_FILE "sbbhost-config.ini" //!< Name of the configuration file.
+#else //Linux
+#define DEFCONFIG_FILE CONFIG_FILE_LINUX //!< Name of the configuration file.
 #endif
+#define LASTCONFIG_FILE ".sbbhost.def" //!< Save here the last configuration file used.
 #define PACKET_SIZE 64 //!< Size of the data packet (do not change unless necessary.
 #define MAX_MISSING_PACKETS 100 //!< Default maximum missing packets (if unable to load it from the configuration file).
 #define NULL_PORT -1 //!< Null serial port.
@@ -108,6 +110,7 @@
 #endif
 #define SAVE_FILE_LABEL "Please select a *.sbb/*.dat/*.mat file to save to" //!<  File>SaveAs label
 #define OPEN_FILE_LABEL "Please select a *.sbb file to open" //!< File>Open label
+#define LOAD_CFG_LABEL	"Please select a *.ini file to load" //!< Load config label.
 #define SETFOLDER_LABEL "Please select a folder to use as default" //!< File>SetFolder label
 #define FILE_START_FLAG "file://" //!< Header when drag & drop a file into the application.
 #define FILE_END_FLAG "\r\n" //!< Terminator when drag & drop a file into the application.
@@ -115,9 +118,12 @@
 #define FILE_EXT ".sbb" //!< Logged-data file extension (SBB stands for self-balancing-bike).
 #define FILE_CSV ".dat" //!< File extension of DAT files.
 #define FILE_MAT ".mat" //!< File extension of MAT files.
+#define FILE_INI ".ini" //!< File extension of INI files.
 #define FILE_EXT_LABEL "sbb files" //!< Logged-data file label.
 #define FILE_CSV_LABEL "dat files" //!< File label for DAT files.
 #define FILE_MAT_LABEL "mat files" //!< File label for MAT files.
+#define FILE_INI_LABEL "ini files" //!< File label for INI files.
+
 #ifdef OS_WIN 
 #define FILE_SEP '\\' //!< File separator (for Windows).
 #else
@@ -174,6 +180,10 @@
 #define EXIT_INVALIDFILE	0x10 //!< Invalid-file exit flag.
 #define EXIT_UNSELECTEDLOG	0x11 //!< Unselected-logged-data exit flag.
 #define EXIT_TOOSELECTEDLOG 0x12 //!< Too-selected-logged-data exit flag.
+#define EXIT_RESTART_APP_ON_CFG 0x13 //!< Restart app on load config flag.
+#define EXIT_NOCONNECTION 0x14 //!< No connection (no IP).
+#define EXIT_INVALIDIP 0x15 //!< Invalid IP spefified.
+#define EXIT_INVALIDIP_SETTINGS 0x16 //!< Invalid IP specified in settings.
 
 //Beep message
 #ifdef OS_WIN

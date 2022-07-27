@@ -27,8 +27,9 @@ public:
 	*/
     ~Params();
 
-	static constexpr int SERIAL = 0; //!< Serial connection constant.
-	static constexpr int SOCKET = 1; //!< Socket connection constant.
+	static constexpr int SERIAL = 0; //!< USB/Serial connection constant.
+	static constexpr int TCP = 1; //!< TCP/IP connection constant.
+	static constexpr int UDP = 2; //!< UDP/Broadcast connection constant.
 
     //functional vars
 	int conn_type = SERIAL; //!< Connection type. Default is SERIAL.

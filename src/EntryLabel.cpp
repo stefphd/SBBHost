@@ -110,6 +110,12 @@ ComboChoiceEntryLabel::ComboChoiceEntryLabel(Glib::ustring lbl) :
 	entry.set_hexpand(true);
 }
 
+ComboChoiceEntryLabel::ComboChoiceEntryLabel(std::vector<int> choice_id, std::vector<std::string> choice_str, Glib::ustring lbl) :
+	ComboChoiceEntryLabel(lbl) {
+		set_entries(choice_id, choice_str);
+}
+
+
 void ComboChoiceEntryLabel::set_entries(std::vector<int> choice_id, std::vector<std::string> choice_str) {
 	entry.remove_all();
 	id = choice_id;

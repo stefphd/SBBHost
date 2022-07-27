@@ -27,9 +27,27 @@ int SBBHostCore::connect(bool logdata, std::string log_path) {
 		hostPort.begin(p_params->port, p_params->baud, p_params->header, p_params->terminator, p_params->timeout); //begin host port
 		if (!hostPort) { return EXIT_UNABLECONNECT; }
 	}
-	else if (p_params->conn_type == Params::SOCKET) {
-		hostPortSocket.begin(p_params->socket_ip.c_str(), p_params->socket_port, p_params->header, p_params->terminator, p_params->timeout); //begin host port socket	
-		if (!hostPortSocket) { return EXIT_UNABLECONNECT; }
+	else if (p_params->conn_type == Params::TCP) {
+		//check if connection
+		uint32_t curr_ip = utils::ip_str2num(p_params->socket_ip);
+		uint32_t ip, mask;
+		if (utils::getIP_and_subnetmask(&ip,&mask) == 0) {
+			std::string remip;
+			uint32_t remip1 = utils::get_remoteIP(ip, mask, &remip);
+			uint32_t remip2 = utils::get_remoteIP(curr_ip, mask);
+			if (remip1 != remip2) { return EXIT_INVALIDIP; }
+		} else { return EXIT_NOCONNECTION; }
+		hostPortTCP.begin(p_params->socket_ip.c_str(), p_params->socket_port, p_params->header, p_params->terminator, p_params->timeout); //begin host port tcp/ip	
+		if (!hostPortTCP) { return EXIT_UNABLECONNECT; }
+	} 
+	else if (p_params->conn_type == Params::UDP) {
+		//check if connection
+		uint32_t ip, mask;
+		if (utils::getIP_and_subnetmask(&ip,&mask) != 0)  { return EXIT_NOCONNECTION; }
+		std::string broad_ip;
+		utils::get_broadcastIP(ip, mask, &broad_ip);
+		hostPortUDP.begin(broad_ip.c_str(), p_params->socket_port, p_params->header, p_params->terminator, p_params->timeout); //begin host port udp/broad
+		if (!hostPortUDP) { return EXIT_UNABLECONNECT; }
 	} 
 	else {
 		return EXIT_UNEXPECTED;
@@ -41,7 +59,8 @@ int SBBHostCore::connect(bool logdata, std::string log_path) {
  
 void SBBHostCore::disconnect() {
 	hostPort.close();
-	hostPortSocket.close();
+	hostPortTCP.close();
+	hostPortUDP.close();
 }
 
 void SBBHostCore::reset_stream() {
@@ -60,15 +79,22 @@ int SBBHostCore::stream(bool writeFlag) {
 		}
 		if (writeFlag) hostPort.write((unsigned char*)&tx_packet.value, p_params->num_of_controls * sizeof(float)); //write only if writeFlag=true and read success
 	}
-	else if (p_params->conn_type == Params::SOCKET) {
-		if (!hostPortSocket.read((unsigned char*)&rx_packet.value, p_params->num_of_signals*sizeof(float))) { //read serial
+	else if (p_params->conn_type == Params::TCP) {
+		if (!hostPortTCP.read((unsigned char*)&rx_packet.value, p_params->num_of_signals*sizeof(float))) { //read tcp/ip
 			numOfMissingPackets++; //increase num of missing packets
 			if (numOfMissingPackets > p_params->max_missing_packets) { return EXIT_LOSTCONNECTION; } //if max num of missing packets reached return EXIT_LOSTCONNECTION
 			return EXIT_MISSINGPACKET; //otherwise return EXIT_MISSINGPACKET
 		}
-		if (writeFlag) hostPortSocket.write((unsigned char*)&tx_packet.value, p_params->num_of_controls * sizeof(float)); //write only if writeFlag=true and read success
+		if (writeFlag) hostPortTCP.write((unsigned char*)&tx_packet.value, p_params->num_of_controls * sizeof(float)); //write only if writeFlag=true and read success
 	}
-	else {
+	else if (p_params->conn_type == Params::UDP) {
+		if (!hostPortUDP.read((unsigned char*)&rx_packet.value, p_params->num_of_signals*sizeof(float))) { //read udp/broad
+			numOfMissingPackets++; //increase num of missing packets
+			if (numOfMissingPackets > p_params->max_missing_packets) { return EXIT_LOSTCONNECTION; } //if max num of missing packets reached return EXIT_LOSTCONNECTION
+			return EXIT_MISSINGPACKET; //otherwise return EXIT_MISSINGPACKET
+		}
+		if (writeFlag) hostPortUDP.write((unsigned char*)&tx_packet.value, p_params->num_of_controls * sizeof(float)); //write only if writeFlag=true and read success
+	} else {
 		return EXIT_UNEXPECTED;
 	}
 	if (dolog) {

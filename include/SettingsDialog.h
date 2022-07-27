@@ -35,11 +35,18 @@ public:
 	*/
 	int set_params(Params* p_params);
 
+	/*! \brief Get the selected ip.
+		\details Function to get the selected ip.
+		\return The IP address.
+	*/
+	std::string get_selected_ip();
+
 protected:
 	//objects
 	Gtk::Notebook noteBook; //!< Gtk::Notebook object for the stream, plot setting tabs.
 	Gtk::Grid streamGrid; //!< Gtk::Grid object for the stream setting page.
 	Gtk::Grid  plotGrid; //!< Gtk::Grid object for the plot setting page.
+	ComboChoiceEntryLabel conntype; //!< ComboChoiceEntryLabel object for the choiche of the connection type.
 	ComboEntryLabel port; //!< ComboEntryLabel object for the choice of the serial port.
 	SpinEntryLabel baud; //!< SpinEntryLabel object for the baudrate.
 	SpinEntryLabel socket_port; //!< SpinEntryLabel object for the socket port.
@@ -64,6 +71,7 @@ private:
 	//void on_ok_button_pressed();
 	//void on_apply_button_pressed();
 	//void on_cancel_button_pressed();
+	void on_conn_type_changed();
 };
 
 #endif
