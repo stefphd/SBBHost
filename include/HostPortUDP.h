@@ -7,8 +7,8 @@
 #include "sockpp/udp_socket.h"
 #include "sockpp/version.h"
 
-/*! \brief A class for host communication via UDP protocol.
-    \details Class for host communication via UDP protocol with a specified communication protocol.
+/*! \brief A class for host communication via UDP protocol using the broadcast IP.
+    \details Class for host communication via UDP protocol using the broadcast IP with a specified communication protocol.
     Data packet consists of
     - 4-bytes header
     - data (with specified length)
@@ -32,7 +32,7 @@ public:
 
     /*! \brief Begin the host port.
 		\details Function to begin the host port communication with default header, terminator, and timeout.
-        \param ipaddr The IP address to use.
+        \param ipaddr The IP address to use. Must be the broadcast IP.
         \param port The socket port to use.
         \return true if success, false otherwise.
 	*/
@@ -40,7 +40,7 @@ public:
 
     /*! \brief Begin the host port.
 		\details Function to begin the host port communication with given header and terminator and default timeout.
-        \param ipaddr The IP address to use.
+        \param ipaddr The IP address to use. Must be the broadcast IP.
         \param port The socket port to use.
         \param header The header to use (as a HEX number of 4-bytes).
         \param terminator The terminator to use (as a HEX number of 4-bytes).
@@ -50,7 +50,7 @@ public:
 
     /*! \brief Begin the host port.
 		\details Function to begin the host port communication with given header, terminator and timeout.
-        \param ipaddr The IP address to use.
+        \param ipaddr The IP address to use. Must be the broadcast IP.
         \param port The socket port to use.
         \param header The header to use (as a HEX number of 4-bytes).
         \param terminator The terminator to use (as a HEX number of 4-bytes).
