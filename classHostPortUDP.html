@@ -111,7 +111,7 @@ $(document).ready(function(){initNavTree('classHostPortUDP.html',''); initResiza
 </div><!--header-->
 <div class="contents">
 
-<p>A class for host communication via UDP protocol.  
+<p>A class for host communication via UDP protocol using the broadcast IP.  
  <a href="classHostPortUDP.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="HostPortUDP_8h_source.html">HostPortUDP.h</a>&gt;</code></p>
@@ -241,8 +241,8 @@ Static Private Attributes</h2></td></tr>
 <tr class="separator:a4b3eb0c53982d2c63ab0c6870edacf10"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p >A class for host communication via UDP protocol. </p>
-<p >Class for host communication via UDP protocol with a specified communication protocol. Data packet consists of</p><ul>
+<div class="textblock"><p >A class for host communication via UDP protocol using the broadcast IP. </p>
+<p >Class for host communication via UDP protocol using the broadcast IP with a specified communication protocol. Data packet consists of</p><ul>
 <li>4-bytes header</li>
 <li>data (with specified length)</li>
 <li>4-bytes terminator No check sum is performed. <dl class="section author"><dt>Author</dt><dd>Stefano Lovato </dd></dl>
@@ -320,7 +320,7 @@ Static Private Attributes</h2></td></tr>
 <p>Begin the host port. </p>
 <p >Function to begin the host port communication with default header, terminator, and timeout. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">ipaddr</td><td>The IP address to use. </td></tr>
+    <tr><td class="paramname">ipaddr</td><td>The IP address to use. Must be the broadcast IP. </td></tr>
     <tr><td class="paramname">port</td><td>The socket port to use. </td></tr>
   </table>
   </dd>
@@ -370,7 +370,7 @@ Static Private Attributes</h2></td></tr>
 <p>Begin the host port. </p>
 <p >Function to begin the host port communication with given header and terminator and default timeout. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">ipaddr</td><td>The IP address to use. </td></tr>
+    <tr><td class="paramname">ipaddr</td><td>The IP address to use. Must be the broadcast IP. </td></tr>
     <tr><td class="paramname">port</td><td>The socket port to use. </td></tr>
     <tr><td class="paramname">header</td><td>The header to use (as a HEX number of 4-bytes). </td></tr>
     <tr><td class="paramname">terminator</td><td>The terminator to use (as a HEX number of 4-bytes). </td></tr>
@@ -428,7 +428,7 @@ Static Private Attributes</h2></td></tr>
 <p>Begin the host port. </p>
 <p >Function to begin the host port communication with given header, terminator and timeout. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">ipaddr</td><td>The IP address to use. </td></tr>
+    <tr><td class="paramname">ipaddr</td><td>The IP address to use. Must be the broadcast IP. </td></tr>
     <tr><td class="paramname">port</td><td>The socket port to use. </td></tr>
     <tr><td class="paramname">header</td><td>The header to use (as a HEX number of 4-bytes). </td></tr>
     <tr><td class="paramname">terminator</td><td>The terminator to use (as a HEX number of 4-bytes). </td></tr>
