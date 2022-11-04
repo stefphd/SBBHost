@@ -200,7 +200,7 @@ Accordingly to the README file in [https://github.com/microsoft/vcpkg](https://g
 
 * Install the prerequisites, i.e. *Git* (see [https://git-scm.com/downloads](https://git-scm.com/downloads)), and *Visual Studio* (>=2015 declared, >=2017 for *gtkmm4*). Git is only used to clone the repository at [https://github.com/microsoft/vcpkg](https://github.com/microsoft/vcpkg) in the PC: you can also download the repository directly.
 
-* Create a path where to install *vcpkg*. Example path is `C:\src\vcpkg` or `C:\dev\vcpkg`, e.g. using
+* Create a path where to install *vcpkg*. Example path is `C:\src\vcpkg` or `C:\dev\vcpkg`, e.g. using the command prompt (with administrator elevation)
   
   ```shell
   mkdir C:\src\vcpkg
@@ -253,7 +253,7 @@ If issues are found, these are probably due to an incorrect include directory cr
   .\vcpkg\vcpkg install pkgconf --triplet=x64-windows
   ```
   
-* Set an environment variable named `VCPKG_ROOT` pointing to the vcpkg installation path. This may be performed using the terminal (with administrator elevation), e.g. (use your installation path)
+* Set an environment variable named `VCPKG_ROOT` pointing to the vcpkg installation path and restart the command prompt. This may be performed using the terminal (with administrator elevation), e.g. (use your installation path) with
 
   ```shell
   setx VCPKG_ROOT C:\src\vcpkg\ /m
@@ -276,7 +276,8 @@ If issues are found, these are probably due to an incorrect include directory cr
 * You may also print a nicer list of include directories using in the ***Windows PowerShell*** 
   
   ```shell
-  $(./pkgconf --cflags-only-I gtkmm-4.0 --with-path=%VCPKG_ROOT%\installed\x64-windows\lib\pkgconfig) -replace "-I", "`n"
+  cd $env:VCPKG_ROOT\installed\x64-windows\tools\pkgconf
+  $(./pkgconf --cflags-only-I gtkmm-4.0 --with-path=$env:VCPKG_ROOT\installed\x64-windows\lib\pkgconfig) -replace "-I", "`n"
   ```
   
     \attention Make sure to use the ***Windows PowerShell***, not the *Command Prompt*.
