@@ -256,7 +256,7 @@ Workaround with &lt;em&gt;gtkmm&lt;/em&gt; in &lt;em&gt;Visual Studio&lt;/em&gt;
 <p >Accordingly to the README file in <a href="https://github.com/microsoft/vcpkg">https://github.com/microsoft/vcpkg</a>, installation is performed with:</p>
 <ul>
 <li>Install the prerequisites, i.e. <em>Git</em> (see <a href="https://git-scm.com/downloads">https://git-scm.com/downloads</a>), and <em>Visual Studio</em> (&gt;=2015 declared, &gt;=2017 for <em>gtkmm4</em>). Git is only used to clone the repository at <a href="https://github.com/microsoft/vcpkg">https://github.com/microsoft/vcpkg</a> in the PC: you can also download the repository directly.</li>
-<li><p class="startli">Create a path where to install <em>vcpkg</em>. Example path is <code>C:\src\vcpkg</code> or <code>C:\dev\vcpkg</code>, e.g. using</p>
+<li><p class="startli">Create a path where to install <em>vcpkg</em>. Example path is <code>C:\src\vcpkg</code> or <code>C:\dev\vcpkg</code>, e.g. using the command prompt (with administrator elevation)</p>
 <div class="fragment"><div class="line">mkdir C:\src\vcpkg</div>
 </div><!-- fragment --></li>
 <li><p class="startli">Go to <code>C:\src</code> (or the installation path employed), e.g. using</p>
@@ -287,7 +287,7 @@ Workaround with &lt;em&gt;gtkmm&lt;/em&gt; in &lt;em&gt;Visual Studio&lt;/em&gt;
 <li><p class="startli">Install <em>pkgconf</em> (alias for <em>pkg-config</em> in <em>vcpkg</em>) using</p>
 <div class="fragment"><div class="line">.\vcpkg\vcpkg install pkgconf --triplet=x64-windows</div>
 </div><!-- fragment --></li>
-<li><p class="startli">Set an environment variable named <code>VCPKG_ROOT</code> pointing to the vcpkg installation path. This may be performed using the terminal (with administrator elevation), e.g. (use your installation path)</p>
+<li><p class="startli">Set an environment variable named <code>VCPKG_ROOT</code> pointing to the vcpkg installation path and restart the command prompt. This may be performed using the terminal (with administrator elevation), e.g. (use your installation path) with</p>
 <div class="fragment"><div class="line">setx VCPKG_ROOT C:\src\vcpkg\ /m</div>
 </div><!-- fragment --></li>
 <li><p class="startli">Go to <code>VCPKG_ROOT%\installed\x64-windows\tools\pkgconf</code></p>
@@ -298,7 +298,8 @@ Workaround with &lt;em&gt;gtkmm&lt;/em&gt; in &lt;em&gt;Visual Studio&lt;/em&gt;
 </div><!-- fragment --><p class="startli">This prints a list of include diretories (e.g. <code>-IC:VCPKG_ROOT%/installed/**</code>), which is the flag to pass to the C/C++ compiler for including the necessary directories.</p>
 </li>
 <li><p class="startli">You may also print a nicer list of include directories using in the <em><b>Windows PowerShell</b></em></p>
-<div class="fragment"><div class="line">$(./pkgconf --cflags-only-I gtkmm-4.0 --with-path=%VCPKG_ROOT%\installed\x64-windows\lib\pkgconfig) -replace &quot;-I&quot;, &quot;`n&quot;</div>
+<div class="fragment"><div class="line">cd $env:VCPKG_ROOT\installed\x64-windows\tools\pkgconf</div>
+<div class="line">$(./pkgconf --cflags-only-I gtkmm-4.0 --with-path=$env:VCPKG_ROOT\installed\x64-windows\lib\pkgconfig) -replace &quot;-I&quot;, &quot;`n&quot;</div>
 </div><!-- fragment --><dl class="section attention"><dt>Attention</dt><dd>Make sure to use the <em><b>Windows PowerShell</b></em>, not the <em>Command Prompt</em>.</dd></dl>
 </li>
 <li><p class="startli">In <em>Visual Studio</em> put these directories in <em>Additional Include Directory</em> for the C/C++ compiler. You may also add the following additional compiler flag</p>
