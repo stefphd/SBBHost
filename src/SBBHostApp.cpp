@@ -568,12 +568,45 @@ void SBBHostApp::create_dialogs() {
 	filter_ini->add_pattern("*" + (std::string) FILE_INI);
 
 	//file save dialog
+#ifdef USE_NATIVE_DIALOG
+	p_fileSaveAsDialog = Gtk::FileChooserNative::create(SAVE_FILE_LABEL, Gtk::FileChooser::Action::SAVE,"_Save","_Cancel");
+	p_fileSaveAsDialog->set_transient_for(mainWin);
+	p_fileSaveAsDialog->set_modal(true);
+	p_fileSaveAsDialog->add_filter(filter_sbb);
+	p_fileSaveAsDialog->add_filter(filter_csv);
+	p_fileSaveAsDialog->add_filter(filter_mat);
+	p_fileSaveAsDialog->signal_response().connect(sigc::mem_fun(*this, &SBBHostApp::on_file_saveAs_dialog));
+
+	//file open dialog
+	p_fileOpenDialog = Gtk::FileChooserNative::create(OPEN_FILE_LABEL, Gtk::FileChooser::Action::OPEN, "_Open", "_Cancel");
+	p_fileOpenDialog->set_transient_for(mainWin);
+	p_fileOpenDialog->set_modal(true);
+	p_fileOpenDialog->set_select_multiple(false);
+	p_fileOpenDialog->add_filter(filter_sbb);
+	p_fileOpenDialog->signal_response().connect(sigc::mem_fun(*this, &SBBHostApp::on_file_open_dialog));
+
+	//load cfg dialog
+	p_cfgLoadDialog = Gtk::FileChooserNative::create(LOAD_CFG_LABEL, Gtk::FileChooser::Action::OPEN, "_Open", "_Cancel");
+	p_cfgLoadDialog->set_transient_for(mainWin);
+	p_cfgLoadDialog->set_modal(true);
+	p_cfgLoadDialog->set_select_multiple(false);
+	p_cfgLoadDialog->add_filter(filter_ini);
+	p_cfgLoadDialog->signal_response().connect(sigc::mem_fun(*this, &SBBHostApp::on_cfg_load_dialog));
+
+	//set folder dialog
+	p_setFolderDialog = Gtk::FileChooserNative::create(SETFOLDER_LABEL, Gtk::FileChooser::Action::SELECT_FOLDER, "_Select", "_Cancel");
+	p_setFolderDialog->set_transient_for(mainWin);
+	p_setFolderDialog->set_modal(true);
+	p_setFolderDialog->set_select_multiple(false);
+	p_setFolderDialog->signal_response().connect(sigc::mem_fun(*this, &SBBHostApp::on_file_setfolder_dialog));
+
+#else
 	p_fileSaveAsDialog = new Gtk::FileChooserDialog(SAVE_FILE_LABEL, Gtk::FileChooser::Action::SAVE);
 	p_fileSaveAsDialog->set_transient_for(mainWin);
 	p_fileSaveAsDialog->set_modal(true);
 	p_fileSaveAsDialog->set_hide_on_close();
 	p_fileSaveAsDialog->add_button("_Cancel", Gtk::ResponseType::CANCEL);
-	p_fileSaveAsDialog->add_button("_Save", Gtk::ResponseType::OK);
+	p_fileSaveAsDialog->add_button("_Save", Gtk::ResponseType::ACCEPT);
 	p_fileSaveAsDialog->add_filter(filter_sbb);
 	p_fileSaveAsDialog->add_filter(filter_csv);
 	p_fileSaveAsDialog->add_filter(filter_mat);
@@ -586,7 +619,7 @@ void SBBHostApp::create_dialogs() {
 	p_fileOpenDialog->set_hide_on_close();
 	p_fileOpenDialog->set_select_multiple(false);
 	p_fileOpenDialog->add_button("_Cancel", Gtk::ResponseType::CANCEL);
-	p_fileOpenDialog->add_button("_Open", Gtk::ResponseType::OK);
+	p_fileOpenDialog->add_button("_Open", Gtk::ResponseType::ACCEPT);
 	p_fileOpenDialog->add_filter(filter_sbb);
 	p_fileOpenDialog->signal_response().connect(sigc::mem_fun(*this, &SBBHostApp::on_file_open_dialog));
 
@@ -597,7 +630,7 @@ void SBBHostApp::create_dialogs() {
 	p_cfgLoadDialog->set_hide_on_close();
 	p_cfgLoadDialog->set_select_multiple(false);
 	p_cfgLoadDialog->add_button("_Cancel", Gtk::ResponseType::CANCEL);
-	p_cfgLoadDialog->add_button("_Open", Gtk::ResponseType::OK);
+	p_cfgLoadDialog->add_button("_Open", Gtk::ResponseType::ACCEPT);
 	p_cfgLoadDialog->add_filter(filter_ini);
 	p_cfgLoadDialog->signal_response().connect(sigc::mem_fun(*this, &SBBHostApp::on_cfg_load_dialog));
 
@@ -608,9 +641,9 @@ void SBBHostApp::create_dialogs() {
 	p_setFolderDialog->set_hide_on_close();
 	p_setFolderDialog->set_select_multiple(false);
 	p_setFolderDialog->add_button("_Cancel", Gtk::ResponseType::CANCEL);
-	p_setFolderDialog->add_button("Select", Gtk::ResponseType::OK);
+	p_setFolderDialog->add_button("Select", Gtk::ResponseType::ACCEPT);
 	p_setFolderDialog->signal_response().connect(sigc::mem_fun(*this, &SBBHostApp::on_file_setfolder_dialog));
-
+#endif
 	//about dialogs
 	aboutDialog.set_logo_default();
 	aboutDialog.set_transient_for(mainWin);
@@ -926,7 +959,7 @@ void SBBHostApp::on_file_saveAs_dialog(int exit) {
 	if (exit != Gtk::ResponseType::DELETE_EVENT) def_dir = p_fileSaveAsDialog->get_current_folder()->get_path();
 	std::string current_filter = p_fileSaveAsDialog->get_filter()->get_name();
 	switch (exit) {
-	case Gtk::ResponseType::OK:
+	case Gtk::ResponseType::ACCEPT:
 		if (current_filter == (std::string) FILE_EXT_LABEL) {
 			exitFlag = core.save(id, p_fileSaveAsDialog->get_current_name(), p_fileSaveAsDialog->get_current_folder()->get_path());
 			//update plot tree log name according to saved file
@@ -953,7 +986,7 @@ void SBBHostApp::on_file_saveAs_dialog(int exit) {
 
 
 void SBBHostApp::on_file_setfolder_dialog(int exit) {
-	if (exit == Gtk::ResponseType::OK) {
+	if (exit == Gtk::ResponseType::ACCEPT) {
 		def_dir = p_setFolderDialog->get_current_folder()->get_path();
 		core.set_path_logs(def_dir);
 	}
@@ -964,7 +997,7 @@ void SBBHostApp::on_cfg_load_dialog(int exit) {
 
 	if (exit != Gtk::ResponseType::DELETE_EVENT) def_dir = p_cfgLoadDialog->get_current_folder()->get_path();
 	switch (exit) {
-	case Gtk::ResponseType::OK: {
+	case Gtk::ResponseType::ACCEPT: {
 		//exitFlag = open(p_cfgLoadDialog->get_file()->get_path());
 		std::string new_cfgfile = p_cfgLoadDialog->get_file()->get_path();
 		std::string config_file =  utils::get_home_path() + "/" + p_cfgLoadDialog->get_file()->get_basename();
@@ -1005,9 +1038,12 @@ void SBBHostApp::on_cfg_load_dialog(int exit) {
 
 void SBBHostApp::on_file_open_dialog(int exit) {
 
+	printf("%d\n", exit);
+
 	if (exit != Gtk::ResponseType::DELETE_EVENT) def_dir = p_fileOpenDialog->get_current_folder()->get_path();
 	switch (exit) {
-	case Gtk::ResponseType::OK:
+	case Gtk::ResponseType::ACCEPT:
+		printf("AAA\n");
 		exitFlag = open(p_fileOpenDialog->get_file()->get_path());
 		break;
 	case Gtk::ResponseType::CANCEL:

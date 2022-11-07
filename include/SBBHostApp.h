@@ -118,10 +118,17 @@ protected:
 	Glib::RefPtr<Gio::SimpleAction> p_menuLog = nullptr; //!< Pointer to Gio::SimpleAction object for the toolbar log button.
 	Glib::RefPtr<Gio::SimpleAction> p_conn = nullptr;
 	std::unique_ptr<Gtk::MessageDialog> p_messageDialog = nullptr; //!< Pointer to Gtk::MessageDialog object for message dialogs.
+#ifdef USE_NATIVE_DIALOG
+	Glib::RefPtr<Gtk::FileChooserNative> p_fileSaveAsDialog = nullptr; //!< Pointer to Gtk::FileChooserDialog object for the file saveas dialog.
+	Glib::RefPtr<Gtk::FileChooserNative> p_fileOpenDialog = nullptr; //!< Pointer to Gtk::FileChooserDialog object for the file open dialog.
+	Glib::RefPtr<Gtk::FileChooserNative> p_cfgLoadDialog = nullptr; //!< Pointer to Gtk::FileChooserDialog object for the config load dialog.
+	Glib::RefPtr<Gtk::FileChooserNative> p_setFolderDialog = nullptr; //!< Pointer to Gtk::FileChooserDialog object for the setfolder dialog.
+#else
 	Gtk::FileChooserDialog* p_fileSaveAsDialog = nullptr; //!< Pointer to Gtk::FileChooserDialog object for the file saveas dialog.
 	Gtk::FileChooserDialog* p_fileOpenDialog = nullptr; //!< Pointer to Gtk::FileChooserDialog object for the file open dialog.
 	Gtk::FileChooserDialog* p_cfgLoadDialog = nullptr; //!< Pointer to Gtk::FileChooserDialog object for the config load dialog.
 	Gtk::FileChooserDialog* p_setFolderDialog = nullptr; //!< Pointer to Gtk::FileChooserDialog object for the setfolder dialog.
+#endif
 	CGraph::CairoGraph* p_streamGraph = nullptr; //!< Pointer to CGraph::CairoGraph object for the graph in the stream tab.
 	CGraph::CairoGraph* p_plotGraph = nullptr; //!< Pointer to CGraph::CairoGraph object for the sample-domain graph in the plot tab.
 	CGraph::CairoGraph* p_magfftGraph = nullptr; //!< Pointer to CGraph::CairoGraph object for the magnitude-spectra graph in the plot tab.

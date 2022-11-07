@@ -74,6 +74,10 @@
 #define NULL_ID -1 //!< Null log ID.
 #define NAN_VAL 0xffc00000 //!< NaN val sent when controls not enabled.
 
+#ifdef OS_WIN
+#define USE_NATIVE_DIALOG //undef to not use native fileopen dialog
+#endif
+
 //serial settings
 #define BAUD 115200 //!< Defalt baudrate of serial communication (if unable to load it from the configuration file).
 
