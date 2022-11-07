@@ -192,6 +192,9 @@
     <ClInclude Include="lib\sockpp\version.h">
       <Filter>lib\sockpp</Filter>
     </ClInclude>
+    <ClInclude Include="include\HostPortUDP.h">
+      <Filter>include</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="lib\cairoplotter\plotter.cpp">
@@ -292,6 +295,9 @@
     </ClCompile>
     <ClCompile Include="lib\sockpp\stream_socket.cpp">
       <Filter>lib\sockpp</Filter>
+    </ClCompile>
+    <ClCompile Include="src\HostPortUDP.cpp">
+      <Filter>src</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

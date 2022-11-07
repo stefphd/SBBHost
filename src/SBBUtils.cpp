@@ -26,6 +26,12 @@ namespace utils {
 	}
 	
 	int getIP_and_subnetmask(uint32_t* ip, uint32_t* mask, std::string* ip_str, std::string* mask_str) {
+#ifdef OS_WIN
+
+
+
+		return 1;
+#else //OS_LINUX
 		struct ifaddrs *ifap, *ifa;
 		struct sockaddr_in *samask, *saip;
 		char *addr;
@@ -45,6 +51,7 @@ namespace utils {
 		}
 		freeifaddrs(ifap);
 		return 1;
+#endif
 	}
 
 	uint32_t get_remoteIP(uint32_t ip, uint32_t mask, std::string* str) {
@@ -69,7 +76,7 @@ namespace utils {
 
 	uint32_t ip_str2num(std::string ip_str) {
 		in_addr ip;
-		inet_aton(ip_str.c_str(), &ip);
+		inet_pton(AF_INET, ip_str.c_str(), &ip);
 		return (uint32_t) ip.s_addr;
 	}
 

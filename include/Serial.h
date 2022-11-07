@@ -17,6 +17,7 @@
 #endif
 
 #ifdef OS_WIN
+#define _WINSOCKAPI_
 #include <windows.h>
 #define PORT_STR "\\\\.\\COM%u"
 #else 

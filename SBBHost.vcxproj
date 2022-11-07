@@ -26,6 +26,7 @@
     <ClInclude Include="include\HostControlDialog.h" />
     <ClInclude Include="include\HostPort.h" />
     <ClInclude Include="include\HostPortTCP.h" />
+    <ClInclude Include="include\HostPortUDP.h" />
     <ClInclude Include="include\IniReader.h" />
     <ClInclude Include="include\LogData.h" />
     <ClInclude Include="include\Packet.h" />
@@ -96,6 +97,7 @@
     <ClCompile Include="src\HostControl.cpp" />
     <ClCompile Include="src\HostPort.cpp" />
     <ClCompile Include="src\HostPortTCP.cpp" />
+    <ClCompile Include="src\HostPortUDP.cpp" />
     <ClCompile Include="src\IniReader.cpp" />
     <ClCompile Include="src\main.cpp" />
     <ClCompile Include="src\Params.cpp" />
@@ -289,7 +291,7 @@ copy "$(SolutionDir)resource\sbbhost-toolbar.xml" "$(SolutionDir)\bin\win64\sbbh
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions);_CRT_SECURE_NO_WARNINGS;_WINSOCK_DEPRECATED_NO_WARNINGS</PreprocessorDefinitions>
+      <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions);_CRT_SECURE_NO_WARNINGS;_WINSOCK_DEPRECATED_NO_WARNINGS;_WINSOCKAPI_</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpp17</LanguageStandard>
       <UndefinePreprocessorDefinitions>%(UndefinePreprocessorDefinitions)</UndefinePreprocessorDefinitions>

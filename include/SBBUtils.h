@@ -20,7 +20,9 @@
 #if defined(OS_WIN)
 #pragma warning(disable : 4996)
 #include <shlobj.h>  //for get document path in Win
-#include <windows.h> //for beep
+#include <WinUser.h> //for beep
+#include <winsock2.h>
+#include <ws2tcpip.h>
 #elif defined(OS_LINUX)
 #define sscanf_s sscanf //in linux use sscanf for sscanf_s
 #define sprintf_s(buf, len, ...) snprintf((buf), (len), __VA_ARGS__)

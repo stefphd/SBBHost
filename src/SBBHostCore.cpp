@@ -29,6 +29,7 @@ int SBBHostCore::connect(bool logdata, std::string log_path) {
 	}
 	else if (p_params->conn_type == Params::TCP) {
 		//check if connection
+#ifdef OS_LINUX
 		uint32_t curr_ip = utils::ip_str2num(p_params->socket_ip);
 		uint32_t ip, mask;
 		if (utils::getIP_and_subnetmask(&ip,&mask) == 0) {
@@ -37,6 +38,7 @@ int SBBHostCore::connect(bool logdata, std::string log_path) {
 			uint32_t remip2 = utils::get_remoteIP(curr_ip, mask);
 			if (remip1 != remip2) { return EXIT_INVALIDIP; }
 		} else { return EXIT_NOCONNECTION; }
+#endif
 		hostPortTCP.begin(p_params->socket_ip.c_str(), p_params->socket_port, p_params->header, p_params->terminator, p_params->timeout); //begin host port tcp/ip	
 		if (!hostPortTCP) { return EXIT_UNABLECONNECT; }
 	} 

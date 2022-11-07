@@ -8,6 +8,18 @@
 #include "EntryLabel.h"
 #include "SBBUtils.h"
 
+#if defined(WIN32) || defined(_WIN32) || defined(__WIN32) || defined(__WIN32__) || defined(WIN64) || defined(_WIN64) || defined(__WIN64) || defined(__WIN64__)
+#ifndef OS_WIN
+#define OS_WIN
+#endif
+#elif defined(linux) || defined(__linux) || defined(__linux__) || defined(__GNUC__) || defined(__GNUG__) || defined(unix) || defined(__unix) || defined(__unix__)
+#ifndef OS_LINUX
+#define OS_LINUX
+#endif
+#else
+#error OS not supported
+#endif
+
 /*! \brief A class for the setting dialog.
     \details Class for setting dialog by extending the Gtk::Dialog class, used in SBBHostApp.
 	\see SBBHostApp
