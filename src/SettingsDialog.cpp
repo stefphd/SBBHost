@@ -182,6 +182,7 @@ int SettingsDialog::set_params(Params * p_params) {
 	if (!utils::str2hex(header.get_text(), &(p_params->header))) exitFlag = EXIT_INVALIDHEADER;
 	if (!utils::str2hex(terminator.get_text(), &(p_params->terminator))) exitFlag = EXIT_INVALIDTERMIN;
 
+#ifdef OS_LINUX
 	if (p_params->conn_type == Params::TCP) {
 		uint32_t curr_ip = utils::ip_str2num(socket_ip.get_text());
 		uint32_t ip, mask;
@@ -195,6 +196,9 @@ int SettingsDialog::set_params(Params * p_params) {
 			else p_params->socket_ip = socket_ip.get_text();
 		} else exitFlag = EXIT_INVALIDIP_SETTINGS;
 	} 
+#else
+	p_params->socket_ip = socket_ip.get_text();
+#endif
 
 	return exitFlag;
 }
