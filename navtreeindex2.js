@@ -1,5 +1,9 @@
 var NAVTREEINDEX2 =
 {
+"classSettingsDialog.html":[3,0,16],
+"classSettingsDialog.html#a05ba637b84e87764d83c84e7b7b509d6":[3,0,16,15],
+"classSettingsDialog.html#a088fd00f177962e013a0aaaf2dfd1681":[3,0,16,13],
+"classSettingsDialog.html#a19f1e13e629d2d04ec5c65f38193aea6":[3,0,16,8],
 "classSettingsDialog.html#a2768eba5ef395196b164589cdb1404ca":[3,0,16,11],
 "classSettingsDialog.html#a3647273739bfb09a4df3533c40c786b0":[3,0,16,9],
 "classSettingsDialog.html#a3d82e6b64640833ee63f2f4b62a52011":[3,0,16,5],
@@ -245,9 +249,5 @@ var NAVTREEINDEX2 =
 "functions_d.html":[3,3,0,4],
 "functions_e.html":[3,3,0,5],
 "functions_f.html":[3,3,0,6],
-"functions_func.html":[3,3,1],
-"functions_func.html":[3,3,1,0],
-"functions_func_b.html":[3,3,1,1],
-"functions_func_c.html":[3,3,1,2],
-"functions_func_d.html":[3,3,1,3]
+"functions_func.html":[3,3,1]
 };

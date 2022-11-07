@@ -74,8 +74,8 @@ var NAVTREEINDEX =
 [
 "EntryLabel_8h.html",
 "classPacket.html#a2f7abef9158089e95f7043c27647cfea",
-"classSettingsDialog.html#a2768eba5ef395196b164589cdb1404ca",
-"functions_func_e.html"
+"classSettingsDialog.html",
+"functions_func.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

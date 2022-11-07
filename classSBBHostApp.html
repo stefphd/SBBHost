@@ -391,6 +391,18 @@ Protected Attributes</h2></td></tr>
 <tr class="memitem:a6e087f6e893dc70ad74a4ea04a64a77c"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; Gtk::MessageDialog &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSBBHostApp.html#a6e087f6e893dc70ad74a4ea04a64a77c">p_messageDialog</a> = nullptr</td></tr>
 <tr class="memdesc:a6e087f6e893dc70ad74a4ea04a64a77c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pointer to Gtk::MessageDialog object for message dialogs.  <a href="classSBBHostApp.html#a6e087f6e893dc70ad74a4ea04a64a77c">More...</a><br /></td></tr>
 <tr class="separator:a6e087f6e893dc70ad74a4ea04a64a77c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3c5b00f6c6051cbd8607071571b6ced4"><td class="memItemLeft" align="right" valign="top">Glib::RefPtr&lt; Gtk::FileChooserNative &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSBBHostApp.html#a3c5b00f6c6051cbd8607071571b6ced4">p_fileSaveAsDialog</a> = nullptr</td></tr>
+<tr class="memdesc:a3c5b00f6c6051cbd8607071571b6ced4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pointer to Gtk::FileChooserDialog object for the file saveas dialog.  <a href="classSBBHostApp.html#a3c5b00f6c6051cbd8607071571b6ced4">More...</a><br /></td></tr>
+<tr class="separator:a3c5b00f6c6051cbd8607071571b6ced4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae1f5b25cefe37e54a761823dcc016670"><td class="memItemLeft" align="right" valign="top">Glib::RefPtr&lt; Gtk::FileChooserNative &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSBBHostApp.html#ae1f5b25cefe37e54a761823dcc016670">p_fileOpenDialog</a> = nullptr</td></tr>
+<tr class="memdesc:ae1f5b25cefe37e54a761823dcc016670"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pointer to Gtk::FileChooserDialog object for the file open dialog.  <a href="classSBBHostApp.html#ae1f5b25cefe37e54a761823dcc016670">More...</a><br /></td></tr>
+<tr class="separator:ae1f5b25cefe37e54a761823dcc016670"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6ddac767186c7c66547719feb9011f46"><td class="memItemLeft" align="right" valign="top">Glib::RefPtr&lt; Gtk::FileChooserNative &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSBBHostApp.html#a6ddac767186c7c66547719feb9011f46">p_cfgLoadDialog</a> = nullptr</td></tr>
+<tr class="memdesc:a6ddac767186c7c66547719feb9011f46"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pointer to Gtk::FileChooserDialog object for the config load dialog.  <a href="classSBBHostApp.html#a6ddac767186c7c66547719feb9011f46">More...</a><br /></td></tr>
+<tr class="separator:a6ddac767186c7c66547719feb9011f46"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa94bfbbc87491d6d8774d9ed29613abf"><td class="memItemLeft" align="right" valign="top">Glib::RefPtr&lt; Gtk::FileChooserNative &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSBBHostApp.html#aa94bfbbc87491d6d8774d9ed29613abf">p_setFolderDialog</a> = nullptr</td></tr>
+<tr class="memdesc:aa94bfbbc87491d6d8774d9ed29613abf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pointer to Gtk::FileChooserDialog object for the setfolder dialog.  <a href="classSBBHostApp.html#aa94bfbbc87491d6d8774d9ed29613abf">More...</a><br /></td></tr>
+<tr class="separator:aa94bfbbc87491d6d8774d9ed29613abf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab9f0b5a5dc6f73e02483dbd1761a128d"><td class="memItemLeft" align="right" valign="top">Gtk::FileChooserDialog *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSBBHostApp.html#ab9f0b5a5dc6f73e02483dbd1761a128d">p_fileSaveAsDialog</a> = nullptr</td></tr>
 <tr class="memdesc:ab9f0b5a5dc6f73e02483dbd1761a128d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pointer to Gtk::FileChooserDialog object for the file saveas dialog.  <a href="classSBBHostApp.html#ab9f0b5a5dc6f73e02483dbd1761a128d">More...</a><br /></td></tr>
 <tr class="separator:ab9f0b5a5dc6f73e02483dbd1761a128d"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -2353,8 +2365,32 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
+<a id="a6ddac767186c7c66547719feb9011f46" name="a6ddac767186c7c66547719feb9011f46"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6ddac767186c7c66547719feb9011f46">&#9670;&#160;</a></span>p_cfgLoadDialog <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Glib::RefPtr&lt;Gtk::FileChooserNative&gt; SBBHostApp::p_cfgLoadDialog = nullptr</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Pointer to Gtk::FileChooserDialog object for the config load dialog. </p>
+
+</div>
+</div>
 <a id="abeee7f9fee55569581e355e12bd0b09f" name="abeee7f9fee55569581e355e12bd0b09f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abeee7f9fee55569581e355e12bd0b09f">&#9670;&#160;</a></span>p_cfgLoadDialog</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#abeee7f9fee55569581e355e12bd0b09f">&#9670;&#160;</a></span>p_cfgLoadDialog <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -2471,8 +2507,32 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
+<a id="ae1f5b25cefe37e54a761823dcc016670" name="ae1f5b25cefe37e54a761823dcc016670"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae1f5b25cefe37e54a761823dcc016670">&#9670;&#160;</a></span>p_fileOpenDialog <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Glib::RefPtr&lt;Gtk::FileChooserNative&gt; SBBHostApp::p_fileOpenDialog = nullptr</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Pointer to Gtk::FileChooserDialog object for the file open dialog. </p>
+
+</div>
+</div>
 <a id="afe6487ff43e9bb9653a417399270d677" name="afe6487ff43e9bb9653a417399270d677"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afe6487ff43e9bb9653a417399270d677">&#9670;&#160;</a></span>p_fileOpenDialog</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#afe6487ff43e9bb9653a417399270d677">&#9670;&#160;</a></span>p_fileOpenDialog <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -2495,8 +2555,32 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
+<a id="a3c5b00f6c6051cbd8607071571b6ced4" name="a3c5b00f6c6051cbd8607071571b6ced4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3c5b00f6c6051cbd8607071571b6ced4">&#9670;&#160;</a></span>p_fileSaveAsDialog <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Glib::RefPtr&lt;Gtk::FileChooserNative&gt; SBBHostApp::p_fileSaveAsDialog = nullptr</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Pointer to Gtk::FileChooserDialog object for the file saveas dialog. </p>
+
+</div>
+</div>
 <a id="ab9f0b5a5dc6f73e02483dbd1761a128d" name="ab9f0b5a5dc6f73e02483dbd1761a128d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab9f0b5a5dc6f73e02483dbd1761a128d">&#9670;&#160;</a></span>p_fileSaveAsDialog</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ab9f0b5a5dc6f73e02483dbd1761a128d">&#9670;&#160;</a></span>p_fileSaveAsDialog <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -2687,8 +2771,32 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
+<a id="aa94bfbbc87491d6d8774d9ed29613abf" name="aa94bfbbc87491d6d8774d9ed29613abf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa94bfbbc87491d6d8774d9ed29613abf">&#9670;&#160;</a></span>p_setFolderDialog <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Glib::RefPtr&lt;Gtk::FileChooserNative&gt; SBBHostApp::p_setFolderDialog = nullptr</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Pointer to Gtk::FileChooserDialog object for the setfolder dialog. </p>
+
+</div>
+</div>
 <a id="a7e67dc9fe97adeb02e4f465d2b53ea5d" name="a7e67dc9fe97adeb02e4f465d2b53ea5d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7e67dc9fe97adeb02e4f465d2b53ea5d">&#9670;&#160;</a></span>p_setFolderDialog</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a7e67dc9fe97adeb02e4f465d2b53ea5d">&#9670;&#160;</a></span>p_setFolderDialog <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
